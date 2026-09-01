@@ -1,12 +1,18 @@
 ---
 ---
-
 @import 'jekyll-theme-hacker';
+
 // Убираем >> из всех списков
 ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: none !important;
+  padding-left: 0 !important;
 }
 ul li::before {
   content: none !important;
+}
+
+// Убираем лишние отступы подвала
+footer {
+  margin-top: 5px;
+  padding: 5px 0;
 }
