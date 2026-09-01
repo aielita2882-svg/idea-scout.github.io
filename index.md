@@ -3,6 +3,16 @@ layout: default
 title: Idea Scout — AI-находки для разработчиков
 ---
 
+<style>
+  ul li::before {
+    content: none !important;
+  }
+  ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+  }
+</style>
+
 # 🚀 Idea Scout
 
 Автономный агрегатор open-source AI-моделей, скриптов и инструментов.
