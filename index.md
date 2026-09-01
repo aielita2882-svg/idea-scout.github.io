@@ -16,11 +16,9 @@ title: Idea Scout — AI-находки для разработчиков
 - [Разное]({{ site.baseurl }}/categories/raznoe/)
 
 ## 📌 Последние посты
-<ul>
 {% for post in site.posts limit:10 %}
-  <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+- [{{ post.title }}]({{ site.baseurl }}{{ post.url }})
 {% endfor %}
-</ul>
 
 ---
 
