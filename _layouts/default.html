@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
     {% seo %}
-	<style>
-      /* Полное отключение >> для всех списков на всех страницах */
-      #main_content ul, #main_content ol {
+    <style>
+      /* Жёстко убираем >> на всех страницах */
+      ul, ol {
         list-style: none !important;
         padding-left: 0 !important;
       }
-      #main_content ul li::before, #main_content ol li::before {
+      ul li::before, ol li::before {
         content: none !important;
+      }
+      /* Убираем лишний отступ подвала */
+      footer {
+        margin-top: 5px !important;
+        padding: 5px 0 !important;
       }
     </style>
   </head>
@@ -43,16 +48,5 @@
         {{ content }}
       </section>
     </div>
-
-    <!-- Подвал только один раз -->
-    <footer style="margin-top: 5px; padding: 5px 0; text-align: center;">
-      <p>
-        Idea Scout | 
-        <a href="https://t.me/idea_scout">Telegram</a> | 
-        <a href="https://vk.com/idea_scout">VK</a> | 
-        <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> | 
-        <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
-      </p>
-    </footer>
   </body>
 </html>
