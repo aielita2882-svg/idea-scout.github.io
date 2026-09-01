@@ -12,7 +12,9 @@ jobs:
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ruby_version: '3.0'        # ← ЯВНО УКАЗЫВАЕМ ВЕРСИЮ RUBY
+          bundler_version: '2.4'      # ← опционально, для совместимости
       - name: Ping search engines
         run: |
-          curl "http://www.google.com/ping?sitemap=https://aielita2882-svg.github.io/sitemap.xml"
-          curl "http://www.bing.com/ping?sitemap=https://aielita2882-svg.github.io/sitemap.xml"
+          curl "http://www.google.com/ping?sitemap=https://aielita2882-svg.github.io/idea-scout.github.io/sitemap.xml"
+          curl "http://www.bing.com/ping?sitemap=https://aielita2882-svg.github.io/idea-scout.github.io/sitemap.xml"
