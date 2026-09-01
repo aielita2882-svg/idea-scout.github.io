@@ -1,7 +1,7 @@
 title: Idea Scout - AI-находки для разработчиков
 description: Автономный агрегатор open-source AI-моделей, скриптов и инструментов для автоматизации.
 url: "https://aielita2882-svg.github.io"  # замените на ваш реальный URL
-baseurl: ""
+baseurl: "/idea-scout.github.io"
 remote_theme: pages-themes/hacker@v0.2.0  # подключаем тему Hacker
 
 plugins:
