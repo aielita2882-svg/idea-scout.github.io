@@ -11,14 +11,16 @@ title: Idea Scout — AI-находки для разработчиков
 
 - [Модели]({{ site.baseurl }}/categories/modeli/)
 - [Скрипты]({{ site.baseurl }}/categories/skripty/)
-- [Автоматизация]({{ site.baseurl }}/categories/avtomatizaciya/)
+- [Автоматизация]({{ site.baseurl }}/categories/avtomatizatsiya/)
 - [Парсинг]({{ site.baseurl }}/categories/parsing/)
 - [Разное]({{ site.baseurl }}/categories/raznoe/)
 
 ## 📌 Последние посты
+<ul>
 {% for post in site.posts limit:10 %}
-- [{{ post.title }}]({{ site.baseurl }}{{ post.url }})
+  <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
+</ul>
 
 ---
 

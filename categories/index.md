@@ -6,10 +6,12 @@ permalink: /categories/
 
 # Все категории
 
-- [AI', 'OpenSource]({{ site.baseurl }}/categories/ai-opensource/)
-- [AI', 'OpenSource', 'Automation]({{ site.baseurl }}/categories/ai-opensource-automation/)
-- [Автоматизация]({{ site.baseurl }}/categories/avtomatizatsiya/)
-- [Модели]({{ site.baseurl }}/categories/modeli/)
-- [Парсинг]({{ site.baseurl }}/categories/parsing/)
-- [Разное]({{ site.baseurl }}/categories/raznoe/)
-- [Скрипты]({{ site.baseurl }}/categories/skripty/)
+<ul>
+<li><a href="{{ site.baseurl }}/categories/ai-opensource/">AI', 'OpenSource</a></li>
+<li><a href="{{ site.baseurl }}/categories/ai-opensource-automation/">AI', 'OpenSource', 'Automation</a></li>
+<li><a href="{{ site.baseurl }}/categories/avtomatizatsiya/">Автоматизация</a></li>
+<li><a href="{{ site.baseurl }}/categories/modeli/">Модели</a></li>
+<li><a href="{{ site.baseurl }}/categories/parsing/">Парсинг</a></li>
+<li><a href="{{ site.baseurl }}/categories/raznoe/">Разное</a></li>
+<li><a href="{{ site.baseurl }}/categories/skripty/">Скрипты</a></li>
+</ul>

@@ -6,4 +6,6 @@ permalink: /categories/avtomatizatsiya/
 
 # Посты в категории «Автоматизация»
 
-- [HKUDSDeepTutor](/2026/09/01/hkudsdeeptutor/)
+<ul>
+<li><a href="/2026/09/01/hkudsdeeptutor/">HKUDSDeepTutor</a></li>
+</ul>
