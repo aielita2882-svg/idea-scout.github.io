@@ -4,12 +4,12 @@ title: Idea Scout — AI-находки для разработчиков
 ---
 
 <style>
-  ul li::before {
-    content: none !important;
-  }
-  ul {
+  ul, ol {
     list-style: none !important;
     padding-left: 0 !important;
+  }
+  ul li::before, ol li::before {
+    content: none !important;
   }
 </style>
 
@@ -34,4 +34,4 @@ title: Idea Scout — AI-находки для разработчиков
 
 ---
 
-[Telegram](https://t.me/idea_scout) | [VK](https://vk.com/idea_scout)
+[Telegram](https://t.me/idea_scout) | [VK](https://vk.com/idea_scout) | [Pinterest](https://ru.pinterest.com/idea_scout/) | [Дзен](https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k)
