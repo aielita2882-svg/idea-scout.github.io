@@ -9,16 +9,15 @@ title: Idea Scout — AI-находки для разработчиков
 
 ## 📂 Категории
 
-- [Модели](/idea-scout.github.io/categories/modeli/)
-- [Скрипты](/idea-scout.github.io/categories/skripty/)
-- [Автоматизация](/idea-scout.github.io/categories/avtomatizaciya/)
-- [Парсинг](/idea-scout.github.io/categories/parsing/)
-- [Разное](/idea-scout.github.io/categories/raznoe/)
+- [Модели]({{ site.baseurl }}/categories/modeli/)
+- [Скрипты]({{ site.baseurl }}/categories/skripty/)
+- [Автоматизация]({{ site.baseurl }}/categories/avtomatizaciya/)
+- [Парсинг]({{ site.baseurl }}/categories/parsing/)
+- [Разное]({{ site.baseurl }}/categories/raznoe/)
 
 ## 📌 Последние посты
-
 {% for post in site.posts limit:10 %}
-- [{{ post.title }}]({{ post.url }})
+- [{{ post.title }}]({{ site.baseurl }}{{ post.url }})
 {% endfor %}
 
 ---
