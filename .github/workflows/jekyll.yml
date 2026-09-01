@@ -7,14 +7,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - uses: helaili/jekyll-action@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ruby_version: '3.0'        # ← ЯВНО УКАЗЫВАЕМ ВЕРСИЮ RUBY
-          bundler_version: '2.4'      # ← опционально, для совместимости
-      - name: Ping search engines
-        run: |
-          curl "http://www.google.com/ping?sitemap=https://aielita2882-svg.github.io/idea-scout.github.io/sitemap.xml"
-          curl "http://www.bing.com/ping?sitemap=https://aielita2882-svg.github.io/idea-scout.github.io/sitemap.xml"
+          ruby-version: '3.1'
+          bundler-cache: true   # кеширует gem'ы для ускорения
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build site
+        run: bundle exec jekyll build --source . --destination _site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages   # или можно оставить main, но лучше gh-pages
+          force_orphan: true
