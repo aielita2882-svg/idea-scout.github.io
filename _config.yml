@@ -1,16 +1,15 @@
 title: Idea Scout - AI-находки для разработчиков
 description: Автономный агрегатор open-source AI-моделей, скриптов и инструментов для автоматизации.
-url: "https://aielita2882-svg.github.io"  # замените на ваш реальный URL
+url: "https://aielita2882-svg.github.io"
 baseurl: "/idea-scout.github.io"
-remote_theme: pages-themes/hacker@v0.2.0  # подключаем тему Hacker
+remote_theme: pages-themes/hacker@v0.2.0
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-remote-theme   # ← ЭТО РЕШАЕТ ПРОБЛЕМУ
 
 markdown: kramdown
-permalink: /:year/:month/:day/:title/   # меняем на короткий формат (без категорий в URL)
-
-# Настройки темы Hacker (опционально)
-show_downloads: false   # убираем кнопку скачивания, если не нужна
+permalink: /:year/:month/:day/:title/
+show_downloads: false
