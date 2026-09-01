@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кто сказал, что бот в VK  это обязательно колхоз из костылей? | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Кто сказал, что бот в VK это обязательно колхоз из костылей? | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Кто сказал, что бот в VK это обязательно колхоз из костылей?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Кто сказал, что бот в VK — это обязательно колхоз из костылей? 🤖 Разобралась в плагине, который прикручивает Hermes-агента прямо к сообществу ВКонтакте через Lo…" />
+<meta property="og:description" content="Кто сказал, что бот в VK — это обязательно колхоз из костылей? 🤖 Разобралась в плагине, который прикручивает Hermes-агента прямо к сообществу ВКонтакте через Lo…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/kto-skazal-chto-bot-v-vk-eto-obyazatelno-kolkhoz-iz-kostyley/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/kto-skazal-chto-bot-v-vk-eto-obyazatelno-kolkhoz-iz-kostyley/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-31T07:42:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Кто сказал, что бот в VK это обязательно колхоз из костылей?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-31T07:42:05+00:00","datePublished":"2026-08-31T07:42:05+00:00","description":"Кто сказал, что бот в VK — это обязательно колхоз из костылей? 🤖 Разобралась в плагине, который прикручивает Hermes-агента прямо к сообществу ВКонтакте через Lo…","headline":"Кто сказал, что бот в VK это обязательно колхоз из костылей?","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/kto-skazal-chto-bot-v-vk-eto-obyazatelno-kolkhoz-iz-kostyley/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/kto-skazal-chto-bot-v-vk-eto-obyazatelno-kolkhoz-iz-kostyley/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>31 August 2026</small>
+<h1>Кто сказал, что бот в VK  это обязательно колхоз из костылей?</h1>
+
+<p class="view">by </p>
+
+<h1 id="интеграция-hermes-агента-в-vk-через-long-poll">Интеграция Hermes-агента в VK через Long Poll</h1>
+
+<p>Большинство ботов в VK до сих пор пишутся по принципу «костыль на синей изоленте». Однако плагин для Hermes меняет подход, превращая сообщество в полноценный интерфейс для AI-агента. Это не примитивный эхо-бот, а полноценный шлюз, который работает с Long Poll API и поддерживает сложную логику взаимодействия.</p>
+
+<h2 id="технический-стек-и-функционал">Технический стек и функционал</h2>
+
+<p>Плагин реализует мост между Hermes и VK API, обрабатывая входящие события и отправляя ответы через <code class="language-plaintext highlighter-rouge">messages.send</code>.</p>
+
+<h3 id="ключевые-фичи">Ключевые фичи:</h3>
+<ul>
+  <li><strong>Работа с контекстом:</strong> Поддержка личных сообщений и бесед (корректная обработка <code class="language-plaintext highlighter-rouge">peer_id</code> для чатов с префиксом <code class="language-plaintext highlighter-rouge">2000000000</code>).</li>
+  <li><strong>Дедупликация:</strong> Встроенный механизм фильтрации событий после реконнекта. Бот не будет спамить одинаковыми ответами, если соединение с сервером VK кратковременно прервалось.</li>
+  <li><strong>Система Allowlist:</strong> Гибкое управление доступом через переменную <code class="language-plaintext highlighter-rouge">VK_ACCESS_POLICY</code>. Доступны три режима:
+    <ol>
+      <li><code class="language-plaintext highlighter-rouge">user_only</code> — фильтрация по ID пользователя.</li>
+      <li><code class="language-plaintext highlighter-rouge">peer_only</code> — доступ для конкретных чатов/бесед.</li>
+      <li><code class="language-plaintext highlighter-rouge">peer_and_user</code> — строгая связка конкретного пользователя в конкретном чате.</li>
+    </ol>
+  </li>
+  <li><strong>Обработка медиа:</strong> Решена проблема с <code class="language-plaintext highlighter-rouge">video.save</code>. Если VK отклоняет сохранение видео, плагин автоматически переотправляет файл как документ, предотвращая silent crash.</li>
+  <li><strong>Форматирование:</strong> Поскольку <code class="language-plaintext highlighter-rouge">messages.send</code> не поддерживает <code class="language-plaintext highlighter-rouge">parse_mode</code>, в плагин встроен конвертер Markdown в plain text.</li>
+  <li><strong>Визуальный фидбек:</strong> Реализована имитация статусов (реакции), которые уведомляют пользователя о состоянии агента: обдумывание, успешный ответ или ошибка.</li>
+</ul>
+
+<h2 id="установка-и-запуск">Установка и запуск</h2>
+
+<p>Плагин написан с использованием стандартной библиотеки (<code class="language-plaintext highlighter-rouge">stdlib</code>), что избавляет от раздутых <code class="language-plaintext highlighter-rouge">requirements.txt</code> и конфликтов зависимостей.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Установка плагина</span>
+hermes plugins <span class="nb">install </span>vk-gateway
+
+<span class="c"># Настройка шлюза</span>
+hermes gateway setup
+</code></pre></div></div>
+
+<h2 id="субъективная-оценка">Субъективная оценка</h2>
+
+<h3 id="почему-это-круто">Почему это круто</h3>
+<p>Это один из немногих случаев, когда интеграция с VK сделана с учетом реальных проблем API. Дедупликация и автоматический fallback видео в документы экономят часы отладки. Отсутствие внешних зависимостей делает решение максимально легким и стабильным для деплоя на слабые VPS.</p>
+
+<h3 id="где-использовать">Где использовать</h3>
+<ol>
+  <li><strong>Автоматизация поддержки:</strong> Создание умного FAQ-бота с доступом к базе знаний через инструменты агента.</li>
+  <li><strong>Управление сообществами:</strong> Модерация и ответы в беседах с разграничением прав доступа.</li>
+  <li><strong>Cron-уведомления:</strong> Использование home-канала для доставки системных алертов или рассылок.</li>
+</ol>
+
+<h3 id="подводные-камни">Подводные камни</h3>
+<ol>
+  <li><strong>Токены:</strong> Для работы с метаданными видео требуется пользовательский токен. Он имеет ограниченный срок жизни, поэтому придется настроить OAuth-скрипт для его обновления. Режим «поставил и забыл» здесь не работает.</li>
+  <li><strong>Безопасность:</strong> Если оставить <code class="language-plaintext highlighter-rouge">VK_ACCESS_POLICY</code> пустым, бот будет отвечать всем. Учитывая, что агент может иметь доступ к системным инструментам (tools), это создает критическую уязвимость. Настройка allowlist обязательна.</li>
+</ol>
+
+<h2 id="итог">Итог</h2>
+<p>Проект представляет собой качественный опенсорсный инструмент для тех, кому нужен надежный интерфейс к LLM внутри экосистемы VK без написания своего бэкенда с нуля.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

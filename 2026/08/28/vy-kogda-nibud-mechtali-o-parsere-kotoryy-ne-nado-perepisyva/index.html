@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт  | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт заново? Я — да. И знаете что? Похоже, я нашла кое-что интересное 🔥 Представляю V…" />
+<meta property="og:description" content="Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт заново? Я — да. И знаете что? Похоже, я нашла кое-что интересное 🔥 Представляю V…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/vy-kogda-nibud-mechtali-o-parsere-kotoryy-ne-nado-perepisyva/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/vy-kogda-nibud-mechtali-o-parsere-kotoryy-ne-nado-perepisyva/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-28T10:02:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-28T10:02:06+00:00","datePublished":"2026-08-28T10:02:06+00:00","description":"Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт заново? Я — да. И знаете что? Похоже, я нашла кое-что интересное 🔥 Представляю V…","headline":"Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/vy-kogda-nibud-mechtali-o-parsere-kotoryy-ne-nado-perepisyva/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/vy-kogda-nibud-mechtali-o-parsere-kotoryy-ne-nado-perepisyva/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>28 August 2026</small>
+<h1>Вы когда-нибудь мечтали о парсере, который не надо переписывать под каждый сайт </h1>
+
+<p class="view">by </p>
+
+<h1 id="vekparser-декларативный-подход-к-веб-скрапингу-на-python">VekParser: Декларативный подход к веб-скрапингу на Python</h1>
+
+<p>Если ваш типичный рабочий день состоит из написания бесконечных цепочек <code class="language-plaintext highlighter-rouge">BeautifulSoup</code> и переписывания селекторов под каждый новый чих фронтенд-разработчиков, пора менять стек. Большинство скраперов страдают от жесткой привязки логики к коду. <strong>VekParser</strong> решает эту проблему, вынося описание процесса сбора данных в YAML-конфигурации.</p>
+
+<p>По сути, это фреймворк, который превращает парсинг из написания скриптов в проектирование конвейеров обработки данных.</p>
+
+<h2 id="технический-стек-и-архитектура">Технический стек и архитектура</h2>
+
+<p>VekParser реализует многоступенчатый пайплайн. Вместо того чтобы описывать каждый шаг в Python-коде, вы создаете YAML-файл, где определяете жизненный цикл данных:</p>
+
+<ol>
+  <li><strong>static</strong>: Инициализация контекста и базовых параметров.</li>
+  <li><strong>extract</strong>: Извлечение данных с помощью CSS или XPath селекторов.</li>
+  <li><strong>list</strong>: Параллельная обработка списков элементов.</li>
+  <li><strong>save</strong>: Финализация и экспорт данных в JSON.</li>
+</ol>
+
+<h3 id="ключевые-фичи">Ключевые фичи</h3>
+
+<ul>
+  <li><strong>JS-рендеринг через Playwright</strong>: Встроенная поддержка динамического контента. Если сайт представляет собой SPA или данные подгружаются через JS, VekParser задействует браузерный движок, избавляя от необходимости вручную реверсить API сайта.</li>
+  <li><strong>Параллелизм</strong>: Параметр <code class="language-plaintext highlighter-rouge">max_workers</code> позволяет масштабировать сбор данных, эффективно используя многопоточность.</li>
+  <li><strong>Кастомные обработчики</strong>: Если стандартных типов (<code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">link</code>, <code class="language-plaintext highlighter-rouge">dict</code>) недостаточно, можно зарегистрировать собственный тип шага в Python и вызвать его из YAML-конфига.</li>
+  <li><strong>Контроль трафика</strong>: Настраиваемый <code class="language-plaintext highlighter-rouge">HttpClient</code> с регулируемыми интервалами запросов помогает минимизировать риск получения 429 Too Many Requests.</li>
+  <li><strong>Логирование</strong>: Полноценная поддержка уровней от <code class="language-plaintext highlighter-rouge">DEBUG</code> до <code class="language-plaintext highlighter-rouge">ERROR</code>, что критично при отладке сложных селекторов на больших объемах данных.</li>
+</ul>
+
+<h2 id="практическое-применение">Практическое применение</h2>
+
+<p>Этот инструмент идеально вписывается в проекты, где нужно собирать данные с десятков однотипных или слегка различающихся ресурсов. Вместо создания 20 разных <code class="language-plaintext highlighter-rouge">.py</code> файлов, вы создаете 20 YAML-конфигов и один общий движок запуска.</p>
+
+<p><strong>Пример сценария:</strong>
+Сбор каталога товаров $\rightarrow$ Переход по каждой ссылке товара (параллельно) $\rightarrow$ Извлечение характеристик $\rightarrow$ Сохранение в структурированный JSON с четко заданными <code class="language-plaintext highlighter-rouge">fields</code>.</p>
+
+<h2 id="субъективная-оценка">Субъективная оценка</h2>
+
+<p><strong>Почему это круто:</strong>
+Главный профит — разделение ответственности. Разработчик пишет расширения (кастомные обработчики), а аналитик или менее опытный кодер может настраивать парсинг новых страниц, просто правя YAML-файл. Это на порядок ускоряет итерации.</p>
+
+<p><strong>Подводные камни:</strong>
+Как и любой декларативный подход, YAML-конфиги могут стать громоздкими при реализации слишком сложной бизнес-логики (например, сложной системы обхода капчи или многоуровневой авторизации с динамическими токенами). В таких случаях придется писать больше кастомного Python-кода, что частично нивелирует идею “конфиг вместо кода”.</p>
+
+<p><strong>Вердикт:</strong>
+VekParser — это не “серебряная пуля”, но мощный инструмент для тех, кто перерос простые скрипты и хочет построить расширяемую систему сбора данных. Если вам нужен порядок в архитектуре скрапера и поддержка современного веба (SPA), этот фреймворк однозначно стоит попробовать.</p>
+
+<p>Проект полностью Open Source.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

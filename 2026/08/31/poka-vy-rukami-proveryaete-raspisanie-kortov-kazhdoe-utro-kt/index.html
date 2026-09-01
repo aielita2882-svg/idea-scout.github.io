@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скри | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скри | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скри" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скрипт, который делает это за него. Каждые 5–12 минут. Бесплатно. На чужих серверах…." />
+<meta property="og:description" content="Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скрипт, который делает это за него. Каждые 5–12 минут. Бесплатно. На чужих серверах…." />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/poka-vy-rukami-proveryaete-raspisanie-kortov-kazhdoe-utro-kt/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/poka-vy-rukami-proveryaete-raspisanie-kortov-kazhdoe-utro-kt/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-31T05:50:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скри" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-31T05:50:05+00:00","datePublished":"2026-08-31T05:50:05+00:00","description":"Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скрипт, который делает это за него. Каждые 5–12 минут. Бесплатно. На чужих серверах….","headline":"Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скри","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/poka-vy-rukami-proveryaete-raspisanie-kortov-kazhdoe-utro-kt/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/poka-vy-rukami-proveryaete-raspisanie-kortov-kazhdoe-utro-kt/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>31 August 2026</small>
+<h1>Пока вы руками проверяете расписание кортов каждое утро, кто-то уже написал скри</h1>
+
+<p class="view">by </p>
+
+<h1 id="автоматизация-мониторинга-слотов-через-github-actions-и-telegram-mini-app">Автоматизация мониторинга слотов через GitHub Actions и Telegram Mini App</h1>
+
+<p>Ручной мониторинг расписания кортов или залов — это пустая трата времени. Вместо того чтобы обновлять страницу каждые пять минут, проще развернуть легковесный скрипт, который будет делать это за вас бесплатно и без собственного сервера.</p>
+
+<p>Рассматриваем кейс трекера свободных слотов, который работает на связке <strong>GitHub Actions + Telegram API + Reenio API</strong>.</p>
+
+<h3 id="технический-стек-и-архитектура">Технический стек и архитектура</h3>
+
+<p>Главная фишка проекта — полное отсутствие инфраструктурных затрат. Здесь нет ни VPS, ни внешних баз данных.</p>
+
+<ul>
+  <li><strong>Runtime:</strong> GitHub Actions.</li>
+  <li><strong>Scheduling:</strong> Cron-задачи.</li>
+  <li><strong>State Management:</strong> Хранение состояния в <code class="language-plaintext highlighter-rouge">state.json</code> прямо в репозитории.</li>
+  <li><strong>Frontend для настроек:</strong> Telegram Mini App (управление фильтрами без правки конфигов).</li>
+  <li><strong>Уведомления:</strong> Telegram Bot API.</li>
+</ul>
+
+<h4 id="решение-проблемы-с-задержками-cron">Решение проблемы с задержками Cron</h4>
+<p>Стандартный cron в GitHub Actions может срабатывать с задержками. Чтобы обеспечить интервал проверки в 5–12 минут, реализован bridge-workflow: самоцепляющийся процесс, который запускает проверку и завершает работу только тогда, когда основной нативный cron подхватывает выполнение. Это позволяет добиться максимальной точности мониторинга.</p>
+
+<h3 id="как-это-работает-внутри">Как это работает внутри</h3>
+
+<p>Скрипт взаимодействует с API Reenio, запрашивая текущую занятость площадок. Логика детектирования свободных окон реализована следующим образом:</p>
+
+<ol>
+  <li><strong>Сбор данных:</strong> Скрипт сканирует доступные 30-минутные слоты.</li>
+  <li><strong>Фильтрация:</strong> Учитывается количество кортов и пересекающиеся брони.</li>
+  <li><strong>Сравнение состояний:</strong> Скрипт сравнивает текущий снимок с данными из <code class="language-plaintext highlighter-rouge">state.json</code>. Алерт срабатывает только в случае перехода состояния слота из «занято» в «свободно». Появление новых дат в календаре игнорируется, чтобы избежать спама.</li>
+  <li><strong>Агрегация:</strong> Соседние свободные окна склеиваются в один временной интервал для компактности уведомления.</li>
+</ol>
+
+<h3 id="практическое-применение-и-настройка">Практическое применение и настройка</h3>
+
+<p>Проект легко адаптируется под любой ресурс, использующий Reenio. Достаточно заменить <code class="language-plaintext highlighter-rouge">URL</code> и <code class="language-plaintext highlighter-rouge">resource_id</code> в конфигурации.</p>
+
+<p><strong>Процесс деплоя:</strong></p>
+<ol>
+  <li>Создание бота через BotFather.</li>
+  <li>Добавление токена в <strong>GitHub Secrets</strong>.</li>
+  <li>Настройка фильтров (дни недели и временные интервалы) через Mini App в Telegram.</li>
+</ol>
+
+<p>Для отладки предусмотрен <strong>dry-run режим</strong>. При запуске локально без токена скрипт выводит в консоль только предполагаемые уведомления, что позволяет проверить логику фильтрации до полноценного запуска в облаке.</p>
+
+<h3 id="субъективная-оценка">Субъективная оценка</h3>
+
+<p><strong>Почему это круто:</strong></p>
+<ul>
+  <li><strong>Zero Cost:</strong> Использование GitHub Actions как бесплатного планировщика и хостинга для стейта — это элегантный хак.</li>
+  <li><strong>UX:</strong> Вынос настроек в Mini App избавляет от необходимости каждый раз делать коммит в репозиторий для смены времени игры.</li>
+  <li><strong>Чистота:</strong> Минимум зависимостей и четкая задача.</li>
+</ul>
+
+<p><strong>Подводные камни:</strong></p>
+<ul>
+  <li><strong>Лимиты GitHub:</strong> При слишком частом коммите <code class="language-plaintext highlighter-rouge">state.json</code> в репозиторий можно столкнуться с замусориванием истории Git (решается использованием отдельной ветки для стейта или очисткой истории).</li>
+  <li><strong>Зависимость от API:</strong> Любое изменение в структуре ответов Reenio потребует обновления парсера.</li>
+</ul>
+
+<p>Этот подход универсален. Его можно масштабировать на любой сервис с открытым или полуоткрытым API для мониторинга коворкингов, записи к врачам или отслеживания наличия товаров.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

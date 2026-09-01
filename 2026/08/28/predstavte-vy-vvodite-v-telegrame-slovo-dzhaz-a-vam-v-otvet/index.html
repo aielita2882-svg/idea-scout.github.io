@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Представьте вы вводите в Телеграме слово джаз  а вам в ответ прилетает готовый . | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Представьте вы вводите в Телеграме слово джаз а вам в ответ прилетает готовый . | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Представьте вы вводите в Телеграме слово джаз а вам в ответ прилетает готовый ." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Представьте: вы вводите в Телеграме слово «джаз» — а вам в ответ прилетает готовый .m3u плейлист с десятком радиостанций со всего мира. Без ручного копания в са…" />
+<meta property="og:description" content="Представьте: вы вводите в Телеграме слово «джаз» — а вам в ответ прилетает готовый .m3u плейлист с десятком радиостанций со всего мира. Без ручного копания в са…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/predstavte-vy-vvodite-v-telegrame-slovo-dzhaz-a-vam-v-otvet/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/predstavte-vy-vvodite-v-telegrame-slovo-dzhaz-a-vam-v-otvet/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-28T11:26:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Представьте вы вводите в Телеграме слово джаз а вам в ответ прилетает готовый ." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-28T11:26:06+00:00","datePublished":"2026-08-28T11:26:06+00:00","description":"Представьте: вы вводите в Телеграме слово «джаз» — а вам в ответ прилетает готовый .m3u плейлист с десятком радиостанций со всего мира. Без ручного копания в са…","headline":"Представьте вы вводите в Телеграме слово джаз а вам в ответ прилетает готовый .","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/predstavte-vy-vvodite-v-telegrame-slovo-dzhaz-a-vam-v-otvet/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/predstavte-vy-vvodite-v-telegrame-slovo-dzhaz-a-vam-v-otvet/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>28 August 2026</small>
+<h1>Представьте вы вводите в Телеграме слово джаз  а вам в ответ прилетает готовый .</h1>
+
+<p class="view">by </p>
+
+<h1 id="radio-station-playlist-generator-автоматизация-создания-m3u-плейлистов-через-telegram">Radio Station Playlist Generator: Автоматизация создания .m3u плейлистов через Telegram</h1>
+
+<p>Разбор компактного open-source инструмента для тех, кому нужно быстро собирать подборки интернет-радио без ручного поиска ссылок. Бот принимает текстовый запрос и возвращает готовый файл плейлиста, который можно закинуть в любой медиаплеер.</p>
+
+<h2 id="технический-стек">Технический стек</h2>
+
+<p>Проект реализован на минималистичном, но эффективном стеке:</p>
+<ul>
+  <li><strong>Язык:</strong> Python 3.7+</li>
+  <li><strong>Telegram API:</strong> <code class="language-plaintext highlighter-rouge">pyTelegramBotAPI</code> (Telebot)</li>
+  <li><strong>HTTP-запросы:</strong> <code class="language-plaintext highlighter-rouge">requests</code></li>
+  <li><strong>Источник данных:</strong> Open API <a href="https://www.radio-browser.info/">Radio Browser</a></li>
+</ul>
+
+<h2 id="как-это-работает-под-капотом">Как это работает под капотом</h2>
+
+<p>Бот работает как прослойка между пользователем и базой данных Radio Browser. Процесс обработки запроса выглядит так:</p>
+
+<ol>
+  <li><strong>Поиск:</strong> Бот принимает строку (например, “lo-fi Tokyo” или “рок Германия”) и отправляет запрос к API. Поиск идет параллельно по трем полям: названию станции, жанрам/тегам и стране.</li>
+  <li><strong>Очистка данных:</strong> Реализована фильтрация дублей по уникальному ID станции. Это исключает ситуацию, когда одна и та же станция попадает в список несколько раз из-за разных тегов.</li>
+  <li><strong>Генерация файла:</strong> На сервере динамически создается файл в формате <code class="language-plaintext highlighter-rouge">.m3u</code> с именем <code class="language-plaintext highlighter-rouge">playlist_[запрос].m3u</code>.</li>
+  <li><strong>Доставка и cleanup:</strong> Файл отправляется пользователю через Telegram API, после чего немедленно удаляется с сервера для экономии места и соблюдения гигиены файловой системы.</li>
+</ol>
+
+<h2 id="безопасность-и-деплой">Безопасность и деплой</h2>
+
+<p>Разработчик не зашил токены в код (hardcode), что является базовым стандартом. Все чувствительные данные вынесены в <code class="language-plaintext highlighter-rouge">config.ini</code>.</p>
+
+<p><strong>Быстрый старт:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pyTelegramBotAPI requests
+<span class="c"># Настройка config.ini -&gt; запуск main.py</span>
+</code></pre></div></div>
+
+<h2 id="субъективная-оценка">Субъективная оценка</h2>
+
+<h3 id="почему-это-круто">Почему это круто</h3>
+<p>Это отличный пример “инструментального” бота. Здесь нет перегруженного UI или бесполезных функций — только одна задача, решенная максимально эффективно. Для джунов или тех, кто хочет попрактиковаться в работе с внешними API, код читается за 30 минут и служит хорошим шаблоном для реализации аналогичных генераторов файлов.</p>
+
+<h3 id="где-применить">Где применить</h3>
+<ul>
+  <li><strong>Личное использование:</strong> Быстрый поиск нишевых станций для фонового прослушивания.</li>
+  <li><strong>База для проекта:</strong> Можно докрутить бота, добавив фильтрацию по битрейту (например, только 320kbps) или интеграцию с распознаванием музыки.</li>
+  <li><strong>Портфолио:</strong> Чистый пример работы с API, файловой системой и конфигурационными файлами.</li>
+</ul>
+
+<h3 id="подводные-камни">Подводные камни</h3>
+<p>Главный нюанс при развертывании на серверах в РФ — блокировки Telegram API. Бот не заведется “из коробки” без настроенного VPN или прокси-сервера. Это критический момент при выборе хостинга для деплоя.</p>
+
+<h2 id="итог">Итог</h2>
+
+<p>Radio Station Playlist Generator — это лаконичный инструмент, который превращает хаотичный поиск по радиостанциям в одну команду в мессенджере. Минимум кода, максимум практической пользы. 100% open-source.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

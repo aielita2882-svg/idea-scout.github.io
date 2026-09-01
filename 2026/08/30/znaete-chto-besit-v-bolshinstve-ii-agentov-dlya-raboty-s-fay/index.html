@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Знаете, что бесит в большинстве ИИ-агентов для работы с файлами? Что они не рабо | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Знаете, что бесит в большинстве ИИ-агентов для работы с файлами? Что они не рабо | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Знаете, что бесит в большинстве ИИ-агентов для работы с файлами? Что они не рабо" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Знаете, что бесит в большинстве «ИИ-агентов для работы с файлами»? Что они не работают с файлами. Они болтают. А ты сидишь и копируешь их текст руками в редакто…" />
+<meta property="og:description" content="Знаете, что бесит в большинстве «ИИ-агентов для работы с файлами»? Что они не работают с файлами. Они болтают. А ты сидишь и копируешь их текст руками в редакто…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/znaete-chto-besit-v-bolshinstve-ii-agentov-dlya-raboty-s-fay/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/znaete-chto-besit-v-bolshinstve-ii-agentov-dlya-raboty-s-fay/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-30T02:34:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Знаете, что бесит в большинстве ИИ-агентов для работы с файлами? Что они не рабо" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-30T02:34:06+00:00","datePublished":"2026-08-30T02:34:06+00:00","description":"Знаете, что бесит в большинстве «ИИ-агентов для работы с файлами»? Что они не работают с файлами. Они болтают. А ты сидишь и копируешь их текст руками в редакто…","headline":"Знаете, что бесит в большинстве ИИ-агентов для работы с файлами? Что они не рабо","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/znaete-chto-besit-v-bolshinstve-ii-agentov-dlya-raboty-s-fay/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/znaete-chto-besit-v-bolshinstve-ii-agentov-dlya-raboty-s-fay/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>30 August 2026</small>
+<h1>Знаете, что бесит в большинстве ИИ-агентов для работы с файлами? Что они не рабо</h1>
+
+<p class="view">by </p>
+
+<h1 id="goal-oriented-file-agent-от-болталки-к-реальному-редактированию-кода">Goal-Oriented File Agent: от «болталки» к реальному редактированию кода</h1>
+
+<p>Большинство современных AI-агентов страдают одной проблемой: они имитируют работу с файлами, выдавая блоки кода в чат, которые пользователю приходится копировать вручную. Это не автоматизация, а дорогой интерфейс для генерации текста.</p>
+
+<p>Решение — агент с прямым доступом к файловой системе и bash, который работает по принципу goal-oriented подхода: получает цель на естественном языке, планирует шаги и самостоятельно модифицирует проект.</p>
+
+<h2 id="технический-стек-и-архитектура">Технический стек и архитектура</h2>
+
+<p>В основе лежит <code class="language-plaintext highlighter-rouge">ChatAgent</code> с поддержкой function calling. Вместо того чтобы ждать команду «открой файл X», агент сам решает, какие инструменты вызвать для достижения цели.</p>
+
+<h3 id="инструментарий-tooling">Инструментарий (Tooling)</h3>
+<p>Для взаимодействия с кодом реализован набор примитивов:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fs_read</code> — чтение содержимого.</li>
+  <li><code class="language-plaintext highlighter-rouge">fs_grep</code> — поиск по проекту.</li>
+  <li><code class="language-plaintext highlighter-rouge">fs_create</code> — создание новых файлов.</li>
+  <li><code class="language-plaintext highlighter-rouge">fs_edit</code> — точечное редактирование.</li>
+  <li><code class="language-plaintext highlighter-rouge">run_checks</code> — запуск линтеров или синтаксического анализа (например, для Python) после внесения правок.</li>
+</ul>
+
+<h3 id="режимы-работы">Режимы работы</h3>
+<p>Реализовано два бэкенда инструментов для разных сценариев безопасности:</p>
+
+<ol>
+  <li><strong>Direct (по умолчанию)</strong>
+Полноценный bash и прямой доступ к FS (аналог Claude Code).
+    <ul>
+      <li>По умолчанию работает в интерактивном режиме (подтверждение <code class="language-plaintext highlighter-rouge">y/N</code> перед каждым изменением).</li>
+      <li>Флаг <code class="language-plaintext highlighter-rouge">--yes</code> переводит агента в полностью автономный режим.</li>
+    </ul>
+  </li>
+  <li><strong>MCP-режим (<code class="language-plaintext highlighter-rouge">--mcp</code>)</strong>
+Безопасный конфайнмент (sandboxing).
+    <ul>
+      <li>Все пути жестко ограничены директорией проекта.</li>
+      <li>Заблокирован доступ к <code class="language-plaintext highlighter-rouge">.env</code> и <code class="language-plaintext highlighter-rouge">.git</code>.</li>
+      <li>Bash-команды недоступны.</li>
+      <li>Флаг <code class="language-plaintext highlighter-rouge">--dry-run</code> позволяет получить превью изменений в формате diff без записи данных на диск.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="практическое-применение">Практическое применение</h2>
+
+<p>Агент эффективен в задачах, требующих анализа контекста из нескольких файлов одновременно:</p>
+
+<ul>
+  <li><strong>Автоматизация документации:</strong> Генерация <code class="language-plaintext highlighter-rouge">CHANGELOG.md</code> на основе анализа git-истории.</li>
+  <li><strong>Архитектурный анализ:</strong> Создание ADR (Architecture Decision Records), где контекст подтягивается напрямую из текущей реализации кода.</li>
+  <li><strong>Рефакторинг и аудит:</strong> Поиск всех упоминаний конкретного API по всему проекту или проверка инвариантов (например, поиск захардкоженных секретов в клиентской части).</li>
+</ul>
+
+<h2 id="реализация-и-детали">Реализация и детали</h2>
+
+<p>Под капотом используется модель <strong>DeepSeek</strong>. Для работы с изменениями написан кастомный <code class="language-plaintext highlighter-rouge">diffutil</code>, который преобразует ответы модели в читаемые git-diff. Это избавляет от «стены текста» и позволяет четко видеть, что именно меняется в коде.</p>
+
+<p>Воспроизводимость подтверждена: повторный запуск с той же целью дает эквивалентный результат. Поскольку агент работает с реальными файлами, любой неудачный эксперимент откатывается стандартным <code class="language-plaintext highlighter-rouge">git checkout</code>.</p>
+
+<h2 id="субъективная-оценка">Субъективная оценка</h2>
+
+<p><strong>Почему это круто:</strong>
+Это переход от LLM как «собеседника» к LLM как «оператору». Возможность комбинировать <code class="language-plaintext highlighter-rouge">fs_grep</code> и <code class="language-plaintext highlighter-rouge">fs_edit</code> позволяет агенту самостоятельно исследовать незнакомый кодовый базис, не требуя от пользователя скармливать ему каждый файл по отдельности.</p>
+
+<p><strong>Где пригодится:</strong>
+Идеально для рутинного обновления зависимостей, миграции API во всем проекте или написания тестов под существующий функционал.</p>
+
+<p><strong>Подводные камни:</strong>
+Основной риск — галлюцинации при использовании <code class="language-plaintext highlighter-rouge">fs_edit</code> в очень больших файлах, где контекстное окно может «замылиться». Рекомендуется использовать режим <code class="language-plaintext highlighter-rouge">--mcp</code> с <code class="language-plaintext highlighter-rouge">--dry-run</code> для первичной проверки гипотез перед тем, как давать агенту полный доступ к репозиторию.</p>
+
+<p>Проект полностью open-source. Код доступен в репозитории.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

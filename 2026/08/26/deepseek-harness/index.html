@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek Harness | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>DeepSeek Harness | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="DeepSeek Harness" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="DeepSeek Harness оказался неожиданно приличной штукой. Пара часов возни с самостоятельно развёрнутым DeepSeek V4 Flash 0731 — и главный вывод напрашивается сам:…" />
+<meta property="og:description" content="DeepSeek Harness оказался неожиданно приличной штукой. Пара часов возни с самостоятельно развёрнутым DeepSeek V4 Flash 0731 — и главный вывод напрашивается сам:…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/26/deepseek-harness/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/26/deepseek-harness/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-26T03:02:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DeepSeek Harness" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-26T03:02:06+00:00","datePublished":"2026-08-26T03:02:06+00:00","description":"DeepSeek Harness оказался неожиданно приличной штукой. Пара часов возни с самостоятельно развёрнутым DeepSeek V4 Flash 0731 — и главный вывод напрашивается сам:…","headline":"DeepSeek Harness","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/26/deepseek-harness/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/26/deepseek-harness/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>26 August 2026</small>
+<h1>DeepSeek Harness</h1>
+
+<p class="view">by </p>
+
+<h1 id="разбор-deepseek-harness-кэширование-на-стероидах-и-экономия-токенов">Разбор DeepSeek Harness: Кэширование на стероидах и экономия токенов</h1>
+
+<p>Потестил DeepSeek Harness в связке с самостоятельно развернутой моделью DeepSeek V4 Flash 0731. Результаты заставляют пересмотреть подход к оптимизации LLM-пайплайнов, особенно в задачах с повторяющимся контекстом.</p>
+
+<h2 id="технический-стек-и-результаты">Технический стек и результаты</h2>
+
+<p>Основной фокус теста был направлен на эффективность работы с контекстом и механизмы кэширования. После нескольких часов настройки и прогона тестов зафиксирован следующий показатель:</p>
+
+<p><strong>Cache Hit Rate: 98,2%</strong></p>
+
+<p>Для тех, кто не в курсе: такой процент попаданий в кэш означает, что система практически не пересчитывает KV-кэш для повторяющихся частей промпта. В реальных сценариях это дает два критических преимущества:</p>
+<ol>
+  <li><strong>Снижение Latency</strong>: Время до первого токена (TTFT) сокращается в разы, так как модель не обрабатывает один и тот же системный промпт или огромный кусок документации при каждом запросе.</li>
+  <li><strong>Радикальная экономия</strong>: Расход токенов падает до минимума. Система работает максимально экономно, что критично при масштабировании на тысячи пользователей.</li>
+</ol>
+
+<h2 id="почему-это-важно-для-продакшена">Почему это важно для продакшена</h2>
+
+<p>DeepSeek Harness решает главную проблему современных LLM-приложений — стоимость и медлительность обработки длинных контекстов.</p>
+
+<p><strong>Где это применить:</strong></p>
+<ul>
+  <li><strong>RAG-системы</strong>: Когда у вас есть статический набор документов, который подается в контекст большинства запросов.</li>
+  <li><strong>Сложные агенты</strong>: Где системный промпт с инструкциями занимает несколько тысяч токенов.</li>
+  <li><strong>Чат-боты с долгой памятью</strong>: Где история переписки постоянно растет, и пересчитывать её целиком при каждом новом сообщении — безумие.</li>
+</ul>
+
+<h2 id="субъективная-оценка">Субъективная оценка</h2>
+
+<p>Цифры впечатляют, и хайп вокруг проекта (188 тысяч звезд на GitHub менее чем за две недели) вполне обоснован. Это не просто очередной оберточный фреймворк, а инструмент для жесткой оптимизации инференса.</p>
+
+<p><strong>Что круто:</strong></p>
+<ul>
+  <li>Эффективность кэширования близка к теоретическому пределу.</li>
+  <li>Модель V4 Flash 0731 показывает отличный баланс между скоростью и качеством ответов.</li>
+</ul>
+
+<p><strong>Подводные камни:</strong></p>
+<ul>
+  <li><strong>Self-hosting</strong>: Развертывание требует ресурсов и времени на настройку. Это не “plug-and-play” решение из облака.</li>
+  <li><strong>Управление кэшем</strong>: При динамически меняющемся контексте (когда промпты почти не повторяются) профит от Harness будет стремиться к нулю. Инструмент работает только там, где есть паттерны в данных.</li>
+</ul>
+
+<h2 id="итог">Итог</h2>
+
+<p>DeepSeek Harness — это маст-хэв для тех, кто хочет выжать максимум из self-hosted моделей и перестать сжигать бюджет на повторную обработку одних и тех же токенов. Если ваш проект завязан на больших промптах и высокой нагрузке, внедрение этого стека даст ощутимый буст к производительности.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-08-31-open-duck-mini.html">Open_Duck_Mini</a></li>
+  <li><a href="/posts/2026-08-30-post.html"></a></li>
+  <li><a href="/posts/2026-08-30-post.html"></a></li>
+  <li><a href="/posts/2026-08-29-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

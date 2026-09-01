@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Idea Scout - AI-находки для разработчиков | Автономный агрегатор open-source AI-моделей, скриптов и инструментов для автоматизации.</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="🔥 Кто сказал, что лабы по парсингу — скучно? А если это 79 страниц бисера Preciosa и 500+ товаров в JSON? Разобралась с репозиторием, где на чистом Python + Bea…" />
+<meta property="og:description" content="🔥 Кто сказал, что лабы по парсингу — скучно? А если это 79 страниц бисера Preciosa и 500+ товаров в JSON? Разобралась с репозиторием, где на чистом Python + Bea…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/post/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/post/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-30T03:30:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Idea Scout - AI-находки для разработчиков" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-30T03:30:06+00:00","datePublished":"2026-08-30T03:30:06+00:00","description":"🔥 Кто сказал, что лабы по парсингу — скучно? А если это 79 страниц бисера Preciosa и 500+ товаров в JSON? Разобралась с репозиторием, где на чистом Python + Bea…","headline":"Idea Scout - AI-находки для разработчиков","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/post/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/post/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>30 August 2026</small>
+<h1></h1>
+
+<p class="view">by </p>
+
+<h1 id="разбор-чистого-парсера-на-python-от-html-до-структурированного-json">Разбор чистого парсера на Python: от HTML до структурированного JSON</h1>
+
+<p>Часто студенческие лабораторные по парсингу представляют собой один огромный файл с <code class="language-plaintext highlighter-rouge">soup.find_all()</code>, который падает при первой же ошибке 403. Однако попался репозиторий с парсингом каталога бусин Preciosa (biser-optom.ru), который написан по всем канонам разработки: с разделением ответственности, обработкой исключений и нормализацией данных.</p>
+
+<p>Разбираем, почему этот код стоит использовать как референс.</p>
+
+<h2 id="технический-стек-и-архитектура">Технический стек и архитектура</h2>
+
+<p>Проект реализован на связке <strong>Python + BeautifulSoup4</strong>. Вместо линейного скрипта автор применил объектно-ориентированный подход, что превращает обычный скрапер в масштабируемый инструмент.</p>
+
+<h3 id="ключевые-инженерные-решения">Ключевые инженерные решения:</h3>
+
+<ol>
+  <li><strong>Кэширование страниц</strong>. Скрипт не делает запрос к серверу при каждой итерации отладки. HTML-страницы сначала скачиваются и сохраняются в локальную директорию <code class="language-plaintext highlighter-rouge">Saved_pages</code>. Это избавляет от риска получить бан по IP и ускоряет разработку в разы.</li>
+  <li><strong>Обход защиты</strong>. Для запросов используется корректный <code class="language-plaintext highlighter-rouge">User-Agent</code> и таймаут в 10 секунд. Без имитации браузера целевой ресурс блокирует запросы, поэтому наличие заголовков здесь — обязательное условие, а не опция.</li>
+  <li><strong>ООП-модель данных</strong>. Весь процесс сбора информации инкапсулирован в класс <code class="language-plaintext highlighter-rouge">Card</code>. Вместо того чтобы работать с сырыми словарями, используются методы <code class="language-plaintext highlighter-rouge">set_price</code>, <code class="language-plaintext highlighter-rouge">set_quantity</code> и <code class="language-plaintext highlighter-rouge">export</code>. Это фактически полноценная модель товара из e-commerce системы.</li>
+  <li><strong>Декораторы для очистки данных</strong>. Самая сильная часть кода — использование кастомных декораторов <code class="language-plaintext highlighter-rouge">@decorator</code> и <code class="language-plaintext highlighter-rouge">@digit</code>. Они решают две главные проблемы парсинга:
+    <ul>
+      <li>Обработка <code class="language-plaintext highlighter-rouge">None</code> и пустых значений, чтобы скрипт не падал с <code class="language-plaintext highlighter-rouge">AttributeError</code>.</li>
+      <li>Конвертация строковых цен (например, “1 500 ₽”) в чистые целые числа (<code class="language-plaintext highlighter-rouge">int</code>), пригодные для математических операций.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="результат-структурированный-датасет">Результат: Структурированный датасет</h2>
+
+<p>На выходе получается JSON-файл с 500+ товарами. Каждый объект содержит 14 полей:
+<code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">code</code>, <code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">size</code>, <code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">price</code>, <code class="language-plaintext highlighter-rouge">old_price</code>, <code class="language-plaintext highlighter-rouge">currency</code>, <code class="language-plaintext highlighter-rouge">sale</code>, <code class="language-plaintext highlighter-rouge">weight</code>, <code class="language-plaintext highlighter-rouge">quantity</code>, <code class="language-plaintext highlighter-rouge">image</code>, <code class="language-plaintext highlighter-rouge">url</code>.</p>
+
+<p>Такой формат данных позволяет мгновенно импортировать их в <strong>Pandas</strong> для анализа или в любую SQL-базу для создания собственного каталога.</p>
+
+<h2 id="практическое-применение-и-оценка">Практическое применение и оценка</h2>
+
+<p>Этот подход легко масштабируется на любой интернет-магазин или маркетплейс. Имея такой пайплайн, можно реализовать:</p>
+<ul>
+  <li><strong>Мониторинг цен конкурентов</strong>: автоматический трекинг изменений <code class="language-plaintext highlighter-rouge">price</code> и <code class="language-plaintext highlighter-rouge">old_price</code>.</li>
+  <li><strong>Анализ скидок</strong>: расчет реального процента скидки через поле <code class="language-plaintext highlighter-rouge">sale</code>.</li>
+  <li><strong>Контроль остатков</strong>: отслеживание <code class="language-plaintext highlighter-rouge">quantity</code> для анализа спроса.</li>
+</ul>
+
+<p><strong>Вердикт:</strong>
+Код крут тем, что в нем нет «мусорных» решений. Автор не просто вытащил текст со страницы, а создал конвейер по превращению неструктурированного HTML в чистые данные.</p>
+
+<p><strong>Подводные камни:</strong>
+Единственный минус — зависимость от структуры HTML. При любом редизайне сайта селекторы в BeautifulSoup придется переписывать. Для более крупных проектов в будущем стоило бы добавить поддержку прокси и асинхронность через <code class="language-plaintext highlighter-rouge">httpx</code> или <code class="language-plaintext highlighter-rouge">aiohttp</code>, чтобы ускорить сбор данных с тысяч страниц.</p>
+
+<p>Для тех, кто изучает веб-скрапинг: используйте этот репозиторий как пример того, как структурировать код, чтобы он не превратился в спагетти.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

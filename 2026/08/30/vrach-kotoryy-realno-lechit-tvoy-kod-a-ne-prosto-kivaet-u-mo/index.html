@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Врач, который реально лечит твой код, а не просто кивает у монитора | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Врач, который реально лечит твой код, а не просто кивает у монитора | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Врач, который реально лечит твой код, а не просто кивает у монитора" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Врач, который реально лечит твой код, а не просто кивает у монитора 🔥 Знаю-знаю, девять утра, открываешь проект, запускаешь — а оно не работает. Полчаса ловишь…" />
+<meta property="og:description" content="Врач, который реально лечит твой код, а не просто кивает у монитора 🔥 Знаю-знаю, девять утра, открываешь проект, запускаешь — а оно не работает. Полчаса ловишь…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/vrach-kotoryy-realno-lechit-tvoy-kod-a-ne-prosto-kivaet-u-mo/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/vrach-kotoryy-realno-lechit-tvoy-kod-a-ne-prosto-kivaet-u-mo/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-30T03:02:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Врач, который реально лечит твой код, а не просто кивает у монитора" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-30T03:02:06+00:00","datePublished":"2026-08-30T03:02:06+00:00","description":"Врач, который реально лечит твой код, а не просто кивает у монитора 🔥 Знаю-знаю, девять утра, открываешь проект, запускаешь — а оно не работает. Полчаса ловишь…","headline":"Врач, который реально лечит твой код, а не просто кивает у монитора","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/vrach-kotoryy-realno-lechit-tvoy-kod-a-ne-prosto-kivaet-u-mo/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/vrach-kotoryy-realno-lechit-tvoy-kod-a-ne-prosto-kivaet-u-mo/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>30 August 2026</small>
+<h1>Врач, который реально лечит твой код, а не просто кивает у монитора</h1>
+
+<p class="view">by </p>
+
+<h1 id="devenv-doctor-cli-инструмент-для-автоматизации-проверки-окружения">DevEnv Doctor: CLI-инструмент для автоматизации проверки окружения</h1>
+
+<p>Развертывание проекта часто превращается в квест по поиску конфликтующих портов, отсутствующих переменных окружения или несовместимых версий Git и Docker. Чтобы не тратить время на ручной дебаг инфраструктуры, существует <strong>DevEnv Doctor</strong> — CLI-утилита на Python, которая автоматизирует проверку локального окружения.</p>
+
+<h2 id="что-это-такое">Что это такое</h2>
+
+<p>DevEnv Doctor — это диагностический инструмент, который по одному конфигу проверяет готовность системы к запуску проекта. Вместо того чтобы вручную проверять <code class="language-plaintext highlighter-rouge">docker ps</code> или <code class="language-plaintext highlighter-rouge">git --version</code>, вы запускаете одну команду и получаете полный отчет о состоянии зависимостей.</p>
+
+<h2 id="основной-функционал">Основной функционал</h2>
+
+<h3 id="1-автоматический-чеклист">1. Автоматический чеклист</h3>
+<p>Инструмент проверяет критические точки входа:</p>
+<ul>
+  <li><strong>Версии ПО:</strong> Соответствие установленных версий Git, Docker и других утилит требованиям проекта.</li>
+  <li><strong>Сетевые ресурсы:</strong> Проверка доступности портов (например, чтобы Postgres не конфликтовал с зависшим процессом).</li>
+  <li><strong>Конфигурация:</strong> Наличие и корректность переменных окружения (<code class="language-plaintext highlighter-rouge">.env</code>).</li>
+</ul>
+
+<h3 id="2-ai-advisor-gpt-4-integration">2. AI Advisor (GPT-4 Integration)</h3>
+<p>При установке опционального пакета <code class="language-plaintext highlighter-rouge">[ai]</code> в утилиту интегрируется AI-советник на базе GPT-4. Если проверка выявляет ошибку, инструмент не просто выводит stack trace, а предлагает конкретные шаги по исправлению проблемы. Это сокращает время на поиск решения в StackOverflow.</p>
+
+<h3 id="3-кастомные-проверки-через-yaml">3. Кастомные проверки через YAML</h3>
+<p>Гибкость настройки обеспечивается через YAML-конфиги. Можно прописать специфические проверки для конкретного стека. Например, проверить, что Redis отвечает <code class="language-plaintext highlighter-rouge">PONG</code> на команду <code class="language-plaintext highlighter-rouge">PING</code>, прежде чем поднимать приложение.</p>
+
+<h3 id="4-авто-фикс">4. Авто-фикс</h3>
+<p>Флаг <code class="language-plaintext highlighter-rouge">--fix</code> предназначен для автоматического исправления типовых ошибок. На текущем этапе (MVP) реализованы базовые сценарии, но архитектура позволяет расширять список автоматических действий.</p>
+
+<h2 id="быстрый-старт">Быстрый старт</h2>
+
+<p>Установка и запуск занимают меньше минуты:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Установка базовой версии</span>
+pip <span class="nb">install </span>devdoctor
+
+<span class="c"># Установка с поддержкой AI</span>
+pip <span class="nb">install</span> <span class="s2">"devdoctor[ai]"</span>
+
+<span class="c"># Инициализация конфига в проекте</span>
+devdoctor init
+
+<span class="c"># Запуск полной диагностики</span>
+devdoctor check
+</code></pre></div></div>
+
+<h2 id="технический-разбор-и-субъективная-оценка">Технический разбор и субъективная оценка</h2>
+
+<p><strong>Почему это полезно:</strong>
+Инструмент решает проблему “it works on my machine”. Добавление <code class="language-plaintext highlighter-rouge">devdoctor check</code> в README или в скрипт инициализации проекта (например, в <code class="language-plaintext highlighter-rouge">Makefile</code> или <code class="language-plaintext highlighter-rouge">package.json</code>) гарантирует, что новый разработчик в команде не застрянет на этапе настройки окружения на полдня.</p>
+
+<p><strong>Где применить:</strong></p>
+<ul>
+  <li>В крупных монорепозиториях с большим количеством зависимостей.</li>
+  <li>В open-source проектах для упрощения онбординга контрибьюторов.</li>
+  <li>В CI/CD пайплайнах для предварительной проверки среды сборки.</li>
+</ul>
+
+<p><strong>Подводные камни:</strong>
+Функционал <code class="language-plaintext highlighter-rouge">--fix</code> сейчас находится в состоянии MVP, поэтому полагаться на него в критических системах без присмотра не стоит. Также использование AI-советника требует наличия API-ключа и доступа к сети, что может быть ограничением в закрытых контурах.</p>
+
+<h2 id="лицензия-и-развитие">Лицензия и развитие</h2>
+
+<p>Проект распространяется под лицензией <strong>MIT</strong>. Это полноценный open-source на Python, который легко форкнуть и доработать под специфические нужды своего стека.</p>
+
+<p>Если вам не хватает конкретных проверок или вы хотите улучшить логику авто-фикса — код открыт для контрибьютов.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

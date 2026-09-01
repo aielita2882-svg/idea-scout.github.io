@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что  | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что лиды с формы уходят в пустоту? 💡 Поздравляю, вы поймали классический синдром «кр…" />
+<meta property="og:description" content="Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что лиды с формы уходят в пустоту? 💡 Поздравляю, вы поймали классический синдром «кр…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/vy-kogda-nibud-zalipali-na-tilda-sobiraya-lending-mechty-a-p/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/vy-kogda-nibud-zalipali-na-tilda-sobiraya-lending-mechty-a-p/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-28T14:42:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-28T14:42:06+00:00","datePublished":"2026-08-28T14:42:06+00:00","description":"Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что лиды с формы уходят в пустоту? 💡 Поздравляю, вы поймали классический синдром «кр…","headline":"Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/vy-kogda-nibud-zalipali-na-tilda-sobiraya-lending-mechty-a-p/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/28/vy-kogda-nibud-zalipali-na-tilda-sobiraya-lending-mechty-a-p/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>28 August 2026</small>
+<h1>Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что </h1>
+
+<p class="view">by </p>
+
+<h1 id="автоматизация-email-рассылок-tilda--yandex-cloud-functions--unisender">Автоматизация email-рассылок: Tilda + Yandex Cloud Functions + Unisender</h1>
+
+<p>Типичная проблема простых лендингов на Tilda — «мертвая база». Формы собирают лиды, но процесс обработки превращается в ручной перенос данных или ожидание уведомлений на почте. Чтобы закрыть этот гэп и отправлять персонализированные приветственные письма мгновенно, можно собрать легковесный серверлесс-пайплайн.</p>
+
+<h3 id="архитектура-решения">Архитектура решения</h3>
+
+<p>Стек максимально прагматичный:</p>
+<ul>
+  <li><strong>Frontend:</strong> Tilda (сбор данных через форму).</li>
+  <li><strong>Backend (Middleware):</strong> Yandex Cloud Functions (Python).</li>
+  <li><strong>Email Service:</strong> Unisender API.</li>
+</ul>
+
+<p><strong>Схема потока данных:</strong>
+<code class="language-plaintext highlighter-rouge">Пользователь заполняет форму</code> $\rightarrow$ <code class="language-plaintext highlighter-rouge">Tilda отправляет Webhook</code> $\rightarrow$ <code class="language-plaintext highlighter-rouge">Yandex Cloud Function (webhook_sender.py)</code> $\rightarrow$ <code class="language-plaintext highlighter-rouge">Unisender API</code> $\rightarrow$ <code class="language-plaintext highlighter-rouge">Персонализированное письмо клиенту</code>.</p>
+
+<h3 id="техническая-реализация">Техническая реализация</h3>
+
+<p>Основная логика сосредоточена в скрипте <code class="language-plaintext highlighter-rouge">webhook_sender.py</code>. Функция работает как HTTP-триггер:</p>
+
+<ol>
+  <li><strong>Прием данных:</strong> Скрипт ловит POST-запрос от Tilda, парсит тело запроса и извлекает поля <code class="language-plaintext highlighter-rouge">name</code> и <code class="language-plaintext highlighter-rouge">email</code>.</li>
+  <li><strong>Обработка:</strong> Данные валидируются, чтобы избежать отправки пустых писем.</li>
+  <li><strong>Интеграция:</strong> Через API Unisender происходит поиск или создание контакта и триггер отправки конкретного шаблона письма.</li>
+</ol>
+
+<p>В результате пользователь получает сообщение вида «Привет, [Имя], вот твоя полезность» спустя несколько секунд после клика по кнопке «Отправить».</p>
+
+<h3 id="практическое-применение-и-профит">Практическое применение и профит</h3>
+
+<p>Этот сетап идеально подходит для:</p>
+<ul>
+  <li><strong>Lead Magnets:</strong> Мгновенная выдача гайдов, чек-листов или промокодов.</li>
+  <li><strong>Welcome-цепочек:</strong> Первый касание с клиентом, пока он еще находится на сайте.</li>
+  <li><strong>MVP проектов:</strong> Когда полноценная CRM избыточна, а платить за сложные интеграторы (вроде Zapier или Albato) дорого.</li>
+</ul>
+
+<h3 id="субъективная-оценка">Субъективная оценка</h3>
+
+<p><strong>Почему это круто:</strong>
+Главный плюс — стоимость и независимость. Вы не платите ежемесячную подписку за «конструкторы автоматизаций». Yandex Cloud Functions в рамках free tier или минимальных тарифов обходятся копейками, а Unisender берет оплату за базу/рассылки. Это масштабируемое решение: если трафик вырастет в 10 раз, серверлесс-функция просто масштабирует количество вызовов без необходимости настраивать сервер.</p>
+
+<p><strong>Подводные камни:</strong>
+Решение не является «no-code». Чтобы всё завелось, придется:</p>
+<ul>
+  <li>Развернуть функцию в Yandex Cloud.</li>
+  <li>Настроить переменные окружения для API-ключей.</li>
+  <li>Правильно сконфигурировать <code class="language-plaintext highlighter-rouge">sender_email</code> и права доступа в Unisender.</li>
+  <li>Отладить формат входящих данных от Tilda (иногда поля приходят в неожиданном виде).</li>
+</ul>
+
+<p>Для разработчика это задача на один вечер. Для маркетолога без опыта в коде — повод позвать в помощь техлида или потратить пару дней на изучение документации Yandex Cloud.</p>
+
+<p><strong>Вердикт:</strong>
+Связка Tilda $\rightarrow$ YC Functions $\rightarrow$ Unisender — это надежный инженерный подход к автоматизации. Это не rocket science, но требует базового понимания работы HTTP-запросов и API. Если вам нужен контроль над данными и минимальные расходы на инфраструктуру — используйте этот стек.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

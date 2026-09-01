@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>А вы уже слышали? Tencent выкатила Hy4 Preview  и это явно не рядовой релиз. Отк | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>А вы уже слышали? Tencent выкатила Hy4 Preview и это явно не рядовой релиз. Отк | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="А вы уже слышали? Tencent выкатила Hy4 Preview и это явно не рядовой релиз. Отк" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="А вы уже слышали? Tencent выкатила Hy4 Preview — и это явно не рядовой релиз. Открытые веса, лицензия Apache 2.0, а внутри 770 млрд параметров на архитектуре mi…" />
+<meta property="og:description" content="А вы уже слышали? Tencent выкатила Hy4 Preview — и это явно не рядовой релиз. Открытые веса, лицензия Apache 2.0, а внутри 770 млрд параметров на архитектуре mi…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/a-vy-uzhe-slyshali-tencent-vykatila-hy4-preview-i-eto-yavno/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/a-vy-uzhe-slyshali-tencent-vykatila-hy4-preview-i-eto-yavno/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-30T05:50:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="А вы уже слышали? Tencent выкатила Hy4 Preview и это явно не рядовой релиз. Отк" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-30T05:50:06+00:00","datePublished":"2026-08-30T05:50:06+00:00","description":"А вы уже слышали? Tencent выкатила Hy4 Preview — и это явно не рядовой релиз. Открытые веса, лицензия Apache 2.0, а внутри 770 млрд параметров на архитектуре mi…","headline":"А вы уже слышали? Tencent выкатила Hy4 Preview и это явно не рядовой релиз. Отк","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/a-vy-uzhe-slyshali-tencent-vykatila-hy4-preview-i-eto-yavno/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/a-vy-uzhe-slyshali-tencent-vykatila-hy4-preview-i-eto-yavno/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>30 August 2026</small>
+<h1>А вы уже слышали? Tencent выкатила Hy4 Preview  и это явно не рядовой релиз. Отк</h1>
+
+<p class="view">by </p>
+
+<h1 id="tencent-hy4-preview-moe-гигант-с-контекстом-в-1-млн-токенов">Tencent Hy4 Preview: MoE-гигант с контекстом в 1 млн токенов</h1>
+
+<p>Tencent выпустила <strong>Hy4 Preview</strong> — открытую модель, которая переводит понятие “open weights” на новый уровень. Это не просто очередной инкрементальный апдейт, а полноценный флагман с архитектурой Mixture of Experts (MoE), доступный под лицензией <strong>Apache 2.0</strong>.</p>
+
+<h3 id="технический-стек-и-архитектура">Технический стек и архитектура</h3>
+
+<p>Модель построена на принципе разреженного активационного слоя, что позволяет сочетать огромный объем знаний с приемлемыми затратами на инференс:</p>
+
+<ul>
+  <li><strong>Общее количество параметров:</strong> 770 млрд.</li>
+  <li><strong>Активные параметры:</strong> 49 млрд (на один токен).</li>
+  <li><strong>Контекстное окно:</strong> 1 000 000 токенов.</li>
+  <li><strong>Лицензия:</strong> Apache 2.0 (полная свобода в коммерческом использовании).</li>
+</ul>
+
+<p>Такой подход (770B total / 49B active) позволяет модели оперировать знаниями уровня GPT-4, не требуя при этом кластера из сотен H100 для каждого запроса, хотя порог входа по VRAM всё равно остается высоким.</p>
+
+<h3 id="главная-фишка-модель-как-оркестратор">Главная фишка: Модель как оркестратор</h3>
+
+<p>Цифры в бенчмарках обычно вторичны, но здесь интересен функциональный сдвиг. Hy4 позиционируется не просто как генератор текста или кода, а как <strong>диспетчер (оркестратор)</strong>.</p>
+
+<p>В тестах Tencent реализовали сценарий, где Hy4 координировала несколько параллельных сессий Codex. Модель выполняла следующие функции:</p>
+<ol>
+  <li>Распределение подзадач между инстансами Codex.</li>
+  <li>Валидация и оценка полученных результатов.</li>
+  <li>Корректировка вектора исследования в реальном времени.</li>
+</ol>
+
+<p>Результат: в таком режиме Hy4 обошла одиночный Codex на восьми ключевых бенчмарках. Это фактически встроенный агентный фреймворк на уровне весов модели.</p>
+
+<h3 id="практическое-применение-в-разработке">Практическое применение в разработке</h3>
+
+<p>Hy4 Preview закрывает боли, с которыми обычно борются с помощью LangChain или AutoGPT:</p>
+
+<ul>
+  <li><strong>Работа с монолитами:</strong> Контекст в 1 млн токенов позволяет “скормить” модели всю кодовую базу среднего проекта вместе с документацией. Больше не нужно мучиться с тонким тюнингом RAG (Retrieval-Augmented Generation) для простых задач поиска по коду.</li>
+  <li><strong>Автономный рефакторинг:</strong> Благодаря способности координировать сессии, модель может самостоятельно планировать изменения в нескольких файлах, проверять их на совместимость и итерировать до рабочего состояния.</li>
+  <li><strong>Сложные Research-пайплайны:</strong> Идеально для анализа огромных массивов научной литературы или логов, где важна взаимосвязь данных в разных частях документа.</li>
+</ul>
+
+<h3 id="субъективная-оценка">Субъективная оценка</h3>
+
+<p><strong>Почему это круто:</strong>
+Мы получаем модель с параметрами флагмана и лицензией Apache 2.0. Возможность развернуть такой инструмент в закрытом контуре компании без зависимости от API OpenAI или Anthropic — это огромный плюс для безопасности и приватности данных.</p>
+
+<p><strong>Подводные камни:</strong>
+Несмотря на MoE, 770 млрд параметров требуют серьезного железа для квантования и деплоя. Обычный потребительский сетап здесь не справится — готовьте серверные стойки или используйте специализированные хостинги. Также стоит проверить реальную деградацию внимания (needle in a haystack) на предельных значениях контекста в 1 млн токенов.</p>
+
+<p><strong>Вердикт:</strong>
+Hy4 Preview — это шаг в сторону автономных AI-инженеров. Если раньше мы писали промпты, то теперь переходим к проектированию систем, где модель управляет другими моделями.</p>
+
+<h3 id="ссылки">Ссылки</h3>
+
+<ul>
+  <li><strong>Веса и исходники:</strong> <a href="https://huggingface.co/tencent/Hy4-preview">huggingface.co/tencent/Hy4-preview</a></li>
+  <li><strong>Технический отчет:</strong> <a href="https://hy.tencent.ai/research/hy4-preview">hy.tencent.ai/research/hy4-preview</a></li>
+</ul>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

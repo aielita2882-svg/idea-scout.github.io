@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скрип | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скрип | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скрип" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скриптов и Конфигуратора, который открывается дольше, чем мой утренний кофе остывает?…" />
+<meta property="og:description" content="А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скриптов и Конфигуратора, который открывается дольше, чем мой утренний кофе остывает?…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/29/a-vy-znali-chto-1s-razrabotka-do-sikh-por-zhivyot-v-mire-xml/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/29/a-vy-znali-chto-1s-razrabotka-do-sikh-por-zhivyot-v-mire-xml/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-29T10:58:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скрип" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-29T10:58:05+00:00","datePublished":"2026-08-29T10:58:05+00:00","description":"А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скриптов и Конфигуратора, который открывается дольше, чем мой утренний кофе остывает?…","headline":"А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скрип","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/29/a-vy-znali-chto-1s-razrabotka-do-sikh-por-zhivyot-v-mire-xml/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/29/a-vy-znali-chto-1s-razrabotka-do-sikh-por-zhivyot-v-mire-xml/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>29 August 2026</small>
+<h1>А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скрип</h1>
+
+<p class="view">by </p>
+
+<h1 id="agenter-ai-агент-для-автоматизации-метаданных-1спредприятие">Agenter: AI-агент для автоматизации метаданных 1С:Предприятие</h1>
+
+<p>Разработка под 1С традиционно считается консервативной: XML-выгрузки, ручные скрипты и тяжеловесный Конфигуратор. Agenter — это попытка перенести современный LLM-стек в этот пайплайн, создав локального AI-агента, который берет на себя рутину по модификации метаданных.</p>
+
+<h2 id="технический-стек">Технический стек</h2>
+
+<p>Проект построен по принципу минимализма с упором на локальное хранение данных и детерминизм:</p>
+
+<ul>
+  <li><strong>Frontend:</strong> PyWebView (нативное окно, исключающее запуск полноценного браузера).</li>
+  <li><strong>Backend:</strong> FastAPI.</li>
+  <li><strong>LLM Orchestration:</strong> Claude Agent SDK.</li>
+  <li><strong>Поиск по конфигурации:</strong> BSL Atlas с индексом на SQLite.</li>
+  <li><strong>Слой исполнения:</strong> PowerShell (67 специализированных скиллов для работы с XML-метаданными).</li>
+</ul>
+
+<h2 id="как-это-работает">Как это работает</h2>
+
+<p>В основе Agenter лежит LLM-цикл с детерминистической диспетчеризацией стадий. В отличие от классических чат-ботов, здесь каждая стадия плана жестко привязана к ожидаемому инструменту (tool). Это минимизирует галлюцинации и исключает хаотичный вызов функций.</p>
+
+<h3 id="ключевые-инженерные-решения">Ключевые инженерные решения:</h3>
+
+<ol>
+  <li><strong>Изоляция модификаций:</strong> Выбор PowerShell в качестве исполнителя обусловлен отказоустойчивостью. Если Python-процесс упадет, изменения в XML не будут повреждены или прерваны на полпути.</li>
+  <li><strong>Test-First подход:</strong> Система включает 226 регрессионных тестов, распределенных по 67 файлам. Полный прогон занимает 7 секунд. Любой баг в продакшене сначала фиксируется тестом, и только затем исправляется.</li>
+  <li><strong>Безопасность данных:</strong> В облако Anthropic отправляются только промпты и схемы вызовов инструментов. Индекс конфигурации, исходники и XML-расширения остаются локально на машине разработчика.</li>
+</ol>
+
+<h2 id="практическое-применение">Практическое применение</h2>
+
+<p>Agenter предназначен для автоматизации создания и правки расширений 1С. Вместо того чтобы вручную править XML или часами искать нужный объект в Конфигураторе, разработчик делегирует это агенту, который понимает структуру метаданных.</p>
+
+<p><strong>Системные требования:</strong></p>
+<ul>
+  <li>ОС: Windows 10/11.</li>
+  <li>Среда: Python 3.11+, PowerShell 5.1.</li>
+  <li>Платформа: 1С:Предприятие 8.3.27+.</li>
+  <li>API: Ключ Anthropic.</li>
+</ul>
+
+<p>Запуск осуществляется через один <code class="language-plaintext highlighter-rouge">start.bat</code>, который поднимает бэкенд и открывает веб-интерфейс в нативном окне.</p>
+
+<h2 id="субъективная-оценка">Субъективная оценка</h2>
+
+<p><strong>Почему это круто:</strong>
+Это первый вменяемый пример применения Agentic Workflow в экосистеме 1С. Переход от «напиши мне код для модуля» к «измени структуру метаданных в расширении» — это качественный скачок. Использование BSL Atlas для индексации делает агента контекстно-зависимым, что критично для огромных ERP-систем.</p>
+
+<p><strong>Подводные камни:</strong></p>
+<ol>
+  <li><strong>Зависимость от Claude:</strong> Весь интеллект завязан на API Anthropic. Переход на локальные LLM (через Ollama или vLLM) может потребовать перенастройки промптов и логики диспетчеризации.</li>
+  <li><strong>Риски XML:</strong> Несмотря на тесты, автоматическая правка метаданных — это всегда риск «сломать» конфигурацию. Обязательно использование систем контроля версий (Git) и бэкапов.</li>
+</ol>
+
+<p><strong>Вердикт:</strong>
+Инструмент для тех, кто пишет сложные расширения и устал от ручного ковыряния в XML. Проект в стадии early development, но архитектурно выглядит очень крепко.</p>
+
+<p>100% Open Source.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

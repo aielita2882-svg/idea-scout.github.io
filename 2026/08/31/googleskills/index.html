@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>googleskills | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>googleskills | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="googleskills" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="🔥 google/skills ❓ Что это: Официальный репозиторий от Google, представляющий коллекцию так называемых Agent Skills для продуктов и технологий компании. По сути…" />
+<meta property="og:description" content="🔥 google/skills ❓ Что это: Официальный репозиторий от Google, представляющий коллекцию так называемых Agent Skills для продуктов и технологий компании. По сути…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/googleskills/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/googleskills/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-31T03:02:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="googleskills" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-31T03:02:05+00:00","datePublished":"2026-08-31T03:02:05+00:00","description":"🔥 google/skills ❓ Что это: Официальный репозиторий от Google, представляющий коллекцию так называемых Agent Skills для продуктов и технологий компании. По сути…","headline":"googleskills","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/googleskills/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/31/googleskills/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>31 August 2026</small>
+<h1>googleskills</h1>
+
+<p class="view">by </p>
+
+<h1 id="разбор-googleskills-стандартизация-навыков-для-ai-агентов">Разбор google/skills: Стандартизация навыков для AI-агентов</h1>
+
+<p>Google выпустил репозиторий <code class="language-plaintext highlighter-rouge">google/skills</code> — коллекцию структурированных инструкций (Agent Skills), которые превращают LLM из «генератора уверенных галлюцинаций» в инструмент, способный корректно взаимодействовать с экосистемой Google.</p>
+
+<h3 id="в-чем-суть">В чем суть</h3>
+<p>Проблема большинства AI-агентов при работе с облачными сервисами — устаревший контекст или попытки модели «додумать» параметры API. <code class="language-plaintext highlighter-rouge">google/skills</code> решает это через предоставление четких мануалов и примеров для моделей. Это переход от парадигмы Zero-shot (надейся на веса модели) к системному подходу с четко определенными навыками.</p>
+
+<h3 id="технический-стек-и-возможности">Технический стек и возможности</h3>
+<p>Репозиторий написан на <strong>Python</strong> и на текущий момент собрал почти <strong>19 000 звезд</strong>, что подтверждает запрос рынка на Agentic Workflows.</p>
+
+<p><strong>Основные возможности:</strong></p>
+<ul>
+  <li><strong>Покрытие продуктов:</strong> Готовые скиллы для Google Cloud, Workspace и Vertex AI.</li>
+  <li><strong>Формат данных:</strong> Описания структурированы так, чтобы их могли нативно потреблять современные фреймворки для создания агентов (например, LangChain, CrewAI или кастомные оркестраторы).</li>
+  <li><strong>Актуальность:</strong> Инструкции привязаны к текущим версиям API и SDK, что исключает использование deprecated методов.</li>
+  <li><strong>Экстенсивность:</strong> Репозиторий открыт для контрибуций. Можно форкнуть базу и дописать специфичные скиллы под внутренние нужды компании.</li>
+</ul>
+
+<h3 id="практическое-применение-в-проектах">Практическое применение в проектах</h3>
+
+<p>Этот репозиторий полезен в трех конкретных сценариях:</p>
+
+<ol>
+  <li><strong>Автоматизация инфраструктуры (IaC):</strong> Создание агентов, которые разворачивают ресурсы в Google Cloud без ошибок в именовании параметров или неверных типов инстансов.</li>
+  <li><strong>Интеграция с Workspace:</strong> Построение ботов для управления документами, календарями и почтой, где требуется строгое соблюдение структуры запросов к API.</li>
+  <li><strong>Стандартизация Prompt Engineering:</strong> Вместо того чтобы писать гигантские системные промпты для каждого нового сотрудника, можно подключить стандартизированный набор скиллов из репозитория.</li>
+</ol>
+
+<h3 id="субъективная-оценка">Субъективная оценка</h3>
+
+<p><strong>Почему это круто:</strong>
+Google фактически признал, что даже самые мощные LLM плохо справляются со спецификой собственных API без внешней помощи. Это «золотой стандарт» того, как должна выглядеть документация для AI-агентов. Вместо многостраничных PDF-гайдов для людей мы получаем структурированные данные для машин.</p>
+
+<p><strong>Подводные камни:</strong></p>
+<ul>
+  <li><strong>Зависимость от формата:</strong> Если вы используете проприетарный фреймворк, который плохо переваривает структуру <code class="language-plaintext highlighter-rouge">google/skills</code>, придется писать прослойку-адаптер.</li>
+  <li><strong>Риск оверфиттинга:</strong> Слишком жесткие инструкции могут ограничить гибкость модели в нестандартных ситуациях, хотя в случае с API это скорее плюс, чем минус.</li>
+</ul>
+
+<p><strong>Вердикт:</strong>
+Если ваш стек завязан на Google Cloud или Vertex AI, игнорировать этот репозиторий — значит добровольно тратить время на отладку галлюцинаций модели. Это обязательный инструмент для тех, кто переходит от простых чат-ботов к полноценным автономным агентам.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

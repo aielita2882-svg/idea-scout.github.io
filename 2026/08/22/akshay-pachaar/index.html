@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>akshay_pachaar | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>akshay_pachaar | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="akshay_pachaar" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="@akshaypachaar (694) 🔥 CAG vs RAG: как избавиться от постоянных запросов в векторную БД ⚡ RAG удобен, но каждый запрос — это выстрел по кошельку: идёт в векторн…" />
+<meta property="og:description" content="@akshaypachaar (694) 🔥 CAG vs RAG: как избавиться от постоянных запросов в векторную БД ⚡ RAG удобен, но каждый запрос — это выстрел по кошельку: идёт в векторн…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/22/akshay-pachaar/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/22/akshay-pachaar/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-22T10:58:06+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="akshay_pachaar" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-22T10:58:06+00:00","datePublished":"2026-08-22T10:58:06+00:00","description":"@akshaypachaar (694) 🔥 CAG vs RAG: как избавиться от постоянных запросов в векторную БД ⚡ RAG удобен, но каждый запрос — это выстрел по кошельку: идёт в векторн…","headline":"akshay_pachaar","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/22/akshay-pachaar/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/22/akshay-pachaar/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>22 August 2026</small>
+<h1>akshay_pachaar</h1>
+
+<p class="view">by </p>
+
+<h1 id="cag-vs-rag-оптимизация-контекста-через-prompt-caching">CAG vs RAG: Оптимизация контекста через Prompt Caching</h1>
+
+<p>Стандартный RAG (Retrieval-Augmented Generation) стал индустриальным стандартом, но у него есть проблема: избыточность. Каждый запрос в векторную БД и последующая передача одних и тех же статичных документов в контекст LLM — это лишние деньги и задержки (latency).</p>
+
+<p>Решением становится <strong>CAG (Cache-Augmented Generation)</strong>. Разберем, как это работает на уровне архитектуры и как внедрить в продакшн.</p>
+
+<h2 id="в-чем-суть-проблемы-rag">В чем суть проблемы RAG?</h2>
+
+<p>В классическом RAG схема выглядит так: <code class="language-plaintext highlighter-rouge">Запрос -&gt; Поиск в Vector DB -&gt; Формирование промпта с контекстом -&gt; Inference</code>.</p>
+
+<p>Если ваш бот отвечает по базе документации из 100 страниц, и 80% запросов касаются одних и тех же разделов, вы платите за обработку этих токенов при каждом вызове. Это неэффективно, так как данные статичны, но модель пересчитывает их каждый раз.</p>
+
+<h2 id="что-такое-cag-и-как-он-работает">Что такое CAG и как он работает?</h2>
+
+<p><strong>Cache-Augmented Generation</strong> переносит статичные данные из внешнего поиска непосредственно в KV-кеш (Key-Value cache) модели.</p>
+
+<h3 id="технический-бэкграунд">Технический бэкграунд</h3>
+<p>Внутри Transformer для каждого токена вычисляются векторы Key и Value. При генерации модель использует этот кеш, чтобы не пересчитывать предыдущие токены. Prompt Caching (реализован в API OpenAI и Anthropic) позволяет сохранять этот KV-кеш на стороне сервера. Если новый запрос начинается с точно такого же префикса, как закешированный, модель просто подтягивает готовые вычисления.</p>
+
+<p><strong>Схема гибридного подхода:</strong></p>
+<ol>
+  <li><strong>CAG (Статика):</strong> Документация, API-референсы, внутренние политики. Загружаются один раз, хранятся в кеше.</li>
+  <li><strong>RAG (Динамика):</strong> Пользовательские данные, свежие логи, транзакции. Извлекаются из векторной БД «на лету».</li>
+</ol>
+
+<h2 id="практические-нюансы-и-подводные-камни">Практические нюансы и подводные камни</h2>
+
+<p>Кеширование — это не «магическая кнопка», здесь есть жесткие ограничения:</p>
+
+<ol>
+  <li><strong>Строгое соответствие префикса.</strong> Кеш работает только при побайтовом совпадении начала промпта. Если вы измените хотя бы один символ в начале или поменяете документы A и B местами, произойдет <strong>cache miss</strong>, и модель пересчитает всё с нуля.</li>
+  <li><strong>Порядок имеет значение.</strong> Чтобы максимально использовать CAG, статичные данные должны идти в самом начале промпта.
+    <ul>
+      <li>Правильно: <code class="language-plaintext highlighter-rouge">[Статичный контекст (Кеш)] -&gt; [Динамический контекст (RAG)] -&gt; [Вопрос пользователя]</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Окно контекста.</strong> Кеширование не увеличивает размер контекстного окна. Если забить весь лимит статикой, для динамических данных и ответа модели просто не останется места.</li>
+</ol>
+
+<h2 id="вердикт-почему-это-круто-и-где-использовать">Вердикт: почему это круто и где использовать</h2>
+
+<p>CAG — это прямой путь к снижению TCO (Total Cost of Ownership) вашего AI-сервиса.</p>
+
+<p><strong>Где применять:</strong></p>
+<ul>
+  <li><strong>Техподдержка и Knowledge Base:</strong> когда 90% ответов базируются на одном и том же FAQ.</li>
+  <li><strong>Код-ассистенты:</strong> кеширование структуры проекта или документации используемого фреймворка.</li>
+  <li><strong>Юридические боты:</strong> работа с неизменными сводами законов или регламентами.</li>
+</ul>
+
+<p><strong>Итог:</strong> 
+Использовать чистый RAG для всего — дорого и медленно. Использовать чистый CAG — невозможно из-за ограничений окна контекста. Оптимальный стек сегодня: <strong>CAG для фундаментальных знаний + RAG для актуальных данных</strong>. Это дает максимальный прирост скорости inference и существенно режет счета за токены.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Агент, который сам себя будит? | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Агент, который сам себя будит? | Idea Scout - AI-находки для разработчиков</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Агент, который сам себя будит?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Агент, который сам себя будит? ☕️ В репозитории Codex на GitHub всплыл любопытный коммит: разработчики наткнулись на возможный режим рассуждений под названием P…" />
+<meta property="og:description" content="Агент, который сам себя будит? ☕️ В репозитории Codex на GitHub всплыл любопытный коммит: разработчики наткнулись на возможный режим рассуждений под названием P…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/agent-kotoryy-sam-sebya-budit/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/agent-kotoryy-sam-sebya-budit/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-30T03:58:05+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Агент, который сам себя будит?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-30T03:58:05+00:00","datePublished":"2026-08-30T03:58:05+00:00","description":"Агент, который сам себя будит? ☕️ В репозитории Codex на GitHub всплыл любопытный коммит: разработчики наткнулись на возможный режим рассуждений под названием P…","headline":"Агент, который сам себя будит?","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/agent-kotoryy-sam-sebya-budit/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/30/agent-kotoryy-sam-sebya-budit/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>30 August 2026</small>
+<h1>Агент, который сам себя будит?</h1>
+
+<p class="view">by </p>
+
+<h1 id="persistent-mode-переход-от-чат-ботов-к-автономным-агентам">Persistent Mode: Переход от чат-ботов к автономным агентам</h1>
+
+<p>В репозитории OpenAI Codex обнаружили коммит, который может изменить подход к построению LLM-агентов. Речь идет о режиме рассуждений под названием <strong>Persistent</strong>. Внутренняя документация описывает его максимально лаконично: “Продолжай работать, пока тебя не отправят спать”.</p>
+
+<h3 id="что-это-технически">Что это технически</h3>
+
+<p>На текущий момент большинство агентских фреймворков (AutoGPT, BabyAGI и прочие) реализуют цикл автономности на внешнем уровне: Python-скрипт в бесконечном цикле вызывает API, парсит ответ и отправляет новый запрос.</p>
+
+<p><strong>Persistent Mode</strong> переносит эту логику внутрь самой модели. Судя по фрагментам кода, агент получает возможность:</p>
+<ol>
+  <li>Самостоятельно формировать очередь задач (Task Queue).</li>
+  <li>Итерировать по списку целей без внешнего триггера (пользовательского промпта).</li>
+  <li>Определять критерий остановки самостоятельно или ждать внешней команды “sleep”.</li>
+</ol>
+
+<p>По сути, мы видим зачаток нативного автономного цикла: <code class="language-plaintext highlighter-rouge">выполнил действие</code> $\rightarrow$ <code class="language-plaintext highlighter-rouge">обновил состояние</code> $\rightarrow$ <code class="language-plaintext highlighter-rouge">поставил следующую задачу</code> $\rightarrow$ <code class="language-plaintext highlighter-rouge">перешел к исполнению</code>.</p>
+
+<h3 id="практическое-применение-в-проектах">Практическое применение в проектах</h3>
+
+<p>Если эта фича выйдет из экспериментальной ветки, архитектура AI-сервисов упростится. Вместо сложных цепочек в LangChain или тяжелых оркестраторов, можно будет развернуть одного агента с Persistent-флагом для решения комплексных задач:</p>
+
+<ul>
+  <li><strong>Автономный CI/CD мониторинг:</strong> Агент не просто уведомляет о падении билда, а сам анализирует логи, ищет причину в коммитах, пробует пофиксить код и прогоняет тесты до победного конца.</li>
+  <li><strong>Глубокий OSINT и ресерч:</strong> Сбор данных по теме, верификация источников и синтез финального отчета без необходимости каждые 5 минут нажимать кнопку “Продолжить”.</li>
+  <li><strong>Сложный кодинг:</strong> Реализация фичи “под ключ” — от проектирования БД до написания тестов и документации в одном сессионном цикле.</li>
+</ul>
+
+<h3 id="субъективная-оценка-и-риски">Субъективная оценка и риски</h3>
+
+<p>Это круто, потому что снимает проблему “забывчивости” модели между итерациями и избавляет разработчика от написания тонн бойлерплейта для управления состоянием агента. Мы переходим от модели “ассистент-инструмент” к модели “автономный сотрудник”.</p>
+
+<p><strong>Подводные камни:</strong></p>
+<ol>
+  <li><strong>Бесконечные циклы и стоимость:</strong> Без жестких лимитов по токенам Persistent-агент может уйти в “рекурсивный штопор”, сжигая бюджет на API за считанные минуты.</li>
+  <li><strong>Галлюцинации в планировании:</strong> Если модель на втором шаге цикла ошибется в постановке задачи, все последующие шаги будут вести в ложном направлении, и пользователь заметит это только в конце сессии.</li>
+  <li><strong>Безопасность:</strong> Предоставление агенту возможности самостоятельно определять длительность работы и последовательность действий требует очень строгого разграничения прав доступа (sandboxing).</li>
+</ol>
+
+<p><strong>Итог:</strong> OpenAI подтвердила тесты механики, но сроки релиза не называла. Пока функция находится в экспериментальном статусе, но вектор понятен: индустрия движется в сторону Long-term autonomy.</p>
+
+<p><strong>Источник:</strong> GitHub-коммит OpenAI Codex.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>

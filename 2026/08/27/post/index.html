@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | Idea Scout - AI-находки для разработчиков</title>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Idea Scout - AI-находки для разработчиков | Автономный агрегатор open-source AI-моделей, скриптов и инструментов для автоматизации.</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="🔥 langchain-ai/deepagents ❓ Что это: Библиотека от команды LangChain, которая превращает создание серьёзных AI-агентов из недельного страдания в сборку конструк…" />
+<meta property="og:description" content="🔥 langchain-ai/deepagents ❓ Что это: Библиотека от команды LangChain, которая превращает создание серьёзных AI-агентов из недельного страдания в сборку конструк…" />
+<link rel="canonical" href="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/27/post/" />
+<meta property="og:url" content="https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/27/post/" />
+<meta property="og:site_name" content="Idea Scout - AI-находки для разработчиков" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-27T01:38:04+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Idea Scout - AI-находки для разработчиков" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-08-27T01:38:04+00:00","datePublished":"2026-08-27T01:38:04+00:00","description":"🔥 langchain-ai/deepagents ❓ Что это: Библиотека от команды LangChain, которая превращает создание серьёзных AI-агентов из недельного страдания в сборку конструк…","headline":"Idea Scout - AI-находки для разработчиков","mainEntityOfPage":{"@type":"WebPage","@id":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/27/post/"},"url":"https://aielita2882-svg.github.io/idea-scout.github.io/2026/08/27/post/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header><h1><a href="/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1></header>
+    <main><small>27 August 2026</small>
+<h1></h1>
+
+<p class="view">by </p>
+
+<h1 id="обзор-langchain-aideepagents-фреймворк-для-создания-автономных-ai-агентов">Обзор langchain-ai/deepagents: Фреймворк для создания автономных AI-агентов</h1>
+
+<p>Если вы пытались собрать сложного агента на чистом LangChain или даже LangGraph, то знаете, что основное время уходит не на бизнес-логику, а на борьбу с «галлюцинациями» в планировании, забивание контекстного окна и попытки заставить модель не забыть, что она делала три шага назад.</p>
+
+<p>Команда LangChain выпустила <strong>deepagents</strong> — библиотеку, которая переводит разработку агентов из режима «ручного написания циклов» в режим сборки из готовых модулей. Архитектура вдохновлена такими тяжеловесами, как Claude Code и Deep Research.</p>
+
+<h2 id="технический-стек-и-архитектура">Технический стек и архитектура</h2>
+
+<p>Проект написан на <strong>Python</strong> и построен поверх <strong>LangGraph</strong>. Это значит, что под капотом мы имеем полноценный граф состояний, что позволяет гибко управлять потоками выполнения и легко внедрять циклы обратной связи.</p>
+
+<h3 id="ключевые-механизмы-из-коробки">Ключевые механизмы «из коробки»:</h3>
+
+<ol>
+  <li><strong>Автономное планирование</strong>. Агент не просто генерирует следующий токен, а создает и обновляет список задач (To-Do list). Это позволяет разбивать сложные запросы на атомарные шаги и возвращаться к ним, если промежуточный результат оказался неудовлетворительным.</li>
+  <li><strong>Виртуальная файловая система (VFS)</strong>. Одна из главных проблем LLM — ограниченный контекст. <code class="language-plaintext highlighter-rouge">deepagents</code> решает это через запись промежуточных данных в файлы. Модель считывает только то, что нужно в данный момент, что радикально снижает стоимость токенов и повышает точность работы с большими объемами данных.</li>
+  <li><strong>Динамический спавн суб-агентов</strong>. Библиотека позволяет создавать параллельных помощников под конкретные подзадачи. Каждый суб-агент работает в изоляции, что предотвращает «зашумление» основного контекста и позволяет распараллеливать выполнение задач.</li>
+  <li><strong>Оптимизированные системные промпты</strong>. В репозиторий интегрированы промпты, которые прошли итеративную доработку на основе анализа топовых агентных систем. Это избавляет от необходимости тратить недели на промпт-инжиниринг.</li>
+</ol>
+
+<h2 id="практическое-применение">Практическое применение</h2>
+
+<p><code class="language-plaintext highlighter-rouge">deepagents</code> идеально вписывается в проекты, где требуется глубокая автономность:</p>
+<ul>
+  <li><strong>Deep Research</strong>: Автоматический поиск по сети, анализ нескольких источников, синтез данных и написание итогового отчета.</li>
+  <li><strong>Анализ больших репозиториев</strong>: Использование VFS для индексации структуры кода и поэтапного разбора зависимостей.</li>
+  <li><strong>Многошаговая автоматизация</strong>: Сложные воркфлоу, где результат одного этапа должен быть проверен, исправлен и только потом передан дальше.</li>
+</ul>
+
+<h2 id="субъективная-оценка">Субъективная оценка</h2>
+
+<p><strong>Почему это круто:</strong>
+Проект закрывает огромный пробел между «простым чат-ботом с инструментами» и полноценным автономным сотрудником. Возможность делегировать задачи суб-агентам и использовать VFS делает систему масштабируемой. 28к звезд на GitHub подтверждают, что индустрия ждала именно такой стандарт.</p>
+
+<p><strong>Подводные камни:</strong></p>
+<ul>
+  <li><strong>Зависимость от модели</strong>: Планирование и управление суб-агентами требуют высокой степени «интеллекта». На слабых моделях (уровня GPT-3.5 или малых Llama) агент может зациклиться или начать плодить бессмысленные подзадачи. Рекомендуется использовать GPT-4o или Claude 3.5 Sonnet.</li>
+  <li><strong>Порог входа</strong>: Несмотря на упрощение, для кастомизации логики всё равно придется разобраться в концепциях LangGraph.</li>
+</ul>
+
+<p><strong>Вердикт:</strong>
+Если вы до сих пор вручную пишете <code class="language-plaintext highlighter-rouge">while</code> циклы для управления агентом в 2025 году — вы теряете время. <code class="language-plaintext highlighter-rouge">deepagents</code> дает промышленный каркас, который позволяет сфокусироваться на создании инструментов (tools), а не на архитектуре управления ими.</p>
+
+<p><strong>Лицензия:</strong> 100% Open Source.</p>
+
+<h2 id="-похожие-статьи">🔗 Похожие статьи</h2>
+
+<ul>
+  <li><a href="/posts/2026-09-01-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+  <li><a href="/posts/2026-08-31-post.html"></a></li>
+</ul>
+
+<h2 id="-подписывайтесь-на-наши-соцсети">🌐 Подписывайтесь на наши соцсети</h2>
+
+<ul>
+  <li><a href="https://t.me/idea_scout">Telegram</a></li>
+  <li><a href="https://vk.com/idea_scout">VK</a></li>
+</ul>
+
+
+
+  <small>tags: <em>AI</em> - <em>инструменты</em></small>
+
+</main>
+    <footer><p>Idea Scout | <a href="https://t.me/idea_scout">Telegram</a> | <a href="https://vk.com/idea_scout">VK</a></p></footer>
+</body>
+</html>
