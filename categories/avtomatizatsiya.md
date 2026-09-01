@@ -7,5 +7,5 @@ permalink: /categories/avtomatizatsiya/
 # Посты в категории «Автоматизация»
 
 <ul>
-<li><a href="{{ site.baseurl }}/2026/09/01/hkudsdeeptutor/">HKUDSDeepTutor</a></li>
+<li><a href="/idea-scout.github.io/2026/09/01/hkudsdeeptutor/">HKUDSDeepTutor</a></li>
 </ul>

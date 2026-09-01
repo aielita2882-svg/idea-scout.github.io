@@ -8,12 +8,12 @@
     {% include head-custom.html %}
     {% seo %}
 	<style>
-      /* Полностью убираем >> на всех страницах */
-      ul, ol {
+      /* Полное отключение >> для всех списков на всех страницах */
+      #main_content ul, #main_content ol {
         list-style: none !important;
         padding-left: 0 !important;
       }
-      ul li::before, ol li::before {
+      #main_content ul li::before, #main_content ol li::before {
         content: none !important;
       }
     </style>
