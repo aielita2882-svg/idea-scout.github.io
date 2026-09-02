@@ -70,7 +70,29 @@
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe/">Разное</a>
         </div>
     </header>
-    <main>{content}</main>
+    <main><h1>Кто сказал, что бот в VK  это обязательно колхоз из костылей?</h1><p class='post-meta'>31 August 2026</p><div class='post-content'>🤖
+Разобралась в плагине, который прикручивает Hermes-агента прямо к сообществу ВКонтакте через Long Poll. И это не просто «эхо-бот на три команды», а полноценный мост: принимает сообщения и редактирования, отвечает через messages.send, понимает и личку, и беседы (да, с этими вашими peer_id = 2000000000 + chat_id).
+Что зацепило больше всего:
+— Дедупликация событий после реконнекта, чтобы бот не повторял одно и то же по три раза.
+— Allowlist с тремя режимами доступа: user_only, peer_only или строгий peer_and_user. Можно даже задать связку peer:user|user для отдельных чатов.
+— Реакции в стиле Telegram: пока агент думает —
+👌
+, ответ готов —
+👍
+, упал —
+👎
+. Мелочь, а приятно.
+— Видео, которое VK не хочет сохранять через
+video.save
+, автоматически летит документом. Спасибо, что не молчит об ошибке.
+— Markdown красиво перемалывается в читаемый plain text, потому что у messages.send нет нормального parse_mode.
+Из минусов честно: для работы с видео-метойдатами нужен пользовательский токен, и его придётся обновлять руками через OAuth-скрипт. Не «поставил и забыл», но инструкция в комплекте. И ещё момент — без allowlist бот принимает всех подряд, а с инструментами агента это потенциальная дыра. Конфиг просит не забыть про VK_ACCESS_POLICY, и я согласна.
+Ставится за минуту через hermes plugins install, дальше gateway setup и понеслось. Под капотом только stdlib, без лишних зависимостей — для тех, кто устал от requirements.txt на три экрана.
+🔥
+Если вы уже автоматизируете VK-рассылки или только присматриваетесь к бот-платформам — присмотритесь. Здесь и рассылка через home-канал, и cron-доставка, и нормальная работа с медиа.
+👉
+Больше таких находок без воды — в нашем Telegram-канале. Ссылка в профиле сообщества.
+100% опенсорс</div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-mirofish.html">MiroFish</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-claude-watch.html">claude-watch</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-tchmaterial-parser.html">tchMaterial-parser</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-spiderfoot.html">SpiderFoot</a></li></ul></div></main>
     <footer>
         © 2026 Idea Scout |
         <a href="https://t.me/idea_scout">Telegram</a> |

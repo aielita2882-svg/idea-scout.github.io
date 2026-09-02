@@ -70,7 +70,25 @@
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe/">Разное</a>
         </div>
     </header>
-    <main>{content}</main>
+    <main><h1>akshay_pachaar</h1><p class='post-meta'>22 August 2026</p><div class='post-content'>(694)
+🔥
+CAG vs RAG: как избавиться от постоянных запросов в векторную БД
+⚡
+RAG удобен, но каждый запрос — это выстрел по кошельку: идёт в векторную БД даже за теми данными, которые не менялись год. CAG решает это, закешировав статичную информацию в KV-памяти модели.
+❓
+Что сделали:
+Автор твита объяснил суть Cache-Augmented Generation (CAG) — подхода, при котором статичные данные (документация, политики) загружаются один раз в ключ-значение память модели, а динамические данные извлекаются через RAG. Это не теория — OpenAI и Anthropic уже поддерживают prompt caching в своих API. Приём основан на внутреннем механизме моделей: для каждого токена они строят KV-кеш, и если промпт совпадает байт в байт — модель не перевычисляет.
+💯
+Результаты:
+Скорость inference растёт, потому что статичные данные не пересчитываются. Затраты на API падают — особенно если вы регулярно запрашиваете одни и те же документы. Но есть уловка: кеш работает только при точном совпадении префикса. Переставьте два документа местами — и оба кеша промахнутся. Закешируйте документ A, потом B, а затем запросите оба — второй окажется мимо, потому что порядок меняет контекст.
+⚡
+Зачем это нужно:
+Если вы строите чат-бота для документации, внутренних политик или справочников — CAG сократит ваши расходы в разы. Комбинация RAG + CAG идеальна: холодные данные в кеш, горячие — в поиск. Но не гонитесь за максимизацией кеша — переполните контекст, и модель начнёт тормозить. Выбор кэшируемых данных должен быть строгим: только статичное, ценное, редко меняющееся.
+🎯
+Где взять:
+Источник — твит от
+@akshay_pachaar
+Источник</div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
     <footer>
         © 2026 Idea Scout |
         <a href="https://t.me/idea_scout">Telegram</a> |
