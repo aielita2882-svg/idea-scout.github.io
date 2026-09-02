@@ -46,3 +46,8 @@ defaults:
       path: ""
     values:
       layout: default
+      
+collections:
+  tabs:
+    output: true
+    sort_by: order
