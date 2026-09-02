@@ -3,62 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MemPalace — память для вашего ИИ, которая наконец-то работает | Idea Scout - AI-находки для разработчиков</title>
-    <meta name="description" content="MemPalace — память для вашего ИИ, которая наконец-то работает">
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>MemPalace  память для вашего ИИ, которая наконец-то работает | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="MemPalace  память для вашего ИИ, которая наконец-то работает">
     <style>
-        /* Дополнительные тёмные тона */
+        /* Чистый, строгий дизайн */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background: #0d1117;
-            color: #e6edf3;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 40px 20px;
+            max-width: 860px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
-        a {
-            color: #58a6ff;
+        a { color: #58a6ff; text-decoration: none; }
+        a:hover { color: #79c0ff; text-decoration: underline; }
+        
+        header {
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
-        a:hover {
-            color: #79c0ff;
-        }
-        header h1 a {
+        header h1 {
+            font-size: 26px;
+            font-weight: 600;
             color: #f0f6fc;
+            margin-bottom: 4px;
         }
-        .categories-list {
+        header h1 a { color: #f0f6fc; }
+        header p { color: #8b949e; font-size: 16px; }
+        
+        .categories {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0;
+            gap: 6px;
+            margin: 12px 0 0;
         }
-        .categories-list a {
+        .categories a {
             background: #21262d;
             color: #58a6ff;
             padding: 4px 14px;
             border-radius: 20px;
+            font-size: 14px;
             border: 1px solid #30363d;
-            text-decoration: none;
         }
-        .categories-list a:hover {
+        .categories a:hover {
             background: #30363d;
             text-decoration: none;
         }
-        .post-list li {
+        
+        .post-list {
             list-style: none;
-            margin-bottom: 12px;
+            padding: 0;
+        }
+        .post-list li {
+            padding: 10px 0;
             border-bottom: 1px solid #21262d;
-            padding-bottom: 10px;
         }
         .post-list a {
-            font-size: 1.2em;
+            font-size: 18px;
             font-weight: 500;
+        }
+        .post-list small {
+            color: #8b949e;
+            font-size: 14px;
+            margin-left: 12px;
+        }
+        
+        .post-content {
+            margin: 20px 0;
+        }
+        .post-content h2 {
+            color: #f0f6fc;
+            font-size: 22px;
+            margin: 25px 0 10px;
+        }
+        .post-content h3 {
+            color: #f0f6fc;
+            font-size: 18px;
+            margin: 20px 0 8px;
+        }
+        .post-content ul, .post-content ol {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        .post-content li {
+            margin-bottom: 4px;
+        }
+        .post-content blockquote {
+            border-left: 3px solid #58a6ff;
+            padding-left: 16px;
+            color: #8b949e;
+            margin: 16px 0;
+        }
+        .post-content code {
+            background: #161b22;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .post-content pre {
+            background: #161b22;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
         }
         .post-meta {
             color: #8b949e;
-            font-size: 0.9em;
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 16px;
         }
+        
+        .related-posts {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+        }
+        .related-posts h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #f0f6fc;
+        }
+        .related-posts li {
+            list-style: none;
+            padding: 4px 0;
+        }
+        
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #f0f6fc;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #f0f6fc;
+            margin: 20px 0 10px;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        
         footer {
             border-top: 1px solid #30363d;
             padding-top: 20px;
             margin-top: 40px;
             text-align: center;
+            font-size: 14px;
             color: #8b949e;
         }
         footer a {
@@ -67,43 +162,13 @@
         footer a:hover {
             color: #f0f6fc;
         }
-        .post-content ul, .post-content ol {
-            padding-left: 25px;
-        }
-        .post-content blockquote {
-            border-left: 3px solid #58a6ff;
-            padding-left: 15px;
-            color: #8b949e;
-        }
-        .post-content code {
-            background: #161b22;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-        .post-content pre {
-            background: #161b22;
-            padding: 15px;
-            border-radius: 6px;
-            overflow-x: auto;
-        }
-        .related-posts {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #30363d;
-        }
-        .related-posts h3 {
-            font-size: 1.2em;
-        }
-        .related-posts li {
-            list-style: none;
-        }
     </style>
 </head>
 <body>
     <header>
         <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
         <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
-        <div class="categories-list">
+        <div class="categories">
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
@@ -111,7 +176,7 @@
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
         </div>
     </header>
-    <main><h1>MemPalace — память для вашего ИИ, которая наконец-то работает</h1><p class='post-meta'>26 August 2026</p><div class='post-content'><p>🔥
+    <main><h1>MemPalace  память для вашего ИИ, которая наконец-то работает</h1><p class='post-meta'>26 August 2026</p><div class='post-content'><p>🔥
 MemPalace — память для вашего ИИ, которая наконец-то работает
 ❓
 Что это:
@@ -128,13 +193,9 @@ MemPalace — это open-source система памяти для AI-аген�
 🎯
 Кому пригодится:
 Разработчикам чат-ботов, AI-ассистентов и автономных агентов, которые устали от того, что их творение при каждом новом диалоге знакомится с пользователем заново, как рыбка Дори. Если строите персонализированные приложения на LLM — это буквально мастхэв в стек. Ну а если просто хотите, чтобы ваш локальный ассистент запомнил, что вы ненавидите понедельники и пьёте кофе без сахара, — тоже забирайте, не пожалеете.
-100% опенсорс</p></div><div class="related-posts"><h3>📚 Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdev/common-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">google/skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне? 🔥</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов: экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
+100% опенсорс</p></div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html"> warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html"> googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне? </a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html"> Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
     <footer>
-        © 2026 Idea Scout &middot;
-        <a href="https://t.me/idea_scout">Telegram</a> &middot;
-        <a href="https://vk.com/idea_scout">VK</a> &middot;
-        <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot;
-        <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        © 2026 Idea Scout · <a href="https://t.me/idea_scout">Telegram</a> · <a href="https://vk.com/idea_scout">VK</a> · <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> · <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
     </footer>
 </body>
 </html>
