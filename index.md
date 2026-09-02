@@ -30,4 +30,4 @@ title: Idea Scout — AI-находки для разработчиков
 
 ---
 
-© Idea Scout 2026 [Telegram](https://t.me/idea_scout) | [VK](https://vk.com/idea_scout) | [Pinterest](https://ru.pinterest.com/idea_scout/) | [Дзен](https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k)
+© Idea Scout2026 [Telegram](https://t.me/idea_scout)|[VK](https://vk.com/idea_scout)|[Pinterest](https://ru.pinterest.com/idea_scout/)|[Дзен](https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k)
