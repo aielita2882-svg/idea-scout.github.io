@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Надоело по десять раз переписывать одни и те же промпты и инструкции, чтобы ваш AI-агент перестал тупить и начал наконец-то работать? | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="Надоело по десять раз переписывать одни и те же промпты и инструкции, чтобы ваш AI-агент перестал тупить и начал наконец-то работать?
+
+**Что это**
+Common Skills">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #7ab7ff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        background-color: #1a2332;   /* чуть светлее фона */
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #1a2332;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #4d9eff;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #1a2332;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #1a2332;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #1a2332;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-light text-decoration-none">Idea Scout - AI-находки для разработчиков</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Надоело по десять раз переписывать одни и те же промпты и инструкции, чтобы ваш AI-агент перестал тупить и начал наконец-то работать?</h1>
+        <p class="post-meta">31 August 2026</p>
+        <div class="post-content"><p>Надоело по десять раз переписывать одни и те же промпты и инструкции, чтобы ваш AI-агент перестал тупить и начал наконец-то работать?</p>
+<p><strong>Что это</strong>
+Common Skills - это своего рода «шпаргалка на стероидах» и библиотека универсальных навыков для AI-агентов. Проект создан командой Warp (теми самыми ребятами, что делают самый стильный терминал в индустрии), чтобы избавить разработчиков от рутины. Вместо того чтобы с нуля придумывать, как агент должен взаимодействовать с кодом или обрабатывать запросы, вы просто берете готовые, обкатанные в продакшене инструкции и интегрируете их в свой пайплайн.</p>
+<p><strong>В чем фишка</strong> 💡
+Здесь нет магии, но есть здравый смысл и отличный инженерный подход:
+- Готовые пресеты для типовых задач: копируете, слегка правите под свой проект и запускаете.
+- Жесткая структура: инструкции написаны так, чтобы их было легко читать и расширять, не сломав всю логику.
+- Прагматизм: всё заточено под реальное применение, а не под красивые демо-ролики.
+- Универсальность: это действительно common-решения, которые не привязывают вас к узким костылям.
+- Экономия времени: вы фокусируетесь на бизнес-логике, а не на том, как объяснить нейронке базовые вещи.</p>
+<p><strong>Кто создатель</strong>
+За проектом стоит команда Warp. Если вы хоть раз открывали их терминал, то знаете, что эти люди помешаны на Developer Experience (DX). Именно этот подход они перенесли и в библиотеку навыков для агентов.</p>
+<p><strong>Статистика</strong> 🚀
+На текущий момент проект собрал 348 звезд на GitHub. Весь код написан на Python. Репозиторий живой: коммиты прилетают регулярно, активность стабильная, а комьюнити вокруг инструментов Warp растет с каждым днем.</p>
+<p><strong>Для кого</strong> 🎯
+Если вы строите AI-агента и чувствуете, что превращаетесь в «оператора по копипасту» собственных промптов - вам сюда. Проект будет полезен:
+- Python-разработчикам, создающим агентские системы.
+- LLM-инженерам, которые ищут лучшие практики структурирования навыков.
+- Всем, кто хочет подсмотреть, как организуют работу с AI в серьезных продакшен-командах.</p>
+<p>Писать всё с нуля на чистом энтузиазме и литрах кофе - это, конечно, по-геройски, но зачем страдать, когда профи уже проложили дорогу?</p>
+<p><strong>Мое мнение</strong>
+Проект выглядит как отличный стартовый пакет. Главный плюс - это избавление от «страха чистого листа» при проектировании логики агента. Из подводных камней: так как это универсальный набор, для очень специфических задач вам все равно придется допиливать инструкции руками. Но как база - это 10 из 10. Стоит попробовать, если вам дорог ваш сон и ментальное здоровье.</p>
+<p><strong>Заключение</strong>
+Common Skills - это эффективный способ ускорить разработку AI-инструментов, используя опыт команды, которая знает толк в удобстве для разработчиков. Меньше рутины - больше реального кода.</p>
+<p><strong>🔗 100% Опенсорс</strong>: <a href="https://github.com/warpdotdev/common-skills">common-skills</a></p></div>
+        <div class="related-posts"><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="btn btn-outline-primary btn-sm">← На главную</a></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

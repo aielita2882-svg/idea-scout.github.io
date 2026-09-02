@@ -8,96 +8,136 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
     <style>
-        body {
-            background: linear-gradient(145deg, #0d1117 0%, #1a2332 100%);
-            color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            padding-top: 2rem;
-            min-height: 100vh;
-        }
-        a { color: #58a6ff; transition: color 0.3s; }
-        a:hover { color: #79c0ff; text-decoration: none; }
-        .post-content h2 { color: #f0f6fc; margin-top: 2rem; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
-        .post-content h3 { color: #f0f6fc; margin-top: 1.5rem; }
-        .post-content ul, .post-content ol { padding-left: 1.5rem; }
-        .post-content blockquote {
-            border-left: 4px solid #1f6feb;
-            padding-left: 1rem;
-            color: #8b949e;
-            margin: 1rem 0;
-            background: #161b22;
-            padding: 1rem;
-            border-radius: 0 6px 6px 0;
-        }
-        .post-content code {
-            background: #161b22;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-size: 0.9em;
-            color: #f0f6fc;
-        }
-        .post-content pre {
-            background: #161b22;
-            padding: 1rem;
-            border-radius: 6px;
-            overflow-x: auto;
-        }
-        .card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: #58a6ff;
-            box-shadow: 0 8px 30px rgba(88, 166, 255, 0.15);
-        }
-        .card-title a { color: #f0f6fc; text-decoration: none; }
-        .card-title a:hover { color: #79c0ff; }
-        .card-text { color: #8b949e; }
-        .category-badge {
-            background: #21262d;
-            color: #58a6ff;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            border: 1px solid #30363d;
-            transition: all 0.3s;
-        }
-        .category-badge:hover {
-            background: #30363d;
-            color: #79c0ff;
-            border-color: #58a6ff;
-            transform: scale(1.05);
-        }
-        .footer {
-            border-top: 1px solid #30363d;
-            padding-top: 1.5rem;
-            margin-top: 2rem;
-            text-align: center;
-            color: #8b949e;
-        }
-        .footer a { color: #8b949e; }
-        .footer a:hover { color: #f0f6fc; }
-        .related-posts {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #30363d;
-        }
-        .post-meta { color: #8b949e; font-size: 0.9rem; }
-        .btn-home {
-            color: #58a6ff;
-            border-color: #30363d;
-        }
-        .btn-home:hover {
-            background: #21262d;
-            color: #79c0ff;
-        }
-        .display-6 {
-            font-weight: 700;
-            color: #f0f6fc;
-        }
-    </style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #7ab7ff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        background-color: #1a2332;   /* чуть светлее фона */
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #1a2332;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #4d9eff;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #1a2332;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #1a2332;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #1a2332;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
 </head>
 <body>
     <div class="container">
@@ -116,8 +156,10 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-open-llm-vtuber-eto-innovatsionnoe-reshenie-dlya-tekh-kto-me.html">Open-LLM-VTuber  это инновационное решение для тех, кто мечт</a></h5>
-                        <p class='card-text'>Open-LLM-VTuber  это инновационное решение для тех, кто мечтает о полноценном цифровом напарнике, как в японской анимации. Программа превращает любую языковую модель в интерактивного собеседника, с ко...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-hkudsdeeptutor.html"> HKUDSDeepTutor</a></h5>
+                        <p class='card-text'>HKUDSDeepTutor
+
+ Что это DeepTutor  это движок для создания персонализированных AI-тьюторов, которые адаптируются под каждого ученика и сопровождают его в обучении на протяжении всей жизни. Проект по...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
@@ -126,8 +168,10 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-prefect-eto-prodvinutyy-instrument-na-baze-python-sozdanny.html">Prefect  это продвинутый инструмент на базе Python, созданны</a></h5>
-                        <p class='card-text'>Prefect  это продвинутый инструмент на базе Python, созданный для управления сложными потоками данных и обеспечения их стабильной работы. Забудьте о примитивных планировщиках вроде cron и бесконечной...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nvidiaskillspector.html"> NVIDIASkillSpector</a></h5>
+                        <p class='card-text'>NVIDIASkillSpector
+
+ Что это Сканер безопасности для скиллов AI-агентов, который не даёт тебе подхватить вредоносный плагин вместе с вдохновением. Проект решает реальную боль современного вайб-кодинг...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
@@ -136,10 +180,11 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-seo-zagolovok-agentic-data-cracking-kak-perestat-szhigat-to.html">SEO-заголовок Agentic Data Cracking как перестать сжигать то</a></h5>
-                        <p class='card-text'>SEO-заголовок Agentic Data Cracking как перестать сжигать токены в RAG
-Мета-описание Узнайте, как адаптивная структуризация данных сокращает расходы на LLM-агентов в 28 раз. Решение проблемы дорогих з...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-robin-ai-razvedka-v-darknete-bez-boli-i-mata.html"> Robin AI-разведка в даркнете без боли и мата</a></h5>
+                        <p class='card-text'>Robin AI-разведка в даркнете без боли и мата
+
+Задумывался когда-нибудь, что случится, если твои данные утекут в даркнет? Скорее всего, ты узнаешь об этом слишком поздно - когда на почту придёт письмо...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
             </div>
@@ -147,10 +192,11 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-15-seo-zagolovok-aimock-kak-testirovat-ii-prilozheniya-bez-trat.html">SEO-заголовок Aimock как тестировать ИИ-приложения без трат </a></h5>
-                        <p class='card-text'>SEO-заголовок Aimock как тестировать ИИ-приложения без трат на токены
-Мета-описание Разбираем aimock - инструмент для мокирования ИИ-инфраструктуры. Миллион установок за неделю, JSON-конфиги и ускорен...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-15</small></p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-mjlab.html"> mjlab</a></h5>
+                        <p class='card-text'>mjlab
+
+ Что это Это амбициозный фреймворк, который объединяет мощь физического движка MuJoCo с невероятной скоростью вычислений Warp для создания идеальной среды обучения роботов. Проект решает главн...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
             </div>
@@ -158,10 +204,11 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-seo-zagolovok-bloom-wilt-kak-effektivno-vzlamyvat-llm-cherez.html">SEO-заголовок BLOOM-WILT как эффективно взламывать LLM через</a></h5>
-                        <p class='card-text'>SEO-заголовок BLOOM-WILT как эффективно взламывать LLM через логиты
-Мета-описание Разбираем BLOOM-WILT - умный инструмент для автоматического аудита LLM, который находит опасные паттерны поведения без...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-vitali87code-graph-rag.html"> vitali87code-graph-rag</a></h5>
+                        <p class='card-text'>vitali87code-graph-rag
+
+ Что это Это RAG-система для монorepo, которая с помощью графа знаний и AI позволяет не просто искать по коду, а реально понимать структуру мультиязычных кодовых баз. По сути...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
             </div>
@@ -169,10 +216,13 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-seo-zagolovok-cag-protiv-rag-kak-perestat-pereplachivat-za.html">SEO-заголовок CAG против RAG как перестать переплачивать за </a></h5>
-                        <p class='card-text'>SEO-заголовок CAG против RAG как перестать переплачивать за векторные БД
-Мета-описание Разбираем Cache-Augmented Generation CAG. Узнайте, как кеширование промптов ускоряет LLM и экономит бюджет на API...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-22</small></p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-seo-bolshe-ne-rabotaet-net-ono-prosto-mutirovalo-v-geo.html">SEO больше не работает? Нет, оно просто мутировало в GEO!</a></h5>
+                        <p class='card-text'>SEO больше не работает? Нет, оно просто мутировало в GEO!
+
+
+
+Забудьте про бесконечную закупку ссылок и молитвы на алгоритмы Google из 2010-х. Пока вы вылизываете мета-теги, ваши потенциальные клиенты...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
             </div>
@@ -180,9 +230,37 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-seo-zagolovok-cord-kak-kalibrovat-veroyatnosti-neyrosetey-be.html">SEO-заголовок CORD как калибровать вероятности нейросетей бе</a></h5>
-                        <p class='card-text'>SEO-заголовок CORD как калибровать вероятности нейросетей без смены предсказаний
-Мета-описание Разбираем CORD - метод постфактум калибровки, который исправляет уверенность модели, не меняя ее итоговый...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-vsyo-eshche-verite-vsemu-chto-vydaet-vash-lyubimyy-chat.html">А вы всё еще верите всему, что выдает ваш любимый чат-бот, или уже привыкли перепроверять каждый чих через Google?</a></h5>
+                        <p class='card-text'>А вы всё еще верите всему, что выдает ваш любимый чат-бот, или уже привыкли перепроверять каждый чих через Google?
+
+Что это 
+Перед нами дерзкий гибридный фреймворк для автоматического фактчекинга. Вме...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-vsyo-eshche-vruchnuyu-kopiruete-nomera-cve-iz-odnogo-ok.html">А вы всё еще вручную копируете номера CVE из одного окна в другое, надеясь не сойти с ума от количества открытых вкладок?</a></h5>
+                        <p class='card-text'>А вы всё еще вручную копируете номера CVE из одного окна в другое, надеясь не сойти с ума от количества открытых вкладок?
+
+Что это 
+CVE MCP Server - это профессиональный сервер протокола MCP, который...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-a-vy-znali-chto-vash-umnyy-kalibrator-mozhet-vtikharya-perep.html">А вы знали, что ваш умный калибратор может втихаря переписать решение нейросети, просто перекинув пару процентов вероятности в другой класс?</a></h5>
+                        <p class='card-text'>А вы знали, что ваш умный калибратор может втихаря переписать решение нейросети, просто перекинув пару процентов вероятности в другой класс? 
+
+Что это 
+Речь об инструменте CORD - адаптере-ремонтнике д...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-01</small></p>
                     </div>
                 </div>
@@ -191,9 +269,11 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-seo-zagolovok-code-graph-rag-kak-priruchit-monrepozitoriy-s.html">SEO-заголовок Code Graph RAG как приручить монрепозиторий с </a></h5>
-                        <p class='card-text'>SEO-заголовок Code Graph RAG как приручить монрепозиторий с помощью AI и графов
-Мета-описание Забудьте про бесконечный grep. Разбираем Code Graph RAG - умную систему навигации по коду, которая понимае...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-znali-chto-dazhe-samaya-umnaya-neyronka-mozhet-pasovat-.html">А вы знали, что даже самая умная нейронка может пасовать перед задачей за 8 класс, если ей не перевести условие на правильный язык?</a></h5>
+                        <p class='card-text'>А вы знали, что даже самая умная нейронка может пасовать перед задачей за 8 класс, если ей не перевести условие на правильный язык?
+
+Что это 
+NL2AGBench - это первый в своем роде бенчмарк, созданный д...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
@@ -202,9 +282,11 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-seo-zagolovok-deeptutor-sozdaem-personalnogo-ai-repetitora.html">SEO-заголовок DeepTutor создаем персонального AI-репетитора </a></h5>
-                        <p class='card-text'>SEO-заголовок DeepTutor создаем персонального AI-репетитора на Python
-Мета-описание Обзор DeepTutor от HKUDS - фреймворка для разработки адаптивных AI-тьюторов с памятью и поддержкой lifelong learning...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-kogda-nibud-zadumyvalis-pochemu-odna-maznya-stoit-milli.html">А вы когда-нибудь задумывались, почему одна мазня стоит миллионы, а другая - ничего, и можно ли объяснить это математически?</a></h5>
+                        <p class='card-text'>А вы когда-нибудь задумывались, почему одна мазня стоит миллионы, а другая - ничего, и можно ли объяснить это математически?
+
+Что это 
+Перед нами амбициозный AI-фреймворк, который превращает компьютер...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
@@ -213,42 +295,8 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-seo-zagolovok-gradient-update-mismatch-kak-na-samom-dele-obu.html">SEO-заголовок Gradient-Update Mismatch как на самом деле обу</a></h5>
-                        <p class='card-text'>SEO-заголовок Gradient-Update Mismatch как на самом деле обучать PINN
-Мета-описание Разбираем феномен GUM в физически-информированных нейросетях и метод GUA, который исправляет ошибки популярных оптим...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-01</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-seo-zagolovok-grok-build-i-browser-use-teper-ii-sam-khodit-p.html">SEO-заголовок Grok Build и Browser Use теперь ИИ сам ходит п</a></h5>
-                        <p class='card-text'>SEO-заголовок Grok Build и Browser Use теперь ИИ сам ходит по сайтам
-Мета-описание Grok получил доступ к браузеру через Browser Use. Узнайте, как автоматизировать веб-серфинг, сбор данных и тесты прил...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-27</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-seo-zagolovok-lévy-attention-kak-izbavit-neyroseti-ot-uvere.html">SEO-заголовок Lévy Attention как избавить нейросети от увере</a></h5>
-                        <p class='card-text'>SEO-заголовок Lévy Attention как избавить нейросети от уверенного бреда
-Мета-описание Разбираем Lévy Attention - новый стохастический оператор для временных рядов, который считает неопределенность мод...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-22</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-seo-zagolovok-nvidia-skillspector-kak-ne-poymat-virus-vmest.html">SEO-заголовок NVIDIA SkillSpector как не поймать вирус вмест</a></h5>
-                        <p class='card-text'>SEO-заголовок NVIDIA SkillSpector как не поймать вирус вместе с AI-скиллом
-Мета-описание Обзор SkillSpector от NVIDIA - сканера безопасности для AI-агентов. Защитите свои данные от вредоносных плагино...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-kogda-nibud-zadumyvalis-pochemu-poisk-na-ogromnykh-mark.html">А вы когда-нибудь задумывались, почему поиск на огромных маркетплейсах иногда ведет себя как пьяный стажер? Ищете белые кроссовки Nike, а система с гордостью предлагает вам рыжие ботинки Timberland или кеды Converse. Добро пожаловать в мир проблем с кодовыми книгами и эмбеддингами.</a></h5>
+                        <p class='card-text'>А вы когда-нибудь задумывались, почему поиск на огромных маркетплейсах иногда ведет себя как пьяный стажер? Ищете белые кроссовки Nike, а система с гордостью предлагает вам рыжие ботинки Timberland ил...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
@@ -257,9 +305,11 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-seo-zagolovok-pageindex-kak-sozdat-rag-bez-vektornykh-baz-da.html">SEO-заголовок PageIndex как создать RAG без векторных баз да</a></h5>
-                        <p class='card-text'>SEO-заголовок PageIndex как создать RAG без векторных баз данных
-Мета-описание Забудьте о галлюцинациях AI. Разбираем PageIndex - новый подход к индексации документов, который заменяет векторный поиск...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-kogda-nibud-mechtali-chtoby-kto-to-drugoy-torgovalsya-z.html">А вы когда-нибудь мечтали, чтобы кто-то другой торговался за вас до победного, пока вы спокойно пьете кофе или спите?</a></h5>
+                        <p class='card-text'>А вы когда-нибудь мечтали, чтобы кто-то другой торговался за вас до победного, пока вы спокойно пьете кофе или спите?
+
+Что это
+XianyuAutoAgent - это мощный комбайн на стероидах искусственного интеллек...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
@@ -268,9 +318,21 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-seo-zagolovok-papergym-kak-nauchit-neyroset-planirovat-iss.html">SEO-заголовок PaperGym как научить нейросеть планировать исс</a></h5>
-                        <p class='card-text'>SEO-заголовок PaperGym как научить нейросеть планировать исследования
-Мета-описание Разбираем PaperGym - фреймворк для обучения ИИ-ученых. Узнайте, как победить утечку критериев и заставить LLM думать...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-tozhe-zametili-chto-vash-rag-bot-inogda-vedet-sebya-kak.html">А вы тоже заметили, что ваш RAG-бот иногда ведет себя как стажер после бессонной ночи вроде что-то нашел, но отвечает невпопад, потому что векторный поиск подсунул ему случайный кусок текста с похожими словами?</a></h5>
+                        <p class='card-text'>А вы тоже заметили, что ваш RAG-бот иногда ведет себя как стажер после бессонной ночи вроде что-то нашел, но отвечает невпопад, потому что векторный поиск подсунул ему случайный кусок текста с похожим...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-tozhe-chuvstvuete-kak-vash-bankovskiy-schet-taet-s-kazh.html">А вы тоже чувствуете, как ваш банковский счет тает с каждым сложным запросом к корпоративному AI-помощнику? </a></h5>
+                        <p class='card-text'>А вы тоже чувствуете, как ваш банковский счет тает с каждым сложным запросом к корпоративному AI-помощнику? 
+
+Что это
+Речь об Agentic Data Cracking - дерзком подходе к работе с неструктурированным хао...</p>
                         <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                     </div>
                 </div>
@@ -279,9 +341,80 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-seo-zagolovok-prime-agent-kak-vyzhat-iz-llm-maksimum-cherez-.html">SEO-заголовок Prime Agent как выжать из LLM максимум через р</a></h5>
-                        <p class='card-text'>SEO-заголовок Prime Agent как выжать из LLM максимум через рекурсию
-Мета-описание Разбираем Prime Agent от Prime Intellect - среду для автономных агентов, которая превращает LLM в самосовершенствующую...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-uvereny-chto-vasha-neyronka-ne-nachnet-sovetovat-polzov.html">А вы уверены, что ваша нейронка не начнет советовать пользователям странные вещи, как только вы выкатите ее в прод? </a></h5>
+                        <p class='card-text'>А вы уверены, что ваша нейронка не начнет советовать пользователям странные вещи, как только вы выкатите ее в прод? 
+
+Что это
+BLOOM-WILT - это продвинутый пайплайн для автоматического аудита больших я...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-a-vy-uvereny-chto-vasha-neyroset-stavit-diagnoz-po-simptomam.html">А вы уверены, что ваша нейросеть ставит диагноз по симптомам, а не потому, что врач в соседнем отделении любит использовать жирный шрифт и странные отступы?</a></h5>
+                        <p class='card-text'>А вы уверены, что ваша нейросеть ставит диагноз по симптомам, а не потому, что врач в соседнем отделении любит использовать жирный шрифт и странные отступы?
+
+Что это
+CAST Concept-guided Artifact Suppr...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-29</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-uvereny-chto-za-krasivym-api-interfeysom-skryvaetsya-im.html">А вы уверены, что за красивым API-интерфейсом скрывается именно та модель, за которую вы платите деньги, а не какой-нибудь обрезанный клон?</a></h5>
+                        <p class='card-text'>А вы уверены, что за красивым API-интерфейсом скрывается именно та модель, за которую вы платите деньги, а не какой-нибудь обрезанный клон?
+
+Что это
+Перед нами суровый судебно-экспертный протокол для...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-uvereny-chto-internet-ne-pomnit-o-vas-lishnego-ili-chto.html">А вы уверены, что интернет не помнит о вас лишнего? Или, что еще хуже, уверены ли вы, что ваша компания не оставила в сети столько зацепок, что любой школьник-хакер соберет ваше досье за обеденный перерыв?</a></h5>
+                        <p class='card-text'>А вы уверены, что интернет не помнит о вас лишнего? Или, что еще хуже, уверены ли вы, что ваша компания не оставила в сети столько зацепок, что любой школьник-хакер соберет ваше досье за обеденный пер...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-vash-ai-assistent-snova-zabyl-chto-vy-nenavidite-kinzu-i-rab.html">Ваш AI-ассистент снова забыл, что вы ненавидите кинзу и работаете по спринтам, хотя вы говорили об этом десять минут назад? Знакомо. Проблема в том, что LLM-агенты до сих пор работают с памятью как золотые рыбки либо забивают контекст всем подряд, сжигая ваши деньги на токенах, либо теряют важные детали в цифровом шуме.</a></h5>
+                        <p class='card-text'>Ваш AI-ассистент снова забыл, что вы ненавидите кинзу и работаете по спринтам, хотя вы говорили об этом десять минут назад? Знакомо. Проблема в том, что LLM-агенты до сих пор работают с памятью как зо...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-vash-server-vpadaet-v-komu-kak-tolko-vy-pytaetes-skormit-gra.html">Ваш сервер впадает в кому, как только вы пытаетесь скормить графовой нейросети данные реальной соцсети?</a></h5>
+                        <p class='card-text'>Ваш сервер впадает в кому, как только вы пытаетесь скормить графовой нейросети данные реальной соцсети? 
+
+Что это
+Перед нами кейс по созданию полноценной end-to-end GNN-системы ранжирования, которая н...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-29</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-vasha-llm-snova-zabyla-chto-ona-delala-pyat-minut-nazad-ili-.html">Ваша LLM снова забыла, что она делала пять минут назад, или захлебнулась в собственном контекстном окне? Поздравляю, вы столкнулись с потолком своего промпт-инжиниринга, а не с пределом интеллекта модели.</a></h5>
+                        <p class='card-text'>Ваша LLM снова забыла, что она делала пять минут назад, или захлебнулась в собственном контекстном окне? Поздравляю, вы столкнулись с потолком своего промпт-инжиниринга, а не с пределом интеллекта мод...</p>
                         <p class='card-text'><small class='text-muted'>2026-08-26</small></p>
                     </div>
                 </div>
@@ -290,42 +423,11 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-seo-zagolovok-robin-ai-avtomatiziruem-osint-i-poisk-po-darkn.html">SEO-заголовок Robin AI автоматизируем OSINT и поиск по даркн</a></h5>
-                        <p class='card-text'>SEO-заголовок Robin AI автоматизируем OSINT и поиск по даркнету с помощью ИИ
-Мета-описание Обзор Robin - мощного инструмента для разведки в Dark Web. Узнайте, как ИИ помогает искать утечки данных и мо...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-seo-zagolovok-mjlab-uskoryaem-obuchenie-robotov-s-mujoco-i-w.html">SEO-заголовок mjlab ускоряем обучение роботов с MuJoCo и War</a></h5>
-                        <p class='card-text'>SEO-заголовок mjlab ускоряем обучение роботов с MuJoCo и Warp
-Мета-описание Обзор mjlab - фреймворка для RL, который объединяет физику MuJoCo и скорость Warp. Узнайте, как обучать роботов в тысячи раз...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-seo-zagolovok-biometriya-po-setchatke-kak-neyroset-navodit-p.html">SEO-заголовок Биометрия по сетчатке как нейросеть наводит по</a></h5>
-                        <p class='card-text'>SEO-заголовок Биометрия по сетчатке как нейросеть наводит порядок в медкартах
-Мета-описание Ученые из Роттердама создали систему идентификации пациентов по снимкам глазного дна с точностью 99.9. Разби...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-seo-zagolovok-kak-zamenit-armiyu-annotatorov-odnoy-vlm-razbo.html">SEO-заголовок Как заменить армию аннотаторов одной VLM разбо</a></h5>
-                        <p class='card-text'>SEO-заголовок Как заменить армию аннотаторов одной VLM разбор MoE системы
-Мета-описание Узнайте, как Mixture-of-Experts VLM с 35B параметрами экономит 80 бюджета на обработку документов и работает на...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-vashi-lossy-v-pinn-krasivo-padayut-a-model-vse-ravno-otkazyv.html">Ваши лоссы в PINN красиво падают, а модель все равно отказывается соблюдать граничные условия? Поздравляю, вы только что столкнулись с иллюзией обучения.</a></h5>
+                        <p class='card-text'>Ваши лоссы в PINN красиво падают, а модель все равно отказывается соблюдать граничные условия? Поздравляю, вы только что столкнулись с иллюзией обучения.
+
+Что это 
+Речь об исследовании проблемы Gradie...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-01</small></p>
                     </div>
                 </div>
@@ -334,9 +436,8 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-seo-zagolovok-kak-zapustit-moshchnye-llm-na-rtx-3090-i-4090-.html">SEO-заголовок Как запустить мощные LLM на RTX 3090 и 4090 об</a></h5>
-                        <p class='card-text'>SEO-заголовок Как запустить мощные LLM на RTX 3090 и 4090 обзор club-3090
-Мета-описание Забудьте про дорогущие H100. Разбираем club-3090 - сборник рецептов для запуска тяжелых нейросетей на домашних в...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-dumaete-chto-sozdat-ai-agenta-eto-prosto-napisat-dlinnyy-pro.html">Думаете, что создать AI-агента - это просто написать длинный промпт и надеяться, что нейронка не сойдет с ума? Спешу вас расстроить настоящий агент - это сложная инженерная конструкция, а не удачная попытка договориться с чат-ботом.</a></h5>
+                        <p class='card-text'>Думаете, что создать AI-агента - это просто написать длинный промпт и надеяться, что нейронка не сойдет с ума? Спешу вас расстроить настоящий агент - это сложная инженерная конструкция, а не удачная п...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
@@ -345,9 +446,8 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-seo-zagolovok-kak-razoblachit-anonimnuyu-ai-model-novyy-prot.html">SEO-заголовок Как разоблачить анонимную AI-модель новый прот</a></h5>
-                        <p class='card-text'>SEO-заголовок Как разоблачить анонимную AI-модель новый протокол верификации
-Мета-описание Устали от стелс-релизов нейросетей? Разбираем четырехэтапный метод черноящичной проверки, который вычисляет р...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-zabyli-pasport-poteryali-medkartu-a-v-baze-dannykh-vy-vnezap.html">Забыли паспорт, потеряли медкарту, а в базе данных вы внезапно превратились в трех разных людей? В медицине такая путаница - не просто бюрократический ад, а реальный риск для жизни, когда анализы одного пациента прилетают в историю болезни другого.</a></h5>
+                        <p class='card-text'>Забыли паспорт, потеряли медкарту, а в базе данных вы внезапно превратились в трех разных людей? В медицине такая путаница - не просто бюрократический ад, а реальный риск для жизни, когда анализы одно...</p>
                         <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                     </div>
                 </div>
@@ -356,8 +456,21 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-spiderfoot-predstavlyaet-soboy-peredovoe-reshenie-dlya-avtom.html">SpiderFoot представляет собой передовое решение для автомати</a></h5>
-                        <p class='card-text'>SpiderFoot представляет собой передовое решение для автоматизации OSINT. Программа осуществляет мониторинг сотен веб-ресурсов, аккумулируя сведения об объектах исследования от IP-адресов и доменных им...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-zadumyvalis-li-vy-pochemu-neyroseti-s-takim-kamennym-litsom-.html">Задумывались ли вы, почему нейросети с таким каменным лицом выдают полную чушь, когда сталкиваются с данными, которых никогда не видели? </a></h5>
+                        <p class='card-text'>Задумывались ли вы, почему нейросети с таким каменным лицом выдают полную чушь, когда сталкиваются с данными, которых никогда не видели? 
+
+Что это
+Lévy Attention - это дерзкая попытка переосмыслить кл...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-22</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-zadumyvalis-li-vy-chto-obshchego-u-upravleniya-raskalennym-g.html">Задумывались ли вы, что общего у управления раскаленным газом в миллионы градусов и попыткой удержать в руках скользкого мыла? Примерно одно и то же - любая ошибка ведет к катастрофе, а объект стремится сбежать из-под контроля.</a></h5>
+                        <p class='card-text'>Задумывались ли вы, что общего у управления раскаленным газом в миллионы градусов и попыткой удержать в руках скользкого мыла? Примерно одно и то же - любая ошибка ведет к катастрофе, а объект стремит...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>
@@ -366,58 +479,11 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-v-sfere-elektronnoy-kommertsii-traditsionnyy-dvukhetapnyy-pr.html">В сфере электронной коммерции традиционный двухэтапный проце</a></h5>
-                        <p class='card-text'>В сфере электронной коммерции традиционный двухэтапный процесс настройки генеративного поиска часто дает сбои. Обычно сначала создаются векторные представления эмбеддинги товаров, а затем на их основе...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-za-rubezhom-aktivno-obsuzhdayut-sposob-pozvolyayushchiy-ispo.html">За рубежом активно обсуждают способ, позволяющий использоват</a></h5>
-                        <p class='card-text'>За рубежом активно обсуждают способ, позволяющий использовать Codex практически без ограничений по количеству запросов. Речь идет о необычном решении, которое сейчас становится виральным в профильных...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-inzhenery-predstavili-innovatsionnyy-metod-stabilizatsii-for.html">Инженеры представили инновационный метод стабилизации формы </a></h5>
-                        <p class='card-text'>Инженеры представили инновационный метод стабилизации формы плазмы на установке MAST Upgrade, внедрив динамический расчет виртуальных схем VC непосредственно в процессе разряда. Ранее этот процесс был...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-innovatsionnyy-podkhod-k-razboru-proizvedeniy-iskusstva-sozd.html">Инновационный подход к разбору произведений искусства создан</a></h5>
-                        <p class='card-text'>Инновационный подход к разбору произведений искусства создан специализированный AI-инструментарий, способный имитировать работу профессионального критика. В основе системы лежит модель Vision Transfor...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-kompaniya-tencent-predstavila-ambitsioznuyu-razrabotku-hy4-p.html">Компания Tencent представила амбициозную разработку  Hy4 Pre</a></h5>
-                        <p class='card-text'>Компания Tencent представила амбициозную разработку  Hy4 Preview. Это не просто обновление, а полноценный флагман в сегменте open-source моделей, распространяемый под лицензией Apache 2.0. Техническая...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-30</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-kompaniya-zhipu-ofitsialno-zapustila-model-glm-53-flash-ko.html">Компания Zhipu официально запустила модель GLM-5.3 Flash, ко</a></h5>
-                        <p class='card-text'>Компания Zhipu официально запустила модель GLM-5.3 Flash, которая готова составить серьезную конкуренцию лидерам индустрии. Стало известно, что ранее тестировавшаяся под псевдонимом Ox Alpha нейросеть...</p>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-zachem-vruchnuyu-klikat-po-knopkam-i-kopipastit-dannye-esli-.html">Зачем вручную кликать по кнопкам и копипастить данные, если можно заставить нейронку делать всю грязную работу за вас?</a></h5>
+                        <p class='card-text'>Зачем вручную кликать по кнопкам и копипастить данные, если можно заставить нейронку делать всю грязную работу за вас?
+
+Что это
+Речь об интеграции плагина Browser Use в экосистему Grok Build. Если упр...</p>
                         <p class='card-text'><small class='text-muted'>2026-08-27</small></p>
                     </div>
                 </div>
@@ -426,100 +492,253 @@
             <div class='col'>
                 <div class='card h-100'>
                     <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-predstavlen-nl2agbench-innovatsionnyy-instrument-dlya-analiz.html">Представлен NL2AGBench  инновационный инструмент для анализа</a></h5>
-                        <p class='card-text'>Представлен NL2AGBench  инновационный инструмент для анализа способности больших языковых моделей трансформировать текстовые условия геометрических задач в специализированный язык DSL, используемый си...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-predstavlen-innovatsionnyy-algoritm-hindsight-memory-prm-pre.html">Представлен инновационный алгоритм Hindsight Memory-PRM, пре</a></h5>
-                        <p class='card-text'>Представлен инновационный алгоритм Hindsight Memory-PRM, предназначенный для совершенствования работы с долгосрочными данными в LLM-агентах. Основная сложность заключалась в том, что эффективность дей...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-predstavlen-innovatsionnyy-gibridnyy-podkhod-k-verifikatsii-.html">Представлен инновационный гибридный подход к верификации дан</a></h5>
-                        <p class='card-text'>Представлен инновационный гибридный подход к верификации данных, где приоритет отдается внутреннему графу знаний, а не внешним веб-ресурсам. Технологический стек включает Sentence-BERT для анализа смы...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-predstavlen-innovatsionnyy-metod-cast-concept-guided-artifac.html">Представлен инновационный метод CAST Concept-guided Artifact</a></h5>
-                        <p class='card-text'>Представлен инновационный метод CAST Concept-guided Artifact Suppression Tuning, призванный повысить прозрачность классификации медицинских данных. Разработчики использовали разреженные автоэнкодеры S...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-29</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-predstavlena-innovatsionnaya-tekhnologiya-blarm-pozvolyayush.html">Представлена инновационная технология BLARM, позволяющая пер</a></h5>
-                        <p class='card-text'>Представлена инновационная технология BLARM, позволяющая переносить динамику из обычного видео на статичную трехмерную модель. В отличие от традиционных подходов, где нужно просчитывать перемещение ка...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-predstavlyaem-pykeen-nsx-gibkuyu-nadstroyku-nad-bibliotekoy-.html">Представляем PyKEEN-NSX  гибкую надстройку над библиотекой P</a></h5>
-                        <p class='card-text'>Представляем PyKEEN-NSX  гибкую надстройку над библиотекой PyKEEN, предназначенную для оптимизации процесса подбора негативных примеров при работе с графами знаний. Разработчики внедрили модульную арх...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-predstavlyaem-mukul975cve-mcp-server-professionalnyy-instru.html">Представляем mukul975cve-mcp-server  профессиональный инстру</a></h5>
-                        <p class='card-text'>Представляем mukul975cve-mcp-server  профессиональный инструмент, который наделяет Claude возможностями полноценного аналитика по безопасности. Этот MCP-сервер объединяет 27 сервисов разведки, использ...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-proekt-jingyaogongminimind-stanet-idealnym-provodnikom-dlya.html">Проект jingyaogongminimind станет идеальным проводником для </a></h5>
-                        <p class='card-text'>Проект jingyaogongminimind станет идеальным проводником для всех, кто стремится разобраться в архитектуре больших языковых моделей, не обладая при этом огромными вычислительными мощностями. Репозитори...</p>
-                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-spetsialisty-iz-industrii-razrabotali-polnotsennuyu-gnn-sist.html">Специалисты из индустрии разработали полноценную GNN-систему</a></h5>
-                        <p class='card-text'>Специалисты из индустрии разработали полноценную GNN-систему ранжирования, адаптированную для гигантских социальных сетей с сотнями миллионов аккаунтов и десятками миллиардов связей. Основная проблема...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-29</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-strategiya-pokupay-ispravlyay-uderzhivay-effektivnyy-podkhod.html">Стратегия Покупай, исправляй, удерживай эффективный подход к</a></h5>
-                        <p class='card-text'>Стратегия Покупай, исправляй, удерживай эффективный подход к доработке компактных ИИ-агентов для интерактивных игр.
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-zachem-dovolstvovatsya-malenkimi-modelyami-kogda-tencent-res.html">Зачем довольствоваться маленькими моделями, когда Tencent решил вывалить в опенсорс настоящего цифрового левиафана?</a></h5>
+                        <p class='card-text'>Зачем довольствоваться маленькими моделями, когда Tencent решил вывалить в опенсорс настоящего цифрового левиафана?
 
-Суть исследования заключалась в оптимизации открытой нейросети объемом 2 млрд парам...</p>
+Что это
+Hy4 Preview - это амбициозный релиз от Tencent, который ломает стереотипы о...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-30</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-zachem-platit-za-premium-podpiski-esli-kitayskie-neyronki-sn.html">Зачем платить за премиум-подписки, если китайские нейронки снова решили раздать мощь почти бесплатно?</a></h5>
+                        <p class='card-text'>Зачем платить за премиум-подписки, если китайские нейронки снова решили раздать мощь почти бесплатно?
+
+Что это
+GLM-5.3 Flash - это новая итерация языковых моделей от Zhipu, которая успела заинтриговат...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-27</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-zachem-skarmlivat-modeli-terabayty-dannykh-esli-ona-vse-ravn.html">Зачем скармливать модели терабайты данных, если она все равно тупит на втором ходу и игнорирует собственные ошибки?</a></h5>
+                        <p class='card-text'>Зачем скармливать модели терабайты данных, если она все равно тупит на втором ходу и игнорирует собственные ошибки?
+
+Что это 
+Перед нами детальный гайд по воспитанию компактных языковых моделей всего...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-mechtaete-o-sobstvennom-moshchnom-ii-no-byudzhet-ne-pozvolya.html">Мечтаете о собственном мощном ИИ, но бюджет не позволяет скупить весь склад Nvidia или продать почку за одну H100? </a></h5>
+                        <p class='card-text'>Мечтаете о собственном мощном ИИ, но бюджет не позволяет скупить весь склад Nvidia или продать почку за одну H100? 
+
+Что это
+club-3090 - это своего рода кулинарная книга для тех, кто решил развернуть...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-mechtali-o-sobstvennom-tsifrovom-kompanone-iz-anime-kotoryy-.html">Мечтали о собственном цифровом компаньоне из аниме, который не будет требовать ежемесячную подписку и не сольет ваши странные запросы в облако корпораций? Поздравляю, будущее наступило, и оно живет прямо на вашем жестком диске.</a></h5>
+                        <p class='card-text'>Мечтали о собственном цифровом компаньоне из аниме, который не будет требовать ежемесячную подписку и не сольет ваши странные запросы в облако корпораций? Поздравляю, будущее наступило, и оно живет пр...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-mechtali-sozdat-svoy-analog-chatgpt-no-obnaruzhili-chto-vash.html">Мечтали создать свой аналог ChatGPT, но обнаружили, что ваш бюджет на серверы меньше, чем стоимость одного обеда в приличном кафе? </a></h5>
+                        <p class='card-text'>Мечтали создать свой аналог ChatGPT, но обнаружили, что ваш бюджет на серверы меньше, чем стоимость одного обеда в приличном кафе? 
+
+Что это
+MiniMind - это своего рода интерактивный учебник в виде реп...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nadoelo-videt-soobshchenie-o-tom-chto-vashi-limity-ischerpan.html">Надоело видеть сообщение о том, что ваши лимиты исчерпаны в самый разгар написания фичи? Пока одни смиренно ждут обновления квот, другие используют серые схемы, чтобы заставить нейронку пахать 247.</a></h5>
+                        <p class='card-text'>Надоело видеть сообщение о том, что ваши лимиты исчерпаны в самый разгар написания фичи? Пока одни смиренно ждут обновления квот, другие используют серые схемы, чтобы заставить нейронку пахать 247.
+
+Ч...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nadoelo-vruchnuyu-skarmlivat-dokumenty-neyrosetevomu-bloknot.html">Надоело вручную скармливать документы нейросетевому блокноту Google и ждать, пока он соизволит выдать резюме?</a></h5>
+                        <p class='card-text'>Надоело вручную скармливать документы нейросетевому блокноту Google и ждать, пока он соизволит выдать резюме? 
+
+Что это
+Перед нами notebooklm-py - дерзкий неофициальный Python API и агентский скилл дл...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-nadoelo-vybirat-mezhdu-dorogushchim-oblakom-kotoroe-slivaet-.html">Надоело выбирать между дорогущим облаком, которое сливает ваши данные, и open-source моделями, которые путают таблицу с иероглифами?</a></h5>
+                        <p class='card-text'>Надоело выбирать между дорогущим облаком, которое сливает ваши данные, и open-source моделями, которые путают таблицу с иероглифами?
+
+Что это
+Перед нами продакшн-система для глубокого понимания докуме...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-01</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-15-nadoelo-zhdat-otveta-ot-llm-po-pyat-minut-i-s-uzhasom-smotre.html">Надоело ждать ответа от LLM по пять минут и с ужасом смотреть, как тают деньги на балансе OpenAI при каждом прогоне тестов? </a></h5>
+                        <p class='card-text'>Надоело ждать ответа от LLM по пять минут и с ужасом смотреть, как тают деньги на балансе OpenAI при каждом прогоне тестов? 
+
+Что это
+Aimock - это дерзкий open-source инструмент для сквозного E2E тест...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-15</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nadoelo-igrat-v-detektiva-pytayas-ponyat-kuda-google-transla.html">Надоело играть в детектива, пытаясь понять, куда Google Translate засунул интеграл и почему таблица с данными внезапно превратилась в иероглифический винегрет? </a></h5>
+                        <p class='card-text'>Надоело играть в детектива, пытаясь понять, куда Google Translate засунул интеграл и почему таблица с данными внезапно превратилась в иероглифический винегрет? 
+
+Что это
+PDFMathTranslate - это спасате...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nadoelo-kazhdyy-raz-obyasnyat-neyronke-kto-vy-i-zachem-vam-e.html">Надоело каждый раз объяснять нейронке, кто вы и зачем вам этот код, будто общаетесь с золотой рыбкой? </a></h5>
+                        <p class='card-text'>Надоело каждый раз объяснять нейронке, кто вы и зачем вам этот код, будто общаетесь с золотой рыбкой? 
+
+Что это
+Hermes Agent - это амбициозный агентский фреймворк от ребят из Nous Research. Если упрос...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nadoelo-plodit-desyatki-fastapi-obertok-tolko-dlya-togo-chto.html">Надоело плодить десятки FastAPI-оберток только для того, чтобы ваш AI-агент мог просто подумать и найти?</a></h5>
+                        <p class='card-text'>Надоело плодить десятки FastAPI-оберток только для того, чтобы ваш AI-агент мог просто подумать и найти?
+
+Что это 
+Superlinked SIE - это открытый inference-сервер и полноценный продакшн-кластер, созда...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-nadoelo-smotret-kak-byudzhet-na-api-utekaet-skvoz-paltsy-iz-.html">Надоело смотреть, как бюджет на API утекает сквозь пальцы из-за бесконечных запросов к векторной базе данных? </a></h5>
+                        <p class='card-text'>Надоело смотреть, как бюджет на API утекает сквозь пальцы из-за бесконечных запросов к векторной базе данных? 
+
+Что это
+Речь пойдет о Cache-Augmented Generation CAG. Если упростить, это способ зашить...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-22</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nadoelo-tratit-nedeli-zhizni-na-rasstanovku-kostey-i-nastroy.html">Надоело тратить недели жизни на расстановку костей и настройку весов в Blender, чтобы персонаж просто помахал рукой? </a></h5>
+                        <p class='card-text'>Надоело тратить недели жизни на расстановку костей и настройку весов в Blender, чтобы персонаж просто помахал рукой? 
+
+Что это
+BLARM - это дерзкий feed-forward метод, который берет обычное видео с одн...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nadoelo-chasami-pyalitsya-v-grafiki-pytayas-razglyadet-tam-k.html">Надоело часами пялиться в графики, пытаясь разглядеть там хоть какой-то намек на голову и плечи или флаг? </a></h5>
+                        <p class='card-text'>Надоело часами пялиться в графики, пытаясь разглядеть там хоть какой-то намек на голову и плечи или флаг? 
+
+Что это
+Sequoia-X - это высокотехнологичный автономный агент, созданный специально для охоты...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-ustali-ot-togo-chto-vashi-llm-pishut-krasivye-abstrakty-no-v.html">Устали от того, что ваши LLM пишут красивые абстракты, но в реальном планировании эксперимента ведут себя как стажер в первый рабочий день? </a></h5>
+                        <p class='card-text'>Устали от того, что ваши LLM пишут красивые абстракты, но в реальном планировании эксперимента ведут себя как стажер в первый рабочий день? 
+
+Что это
+PaperGym - это дерзкий фреймворк, который превраща...</p>
+                        <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-ustali-prosypatsya-v-tri-chasa-nochi-ot-togo-chto-vash-ocher.html">Устали просыпаться в три часа ночи от того, что ваш очередной bash-скрипт решил отдохнуть и уронил весь продакшн? </a></h5>
+                        <p class='card-text'>Устали просыпаться в три часа ночи от того, что ваш очередной bash-скрипт решил отдохнуть и уронил весь продакшн? 
+
+Что это
+Prefect - это продвинутый фреймворк на Python для оркестровки рабочих процес...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-ustali-smotret-kak-vasha-kge-model-buksuet-na-meste-potomu-c.html">Устали смотреть, как ваша KGE-модель буксует на месте, потому что негативные примеры генерируются пальцем в небо? Пора перестать надеяться на рандом и начать использовать мозги вашего графа.</a></h5>
+                        <p class='card-text'>Устали смотреть, как ваша KGE-модель буксует на месте, потому что негативные примеры генерируются пальцем в небо? Пора перестать надеяться на рандом и начать использовать мозги вашего графа.
+
+Что это...</p>
+                        <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col'>
+                <div class='card h-100'>
+                    <div class='card-body'>
+                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-khotite-zayti-v-zoom-koll-v-oblike-ilona-maska-ili-prosto-po.html">Хотите зайти в Zoom-колл в облике Илона Маска или просто потроллить друзей, превратившись в голливудскую звезду за одну секунду? </a></h5>
+                        <p class='card-text'>Хотите зайти в Zoom-колл в облике Илона Маска или просто потроллить друзей, превратившись в голливудскую звезду за одну секунду? 
+
+Что это
+Deep-Live-Cam - это дерзкий open-source проект в сфере компью...</p>
                         <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                     </div>
                 </div>

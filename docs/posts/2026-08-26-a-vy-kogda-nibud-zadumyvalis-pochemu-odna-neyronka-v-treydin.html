@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>А вы когда-нибудь задумывались, почему одна нейронка в трейдинге - это почти всегда путь к быстрому сливу депозита? Ответ прост одинокий ИИ слишком самоуверен и часто галлюцинирует там, где нужны холодный расчет и жесткая критика. | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="А вы когда-нибудь задумывались, почему одна нейронка в трейдинге - это почти всегда путь к быстрому сливу депозита? Ответ прост: одинокий ИИ слишком самоуверен ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #7ab7ff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        background-color: #1a2332;   /* чуть светлее фона */
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #1a2332;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #4d9eff;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #1a2332;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #1a2332;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #1a2332;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-light text-decoration-none">Idea Scout - AI-находки для разработчиков</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">А вы когда-нибудь задумывались, почему одна нейронка в трейдинге - это почти всегда путь к быстрому сливу депозита? Ответ прост одинокий ИИ слишком самоуверен и часто галлюцинирует там, где нужны холодный расчет и жесткая критика.</h1>
+        <p class="post-meta">26 August 2026</p>
+        <div class="post-content"><p>А вы когда-нибудь задумывались, почему одна нейронка в трейдинге - это почти всегда путь к быстрому сливу депозита? Ответ прост: одинокий ИИ слишком самоуверен и часто галлюцинирует там, где нужны холодный расчет и жесткая критика.</p>
+<p><strong>Что это</strong> 💡
+TradingAgents - это не просто очередной скрипт для покупки крипты, а полноценный мультиагентный фреймворк. Представьте, что вы открыли собственный хедж-фонд, но вместо того, чтобы нанимать капризных аналитиков с Уолл-стрит, вы заселили в код целую команду LLM-агентов. Каждый из них играет свою роль, имеет свой характер и зону ответственности. Вместо одного "мнения" нейросети вы получаете результат коллективного разума, который проходит через фильтры критики и риск-менеджмента.</p>
+<p><strong>В чем фишка</strong> 🚀
+Проект превращает процесс принятия решения в настоящий корпоративный триллер:
+- Имитация структуры фирмы: в системе есть все - от новостных аналитиков до генерального управляющего.
+- Битва мнений: встроенный механизм дебатов "быков" и "медведей". Агенты буквально грызутся в чате, чтобы найти дыры в инвестиционной стратегии.
+- Жесткий контроль: риск-менеджеры проверяют каждую сделку, прежде чем она уйдет в исполнение.
+- Всеядный пайплайн: система одновременно переваривает фундаментальные показатели, технический анализ, новости и даже шум из соцсетей.
+- Борьба с однобокостью: многоуровневое обсуждение исключает ситуацию, когда одна ошибка LLM приводит к катастрофе.</p>
+<p><strong>Кто создатель</strong> 🎯
+Проект развивается сообществом энтузиастов и исследователей из Tauric Research, которые решили перенести принципы работы реальных инвестиционных комитетов в мир больших языковых моделей.</p>
+<p><strong>Статистика</strong> ⚡
+Цифры говорят сами за себя: почти 100 тысяч звезд на GitHub. Это настоящий взрыв в узких кругах. Весь стек базируется на Python, поэтому порог входа ниже плинтуса для любого кванта. Активность разработки зашкаливает, а количество форков растет в геометрической прогрессии.</p>
+<p><strong>Для кого</strong> 💡
+- Квантам и дата-сайентистам, которые хотят прикрутить LLM к финансовым рынкам.
+- Разработчикам, изучающим мультиагентные системы (AutoGPT и компания теперь кажутся детским садом).
+- Мечтателям, которые хотят запустить робо-трейдера и уйти смотреть сериалы.</p>
+<p><strong>Мое мнение</strong> 🚀
+Идея с дебатами быков и медведей - это просто пушка. Именно так и работает реальный бизнес: чем больше людей попытаются разнести твою идею в щепки, тем крепче она станет. Главный подводный камень - это, конечно, стоимость токенов при таком количестве агентов и риск того, что они все вместе договорятся о какой-нибудь абсурдной сделке. Стоит ли пробовать? Однозначно да, для исследований и бэктестов это золото. Но заклинаю: не отдавайте этой штуке пенсионные накопления. Рынок любит наказывать самоуверенных, даже если у них в основе лежит GPT-4.</p>
+<p><strong>Заключение</strong>
+TradingAgents доказывает, что будущее ИИ не в одной гигантской модели, а в оркестре специализированных агентов, которые умеют спорить и проверять друг друга. Это мощный инструмент для тех, кто хочет автоматизировать аналитику на профессиональном уровне.</p>
+<p><strong>🔗 100% Опенсорс</strong>: <a href="https://github.com/tauricresearch/tradingagents">TradingAgents</a></p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-po-desyat-raz-perepisyvat-odni-i-te-zhe-prompty-i-in.html">Надоело по десять раз переписывать одни и те же промпты и инструкции, чтобы ваш AI-агент перестал тупить и начал наконец-то работать?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-chto-vash-ai-agent-s-uverennym-vidom-pridumyvaet-nes.html">Надоело, что ваш AI-агент с уверенным видом придумывает несуществующие методы API, а потом искренне удивляется, почему код не работает?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-igrat-v-perekladyvatelya-konteksta-prygaya-mezhdu-py.html">Надоело играть в перекладывателя контекста, прыгая между пятью вкладками браузера, чтобы сравнить, кто из нейронок меньше накосячил в вашем коде?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-a-vy-vsyo-eshche-vruchnuyu-kopiruete-prompty-iz-chata-v-reda.html">А вы всё еще вручную копируете промпты из чата в редактор кода, надеясь, что нейронка в этот раз не нагаллюцинировала? Пора перестать быть перекладывателем токенов и заставить искусственный интеллект работать за вас в режиме полного автопилота.</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
