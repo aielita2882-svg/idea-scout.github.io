@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Автоматизация | Idea Scout - AI-находки для разработчиков</title>
-    <meta name="description" content="Автономный агрегатор open-source AI-моделей, скриптов и инструментов.">
+    <title>Как Памяти автоматизация и ускорить автоматизация | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="Как Памяти автоматизация и ускорить автоматизация">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
     <style>
@@ -121,43 +121,15 @@
                 <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
             </div>
         </header>
-        <main><h1 class='display-6'>Автоматизация</h1><div class='row row-cols-1 g-4'>
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-kak-deepseek-reshenie-i-uskorit-effektivnost-2.html">Как Deepseek решение и ускорить эффективность</a></h5>
-                        <p class='card-text'>DeepSeek не отстаёт  выпустила свою обвязку под названием DeepSeek Harness
-Модели, утилиты, экспертизы, сессии, песочницы, файловые системы, циклы, оркестрация и интерфейсы  всё это реализовано в в...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-14</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-kak-skypilot-optimizatsiya-i-uskorit-effektivnost.html">Как Skypilot оптимизация и ускорить эффективность</a></h5>
-                        <p class='card-text'>SkyPilot
-
-Что это
-Это мощнейшая платформа для управления вычислительными ресурсами, которая превращает разрозненные облачные инстансы в единый суперкомпьютер для работы с искусственным интеллектом. П...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-14</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-kak-druzey-reshenie-i-uskorit-effektivnost.html">Как Друзей решение и ускорить эффективность</a></h5>
-                        <p class='card-text'>Масштабирование графовых нейросетей для рекомендации друзей мульти-хеш эмбеддинги и временное семплирование соседей
-
-Что сделали Ребята из индустрии собрали end-to-end GNN-систему ранжирования для пр...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-29</small></p>
-                    </div>
-                </div>
-            </div>
-            </div></main>
+        <main>
+        <h1 class="display-6">Как Памяти автоматизация и ускорить автоматизация</h1>
+        <p class="post-meta">02 September 2026</p>
+        <div class="post-content"><p>💡 Hindsight Memory-PRM: обучение памяти LLM-агентов с аудируемой ретроспективной оценкой</p>
+<p>❓ Что сделали: Авторы разработали новый метод обучения с подкреплением для долгосрочной памяти LLM-агентов под названием Hindsight Memory-PRM. Главная проблема — операции с памятью (чтение, запись, удаление) невозможно нормально оценить в момент их выполнения, потому что их ценность проявляется только через десятки шагов. Ребята решили это элегантно: они используют машинно-читаемые следы в траектории — попадания в ретривер и цитаты при генерации ответа — чтобы дважды провести аудит. Офлайн они тренируют критика полезности памяти по операциям, а онлайн через контролируемое удаление-переотвечание калибруют кредит доверия для конкретных записей. Этот кредит потом распространяется по цепочкам версий как прокси-награда за действие — без человеческой разметки и без Monte-Carlo переигровки.</p>
+<p>🎰 Результаты: На бенчмарке LoCoMo локальная 8B модель достигла 77.5% при фиксированном общем reader, обогнав своего API-учителя (65.1%) и все воспроизведённые внешние системы. Контекст при этом в восемь раз меньше, чем у Mem0 в его официальной конфигурации. На LongMemEval результат 79.0%. Абляции показывают, что прирост идёт именно от каузальной калибровки, а не от плотности сигнала. Политика сходится к многоверсионной организации памяти, приросты которой не воспроизводит ни один открытый бейзлайн.</p>
+<p>✈️ Зачем это нужно: Это серьёзный шаг к тому, чтобы LLM-агенты могли работать с длинным контекстом не раздувая его в бесконечность и не разоряя бюджет на токены. Метод позволяет тренировать агентов с эффективной памятью на средних по размеру моделях, которые превосходят коммерческие API — мечта для тех, кто устал платить за облака. Практическая польза: персональные ассистенты, которые помнят о тебе всё и не теряют нить через неделю, корпоративные боты с длинной историей диалогов и автоматизация, где нужно принимать решения на основе накопленного контекста. Ну и приятный бонус — отсутствие необходимости в человеческой разметке делает подход масштабируемым для всех, у кого есть пара свободных GPU.</p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-kotorye-reshenie-i-uskorit-effektivnost.html">Как Которые решение и ускорить эффективность</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-google-reshenie-i-uskorit-effektivnost.html">Как Google решение и ускорить эффективность</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-codex-reshenie-i-uskorit-effektivnost.html">Как Codex решение и ускорить эффективность</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-kak-plazmy-upravlenie-i-uskorit-effektivnost.html">Как Плазмы управление и ускорить эффективность</a></li></ul></div>
+        </main>
         <footer class="footer">
             © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
         </footer>

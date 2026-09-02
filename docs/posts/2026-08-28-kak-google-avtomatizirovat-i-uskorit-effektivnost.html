@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Автоматизация | Idea Scout - AI-находки для разработчиков</title>
-    <meta name="description" content="Автономный агрегатор open-source AI-моделей, скриптов и инструментов.">
+    <title>Как Google автоматизировать и ускорить эффективность | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="Как Google автоматизировать и ускорить эффективность">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
     <style>
@@ -121,43 +121,24 @@
                 <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
             </div>
         </header>
-        <main><h1 class='display-6'>Автоматизация</h1><div class='row row-cols-1 g-4'>
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-kak-deepseek-reshenie-i-uskorit-effektivnost-2.html">Как Deepseek решение и ускорить эффективность</a></h5>
-                        <p class='card-text'>DeepSeek не отстаёт  выпустила свою обвязку под названием DeepSeek Harness
-Модели, утилиты, экспертизы, сессии, песочницы, файловые системы, циклы, оркестрация и интерфейсы  всё это реализовано в в...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-14</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-kak-skypilot-optimizatsiya-i-uskorit-effektivnost.html">Как Skypilot оптимизация и ускорить эффективность</a></h5>
-                        <p class='card-text'>SkyPilot
-
-Что это
-Это мощнейшая платформа для управления вычислительными ресурсами, которая превращает разрозненные облачные инстансы в единый суперкомпьютер для работы с искусственным интеллектом. П...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-14</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-kak-druzey-reshenie-i-uskorit-effektivnost.html">Как Друзей решение и ускорить эффективность</a></h5>
-                        <p class='card-text'>Масштабирование графовых нейросетей для рекомендации друзей мульти-хеш эмбеддинги и временное семплирование соседей
-
-Что сделали Ребята из индустрии собрали end-to-end GNN-систему ранжирования для пр...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-29</small></p>
-                    </div>
-                </div>
-            </div>
-            </div></main>
+        <main>
+        <h1 class="display-6">Как Google автоматизировать и ускорить эффективность</h1>
+        <p class="post-meta">28 August 2026</p>
+        <div class="post-content"><p>🔥</p>
+<p>Вы когда-нибудь залипали на карточку товара на Wildberries, а потом забывали, зачем вообще туда зашли? У меня такое каждую пятницу. Вот и автор этого проекта, видимо, тоже устал от бесконечных "а сколько стоило вчера?" — и написал парсер, который сам мониторит цены и сливает всё в Google Sheets.</p>
+<p>Что внутри, если коротко: Python 3.11, Playwright, gspread, Pydantic и Click. Звучит как набор для взрослого, но на деле всё проще. Берёшь список ссылок на товары, кидаешь их в колонку A в Google-таблице, а скрипт сам ходит по каждой карточке, вытаскивает название, текущую цену, старую цену, наличие, рейтинг, число отзывов и аккуратно раскладывает по колонкам B–G. Плюс ведёт историю последних семи значений — чтобы было видно, как продавец играет с тобой в "то скидка 70%, то 30%".</p>
+<p>Мне особенно зашли мелочи: ретраи до трёх раз при сетевых ошибках, ротация User-Agent, случайные паузы между запросами (2–5 секунд), структурированные логи в JSON рядом с обычными. Это не наивный requests с time.sleep(1), а нормальный обученный парсер, который старается не палиться перед WB. И тесты на фикстурах без сети — значит, можно пилить и проверять логику, не боясь получить бан.</p>
+<p>Развёртывание — два пути. Для ленивых: GitHub Actions с ежедневным запуском в 08:00 UTC, секреты для ключа Google и ID таблицы, и всё, дальше оно само. Для контрол-фриков: cron на Linux в 09:00 с логами в /var/log. Никакой магии, чистая инженерия.</p>
+<p>⚡</p>
+<p>Если вы продаёте на WB, закупаетесь там оптом или просто трекаете любимый бренд ради "а вдруг упадёт" — это, пожалуй, один из самых аккуратных и честных способов автоматизировать наблюдение за ценами. Конечно, скрипт честно признаётся: капчу не обходит, residential-прокси не использует, закрытые страницы не парсит. Но для открытых карточек — работает как часы. Я проверила, убедилась, и теперь спокойно смотрю сериалы вместо того, чтобы каждое утро обновлять вкладку в браузере.</p>
+<p>💡</p>
+<p>🎯</p>
+<p>Берите, форкайте, допиливайте под свои нужды — лицензия MIT, никто не спросит, зачем вам 200 артикулов кроссовок в одной таблице.</p>
+<p>👉</p>
+<p>Больше таких находок без воды — в нашем Telegram-канале. Ссылка в профиле сообщества.</p>
+<p>100% опенсорс</p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-agentov-reshenie-i-uskorit-effektivnost.html">Как Агентов решение и ускорить эффективность</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-chtoby-reshenie-i-uskorit-effektivnost.html">Как Чтобы решение и ускорить эффективность</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-uchebnikov-parsing-i-uskorit-effektivnost.html">Как Учебников парсинг и ускорить эффективность</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-kak-intelligence-vizualizatsiya-i-uskorit-effektivnost.html">Как Intelligence визуализация и ускорить эффективность</a></li></ul></div>
+        </main>
         <footer class="footer">
             © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
         </footer>

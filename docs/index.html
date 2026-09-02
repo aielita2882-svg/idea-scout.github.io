@@ -9,27 +9,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #0d1117;
+            background: linear-gradient(145deg, #0d1117 0%, #1a2332 100%);
             color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             padding-top: 2rem;
+            min-height: 100vh;
         }
-        a { color: #58a6ff; }
-        a:hover { color: #79c0ff; }
-        .post-content h2 { color: #f0f6fc; margin-top: 2rem; }
+        a { color: #58a6ff; transition: color 0.3s; }
+        a:hover { color: #79c0ff; text-decoration: none; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #58a6ff, #1f6feb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .post-content h2 { color: #f0f6fc; margin-top: 2rem; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
         .post-content h3 { color: #f0f6fc; margin-top: 1.5rem; }
         .post-content ul, .post-content ol { padding-left: 1.5rem; }
         .post-content blockquote {
-            border-left: 4px solid #58a6ff;
+            border-left: 4px solid #1f6feb;
             padding-left: 1rem;
             color: #8b949e;
             margin: 1rem 0;
+            background: #161b22;
+            padding: 1rem;
+            border-radius: 0 6px 6px 0;
         }
         .post-content code {
             background: #161b22;
             padding: 0.2rem 0.4rem;
             border-radius: 4px;
             font-size: 0.9em;
+            color: #f0f6fc;
         }
         .post-content pre {
             background: #161b22;
@@ -40,28 +52,30 @@
         .card {
             background-color: #161b22;
             border: 1px solid #30363d;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
-        .card-title a {
-            color: #f0f6fc;
-            text-decoration: none;
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #58a6ff;
+            box-shadow: 0 8px 30px rgba(88, 166, 255, 0.15);
         }
-        .card-title a:hover {
-            color: #79c0ff;
-        }
-        .card-text {
-            color: #8b949e;
-        }
+        .card-title a { color: #f0f6fc; text-decoration: none; }
+        .card-title a:hover { color: #79c0ff; }
+        .card-text { color: #8b949e; }
         .category-badge {
             background: #21262d;
             color: #58a6ff;
-            padding: 0.2rem 0.8rem;
+            padding: 0.3rem 1rem;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             border: 1px solid #30363d;
+            transition: all 0.3s;
         }
         .category-badge:hover {
             background: #30363d;
             color: #79c0ff;
+            border-color: #58a6ff;
+            transform: scale(1.05);
         }
         .footer {
             border-top: 1px solid #30363d;
@@ -70,20 +84,27 @@
             text-align: center;
             color: #8b949e;
         }
-        .footer a {
-            color: #8b949e;
-        }
-        .footer a:hover {
-            color: #f0f6fc;
-        }
+        .footer a { color: #8b949e; }
+        .footer a:hover { color: #f0f6fc; }
         .related-posts {
             margin-top: 2rem;
             padding-top: 1.5rem;
             border-top: 1px solid #30363d;
         }
-        .post-meta {
-            color: #8b949e;
-            font-size: 0.9rem;
+        .post-meta { color: #8b949e; font-size: 0.9rem; }
+        .btn-home {
+            color: #58a6ff;
+            border-color: #30363d;
+        }
+        .btn-home:hover {
+            background: #21262d;
+            color: #79c0ff;
+        }
+        .display-6 {
+            background: linear-gradient(135deg, #f0f6fc, #79c0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -104,10 +125,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html"> warpdotdevcommon-skills</a></h5>
-                    <p class='card-text'>🔥 warpdotdev/common-skills
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-kotorye-reshenie-i-uskorit-effektivnost.html">Как Которые решение и ускорить эффективность</a></h5>
+                    <p class='card-text'>warpdotdevcommon-skills
 
-❓ Что это: Коллекция универсальных скиллов для AI-агентов от команды Warp — это та самая штука, которую разработчики терминала Warp собрали, чтобы облегчить жизнь тем, кто</p>
+ Что это Коллекция универсальных скиллов для AI-агентов от команды Warp  это та самая штука, которую разработчики терминала Warp собрали, чтобы облегчить жизнь тем, кто пишет...</p>
                     <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                 </div>
             </div>
@@ -116,10 +137,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html"> googleskills</a></h5>
-                    <p class='card-text'>🔥 google/skills
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-google-reshenie-i-uskorit-effektivnost.html">Как Google решение и ускорить эффективность</a></h5>
+                    <p class='card-text'>googleskills
 
-❓ Что это: Официальный репозиторий от Google, представляющий коллекцию так называемых Agent Skills для продуктов и технологий компании. По сути, это набор структурированных инструкций</p>
+ Что это Официальный репозиторий от Google, представляющий коллекцию так называемых Agent Skills для продуктов и технологий компании. По сути, это набор структурированных инструкций и п...</p>
                     <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                 </div>
             </div>
@@ -128,10 +149,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-open-duck-mini.html"> Open_Duck_Mini</a></h5>
-                    <p class='card-text'>🔥 Open_Duck_Mini
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-robota-reshenie-i-uskorit-effektivnost.html">Как Робота решение и ускорить эффективность</a></h5>
+                    <p class='card-text'>Open_Duck_Mini
 
-❓ Что это: Проект по созданию мини-версии дроида BDX из вселенной Star Wars. Это полноценная робототехническая платформа с открытым исходным кодом, которая позволяет энтузиастам собр</p>
+ Что это Проект по созданию мини-версии дроида BDX из вселенной Star Wars. Это полноценная робототехническая платформа с открытым исходным кодом, которая позволяет энтузиастам собрать...</p>
                     <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                 </div>
             </div>
@@ -140,12 +161,12 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне? </a></h5>
-                    <p class='card-text'>А что, если объединить всех ИИ-помощников в одном окне? 🔥
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-codex-reshenie-i-uskorit-effektivnost.html">Как Codex решение и ускорить эффективность</a></h5>
+                    <p class='card-text'>А что, если объединить всех ИИ-помощников в одном окне? 
 
 Многие уже оценили удобство десктопной версии Codex, но мало кто готов ограничиваться только ею.
 
-Один разработчик решил эту дилемму радикаль</p>
+Один разработчик решил эту дилемму радикальн...</p>
                     <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                 </div>
             </div>
@@ -154,10 +175,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-mirofish.html"> MiroFish</a></h5>
-                    <p class='card-text'>🔥 MiroFish
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-agentov-reshenie-i-uskorit-effektivnost.html">Как Агентов решение и ускорить эффективность</a></h5>
+                    <p class='card-text'>MiroFish
 
-❓ Что это: Это open-source движок группового интеллекта (swarm intelligence), который обещает «предсказывать всё» на основе симуляции поведения множества агентов. По сути, проект берёт ваш</p>
+ Что это Это open-source движок группового интеллекта swarm intelligence, который обещает предсказывать всё на основе симуляции поведения множества агентов. По сути, проект берёт ваши данны...</p>
                     <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                 </div>
             </div>
@@ -166,10 +187,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-claude-watch.html"> claude-watch</a></h5>
-                    <p class='card-text'>🔥 claude-watch
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-chtoby-reshenie-i-uskorit-effektivnost.html">Как Чтобы решение и ускорить эффективность</a></h5>
+                    <p class='card-text'>claude-watch
 
-❓ Что это: Короче, это такая штука, которая прокачивает Claude до уровня видео-аналитика. Закидываешь ему любой ролик, а он его смотрит как человек: находит ключевые моменты по смене с</p>
+ Что это Короче, это такая штука, которая прокачивает Claude до уровня видео-аналитика. Закидываешь ему любой ролик, а он его смотрит как человек находит ключевые моменты по смене сцен,...</p>
                     <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                 </div>
             </div>
@@ -178,10 +199,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-tchmaterial-parser.html"> tchMaterial-parser</a></h5>
-                    <p class='card-text'>🔥 tchMaterial-parser
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-kak-uchebnikov-parsing-i-uskorit-effektivnost.html">Как Учебников парсинг и ускорить эффективность</a></h5>
+                    <p class='card-text'>tchMaterial-parser
 
-❓ Что это: Инструмент для скачивания электронных учебников с китайской государственной образовательной платформы «Smart Education». Скрипт автоматически находит PDF-ссылки на нуж</p>
+ Что это Инструмент для скачивания электронных учебников с китайской государственной образовательной платформы Smart Education. Скрипт автоматически находит PDF-ссылки на нужные у...</p>
                     <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
                 </div>
             </div>
@@ -190,10 +211,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html"> Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></h5>
-                    <p class='card-text'>💡 Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов: экспериментальная демонстрация на MAST Upgrade
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-kak-plazmy-upravlenie-i-uskorit-effektivnost.html">Как Плазмы управление и ускорить эффективность</a></h5>
+                    <p class='card-text'>Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade
 
-❓ Что сделали: Впервые в мире развернули систему у</p>
+ Что сделали Впервые в мире развернули систему управ...</p>
                     <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                 </div>
             </div>
@@ -202,10 +223,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-codex-kotoryy-bolshe-ne-upiraetsya-v-limity-pokazyvayu-chto-.html"> Codex, который больше не упирается в лимиты? Показываю, что обсуждают за рубежом!</a></h5>
-                    <p class='card-text'>🔥 Codex, который больше не упирается в лимиты? Показываю, что обсуждают за рубежом!
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-kak-codex-reshenie-i-uskorit-kachestvo.html">Как Codex решение и ускорить качество</a></h5>
+                    <p class='card-text'>Codex, который больше не упирается в лимиты? Показываю, что обсуждают за рубежом!
 
-В Telegram-каналах набирает обороты история про инструмент, который превращает Codex в практически безлимитный движ</p>
+В Telegram-каналах набирает обороты история про инструмент, который превращает Codex в практически безлимитный движо...</p>
                     <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                 </div>
             </div>
@@ -214,11 +235,11 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nl2agbench-benchmark-avto-formalizatsii-geometricheskikh-zad.html"> NL2AGBench Бенчмарк авто-формализации геометрических задач для AlphaGeometry</a></h5>
-                    <p class='card-text'>💡 NL2AGBench: Бенчмарк авто-формализации геометрических задач для AlphaGeometry
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-kak-alphageometry-avtomatizatsiya-i-uskorit-avtomatizatsiya.html">Как Alphageometry автоматизация и ускорить автоматизация</a></h5>
+                    <p class='card-text'>NL2AGBench Бенчмарк авто-формализации геометрических задач для AlphaGeometry
 
-❓ Что сделали:
-Создали первый бенчмарк NL2AGBench, который оценивает, насколько хорошо большие языковые модели умеют пе</p>
+ Что сделали
+Создали первый бенчмарк NL2AGBench, который оценивает, насколько хорошо большие языковые модели умеют перево...</p>
                     <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                 </div>
             </div>
@@ -227,10 +248,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-priobretay-chini-sokhranyay-retsept-post-obucheniya-dlya-mal.html"> Приобретай, чини, сохраняй рецепт пост-обучения для маленьких диалоговых игровых агентов</a></h5>
-                    <p class='card-text'>💡 Приобретай, чини, сохраняй: рецепт пост-обучения для маленьких диалоговых игровых агентов
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-kak-retsept-obuchenie-i-uskorit-effektivnost.html">Как Рецепт обучение и ускорить эффективность</a></h5>
+                    <p class='card-text'>Приобретай, чини, сохраняй рецепт пост-обучения для маленьких диалоговых игровых агентов
 
-❓ Что сделали: Исследователи взяли маленькую открытую модель на 2 миллиарда параметров и попробовали научит</p>
+ Что сделали Исследователи взяли маленькую открытую модель на 2 миллиарда параметров и попробовали научить её...</p>
                     <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                 </div>
             </div>
@@ -239,10 +260,10 @@
         <div class='col'>
             <div class='card h-100'>
                 <div class='card-body'>
-                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-jingyaogongminimind.html"> jingyaogongminimind</a></h5>
-                    <p class='card-text'>🔥 jingyaogong/minimind
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-kak-dazhe-reshenie-i-uskorit-effektivnost.html">Как Даже решение и ускорить эффективность</a></h5>
+                    <p class='card-text'>jingyaogongminimind
 
-❓ Что это: Репозиторий для тех, кто давно хотел заглянуть "под капот" больших языковых моделей, но боялся начинать. Здесь предлагается с нуля обучить компактную LLM на 64 милли</p>
+ Что это Репозиторий для тех, кто давно хотел заглянуть под капот больших языковых моделей, но боялся начинать. Здесь предлагается с нуля обучить компактную LLM на 64 миллиона па...</p>
                     <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
                 </div>
             </div>

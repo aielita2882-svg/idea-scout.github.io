@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Автоматизация | Idea Scout - AI-находки для разработчиков</title>
-    <meta name="description" content="Автономный агрегатор open-source AI-моделей, скриптов и инструментов.">
+    <title>Как Друзей решение и ускорить эффективность | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="Как Друзей решение и ускорить эффективность">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
     <style>
@@ -121,43 +121,20 @@
                 <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
             </div>
         </header>
-        <main><h1 class='display-6'>Автоматизация</h1><div class='row row-cols-1 g-4'>
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-kak-deepseek-reshenie-i-uskorit-effektivnost-2.html">Как Deepseek решение и ускорить эффективность</a></h5>
-                        <p class='card-text'>DeepSeek не отстаёт  выпустила свою обвязку под названием DeepSeek Harness
-Модели, утилиты, экспертизы, сессии, песочницы, файловые системы, циклы, оркестрация и интерфейсы  всё это реализовано в в...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-14</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-kak-skypilot-optimizatsiya-i-uskorit-effektivnost.html">Как Skypilot оптимизация и ускорить эффективность</a></h5>
-                        <p class='card-text'>SkyPilot
-
-Что это
-Это мощнейшая платформа для управления вычислительными ресурсами, которая превращает разрозненные облачные инстансы в единый суперкомпьютер для работы с искусственным интеллектом. П...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-14</small></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class='col'>
-                <div class='card h-100'>
-                    <div class='card-body'>
-                        <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-kak-druzey-reshenie-i-uskorit-effektivnost.html">Как Друзей решение и ускорить эффективность</a></h5>
-                        <p class='card-text'>Масштабирование графовых нейросетей для рекомендации друзей мульти-хеш эмбеддинги и временное семплирование соседей
-
-Что сделали Ребята из индустрии собрали end-to-end GNN-систему ранжирования для пр...</p>
-                        <p class='card-text'><small class='text-muted'>2026-08-29</small></p>
-                    </div>
-                </div>
-            </div>
-            </div></main>
+        <main>
+        <h1 class="display-6">Как Друзей решение и ускорить эффективность</h1>
+        <p class="post-meta">29 August 2026</p>
+        <div class="post-content"><p>💡</p>
+<p>Масштабирование графовых нейросетей для рекомендации друзей: мульти-хеш эмбеддинги и временное семплирование соседей</p>
+<p>❓</p>
+<p>Что сделали: Ребята из индустрии собрали end-to-end GNN-систему ранжирования для продакшн-соцсетей с сотнями миллионов пользователей и десятками миллиардов рёбер. Ключевая боль обычных графовых сетей на таких масштабах — таблица эмбеддингов ID-шников пользователей раздувается за 200 ГБ и вообще не влезает в память, а тупой temporal sampling требует обхода всей окрестности вершины, что убийственно для юзеров с десятками тысяч друзей. Авторы предложили два главных решения: мульти-хеш эмбеддинги как основное представление узла и хранение соседей в CSR-структуре с сортировкой по timestamp и бинарным поиском. По сути, превратили монструозный ID-lookup в лёгкую хеш-операцию, а выбор временных соседей — в почти бесплатный логарифм.</p>
+<p>🎯</p>
+<p>Результаты: На графе с 194 миллионами пользователей и 28 миллиардами рёбер таблица ID-эмбеддингов ужалась более чем на 98 процентов без потери качества ранжирования. Сложность temporal sampling сократилась с линейной O(deg(v) + k) до сублинейной O(log(deg(v)) + k) — то есть для юзера с 50 тысячами друзей выборка k=соседей теперь стоит как несколько десятков операций вместо полного сканирования. Онлайн A/B тест на реальных пользователях показал измеримый production impact, что для соцсетевой метрики означает живые деньги и удержание.</p>
+<p>✈️</p>
+<p>Зачем это нужно: Для любой крупной соцсети рекомендация друзей — это одна из базовых фич, которая держит engagement и рост аудитории. Классические GNN на таких объёмах раньше просто не вывозили в проде, и команды скатывались к более простым, но менее качественным моделям. Теперь можно ставить графовые сети и не платить за это терабайтами RAM и бесконечным latency. Полезно ML-инженерам в крупных платформах, рекомендательным командам и всем, кто страдает от того, что их красивый пайплайн упирается в инфраструктурные лимиты, а не в математику.</p>
+<p>Источник</p></div>
+        <div class="related-posts"><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="btn btn-outline-primary btn-sm">← На главную</a></div>
+        </main>
         <footer class="footer">
             © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
         </footer>
