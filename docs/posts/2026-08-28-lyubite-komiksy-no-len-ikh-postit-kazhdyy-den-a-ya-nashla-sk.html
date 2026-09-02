@@ -5,159 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Любите комиксы, но лень их постить каждый день? А я нашла скрипт, который делает это за вас, пока вы пьёте кофе. | Idea Scout - AI-находки для разработчиков</title>
     <meta name="description" content="Любите комиксы, но лень их постить каждый день? А я нашла скрипт, который делает это за вас, пока вы пьёте кофе.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: #0d1117;
+            background-color: #0d1117;
             color: #c9d1d9;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.7;
+            padding-top: 2rem;
         }
-        a { color: #58a6ff; text-decoration: none; }
-        a:hover { color: #79c0ff; text-decoration: underline; }
-        header {
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        header h1 {
-            font-size: 28px;
-            font-weight: 600;
-            color: #f0f6fc;
-        }
-        header h1 a { color: #f0f6fc; }
-        header p { color: #8b949e; font-size: 16px; }
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 12px 0 0;
-        }
-        .categories a {
-            background: #21262d;
-            color: #58a6ff;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            border: 1px solid #30363d;
-        }
-        .categories a:hover {
-            background: #30363d;
-            text-decoration: none;
-        }
-        .post-list {
-            list-style: none;
-            padding: 0;
-        }
-        .post-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #21262d;
-        }
-        .post-list a {
-            font-size: 18px;
-            font-weight: 500;
-        }
-        .post-list small {
-            color: #8b949e;
-            font-size: 14px;
-            margin-left: 12px;
-        }
-        .post-content {
-            margin: 20px 0;
-        }
-        .post-content h2 {
-            color: #f0f6fc;
-            font-size: 24px;
-            margin: 25px 0 10px;
-        }
-        .post-content h3 {
-            color: #f0f6fc;
-            font-size: 20px;
-            margin: 20px 0 8px;
-        }
-        .post-content ul, .post-content ol {
-            padding-left: 25px;
-            margin: 10px 0;
-        }
-        .post-content li {
-            margin-bottom: 4px;
-        }
+        a { color: #58a6ff; }
+        a:hover { color: #79c0ff; }
+        .post-content h2 { color: #f0f6fc; margin-top: 2rem; }
+        .post-content h3 { color: #f0f6fc; margin-top: 1.5rem; }
+        .post-content ul, .post-content ol { padding-left: 1.5rem; }
         .post-content blockquote {
-            border-left: 3px solid #58a6ff;
-            padding-left: 16px;
+            border-left: 4px solid #58a6ff;
+            padding-left: 1rem;
             color: #8b949e;
-            margin: 16px 0;
+            margin: 1rem 0;
         }
         .post-content code {
             background: #161b22;
-            padding: 2px 6px;
+            padding: 0.2rem 0.4rem;
             border-radius: 4px;
-            font-size: 14px;
+            font-size: 0.9em;
         }
         .post-content pre {
             background: #161b22;
-            padding: 16px;
+            padding: 1rem;
             border-radius: 6px;
             overflow-x: auto;
         }
-        .post-meta {
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .card-title a {
+            color: #f0f6fc;
+            text-decoration: none;
+        }
+        .card-title a:hover {
+            color: #79c0ff;
+        }
+        .card-text {
             color: #8b949e;
-            font-size: 14px;
-            margin-bottom: 16px;
+        }
+        .category-badge {
+            background: #21262d;
+            color: #58a6ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid #30363d;
+        }
+        .category-badge:hover {
+            background: #30363d;
+            color: #79c0ff;
+        }
+        .footer {
+            border-top: 1px solid #30363d;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: #8b949e;
+        }
+        .footer a {
+            color: #8b949e;
+        }
+        .footer a:hover {
+            color: #f0f6fc;
         }
         .related-posts {
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid #30363d;
         }
-        .related-posts h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #f0f6fc;
-        }
-        .related-posts li {
-            list-style: none;
-            padding: 4px 0;
-        }
-        h1 {
-            font-size: 28px;
-            font-weight: 600;
-            color: #f0f6fc;
-        }
-        h2 {
-            font-size: 24px;
-            font-weight: 600;
-            color: #f0f6fc;
-            margin: 20px 0 10px;
-        }
-        footer {
-            border-top: 1px solid #30363d;
-            padding-top: 20px;
-            margin-top: 40px;
-            text-align: center;
-            font-size: 14px;
+        .post-meta {
             color: #8b949e;
+            font-size: 0.9rem;
         }
-        footer a { color: #8b949e; }
-        footer a:hover { color: #f0f6fc; }
     </style>
 </head>
 <body>
-    <header>
-        <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
-        <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
-        <div class="categories">
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html">Парсинг</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
-        </div>
-    </header>
-    <main><h1>Любите комиксы, но лень их постить каждый день? А я нашла скрипт, который делает это за вас, пока вы пьёте кофе.</h1><p class='post-meta'>28 August 2026</p><div class='post-content'><p>Любите комиксы, но лень их постить каждый день? А я нашла скрипт, который делает это за вас, пока вы пьёте кофе.
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-light text-decoration-none">Idea Scout - AI-находки для разработчиков</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Любите комиксы, но лень их постить каждый день? А я нашла скрипт, который делает это за вас, пока вы пьёте кофе.</h1>
+        <p class="post-meta">28 August 2026</p>
+        <div class="post-content"><p>Любите комиксы, но лень их постить каждый день? А я нашла скрипт, который делает это за вас, пока вы пьёте кофе.
 ☕
 Суть простая до безобразия: парень по имени Анатолий так фанател от xkcd, что решил нести культуру в массы через ВКонтакте. Создал паблик, составил план великой миссии — но вручную постить комиксы каждый день оказалось выше его сил. И правильно, зачем тратить драгоценные минуты жизни на рутину, когда есть Python?
 🐍
@@ -172,9 +118,13 @@ comics.py
 🔥
 👉
 Больше таких находок без воды — в нашем Telegram-канале. Ссылка в профиле сообщества.
-100% опенсорс</p></div><div class="related-posts"><h3>📚 Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-mirofish.html"> MiroFish</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-claude-watch.html"> claude-watch</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-tchmaterial-parser.html"> tchMaterial-parser</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-spiderfoot.html"> SpiderFoot</a></li></ul></div></main>
-    <footer>
-        © 2026 Idea Scout · <a href="https://t.me/idea_scout">Telegram</a> · <a href="https://vk.com/idea_scout">VK</a> · <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> · <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
-    </footer>
+100% опенсорс</p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-mirofish.html"> MiroFish</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-claude-watch.html"> claude-watch</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-tchmaterial-parser.html"> tchMaterial-parser</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-spiderfoot.html"> SpiderFoot</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
