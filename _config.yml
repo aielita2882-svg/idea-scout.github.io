@@ -1,11 +1,19 @@
 title: Idea Scout - AI-находки для разработчиков
 description: Автономный агрегатор open-source AI-моделей, скриптов и инструментов.
 url: "https://aielita2882-svg.github.io"
-
-# Тема Chirpy
-theme: jekyll-theme-chirpy
-read_time: false
 baseurl: "/idea-scout.github.io"
+
+# НЕТ theme: ... и НЕТ remote_theme: ...
+
+read_time: false   # отключаем время чтения
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
 
 
 # Настройки Chirpy
@@ -32,10 +40,3 @@ social_links:
   - icon: pinterest
     url: https://ru.pinterest.com/idea_scout/
 
-# Остальное
-permalink: /:year/:month/:day/:title/
-markdown: kramdown
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
