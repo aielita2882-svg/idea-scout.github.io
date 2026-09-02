@@ -3,16 +3,13 @@ description: Автономный агрегатор open-source AI-моделе
 url: "https://aielita2882-svg.github.io"
 baseurl: "/idea-scout.github.io"
 
-# Подключаем тему
 remote_theme: cotes2020/jekyll-theme-chirpy@v7.2.1
 
-# Основные настройки
 lang: ru
 timezone: Europe/Moscow
 theme_mode: dark
 read_time: false
 
-# Коллекции для категорий и тегов
 collections:
   tabs:
     output: true
@@ -25,10 +22,8 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# Поиск
 search: true
 
-# Социальные ссылки
 social_links:
   - icon: telegram
     url: https://t.me/idea_scout
@@ -37,7 +32,6 @@ social_links:
   - icon: pinterest
     url: https://ru.pinterest.com/idea_scout/
 
-# Плагины
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -47,7 +41,6 @@ plugins:
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
 
-# Базовый layout
 defaults:
   - scope:
       path: ""
