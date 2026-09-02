@@ -3,83 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Категория: Модели | Idea Scout - AI-находки для разработчиков</title>
+    <title>Модели | Idea Scout - AI-находки для разработчиков</title>
     <meta name="description" content="Посты в категории Модели">
     <style>
-        body {
-            background: #0a0a0a;
-            color: #e0e0e0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.7;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        a { color: #80cbc4; text-decoration: none; }
-        a:hover { color: #ffffff; text-decoration: underline; }
-        ul { list-style: none; padding-left: 0; }
-        ul li::before { content: none !important; }
+        body {
+            background: #0d1117;
+            color: #e6edf3;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 30px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        a { color: #58a6ff; text-decoration: none; }
+        a:hover { color: #79c0ff; text-decoration: underline; }
+        
         header {
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 20px;
             margin-bottom: 30px;
         }
-        footer {
-            border-top: 1px solid #333;
-            padding-top: 15px;
-            margin-top: 40px;
-            text-align: center;
-            font-size: 14px;
-        }
-        .post-meta { color: #888; font-size: 14px; }
-        .post-content { margin: 20px 0; }
-        .post-content h2 { color: #80cbc4; }
-        .post-content h3 { color: #80cbc4; }
-        .post-content ul {
-            list-style: disc !important;
-            padding-left: 20px !important;
-        }
-        .post-content ul li {
-            list-style: disc !important;
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
             margin-bottom: 5px;
         }
-        .post-content ul li::before {
-            content: none !important;
-        }
-        .categories-list {
+        header h1 a { color: #f0f6fc; }
+        header p { color: #8b949e; font-size: 16px; }
+        
+        .categories {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            margin: 15px 0 10px;
+        }
+        .categories a {
+            background: #21262d;
+            color: #58a6ff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid #30363d;
+        }
+        .categories a:hover {
+            background: #30363d;
+            text-decoration: none;
+        }
+        
+        .post-list li {
+            list-style: none;
+            padding: 10px 0;
+            border-bottom: 1px solid #21262d;
+        }
+        .post-list a {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .post-list small {
+            color: #8b949e;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .post-content {
             margin: 20px 0;
         }
-        .categories-list a {
-            background: #1a1a1a;
-            padding: 5px 15px;
-            border-radius: 20px;
+        .post-content h2 {
+            color: #f0f6fc;
+            font-size: 22px;
+            margin: 25px 0 10px;
         }
-        .post-list li {
-            margin-bottom: 12px;
-            border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 8px;
+        .post-content h3 {
+            color: #f0f6fc;
+            font-size: 18px;
+            margin: 20px 0 8px;
         }
-        .post-list a { font-size: 18px; }
-        .post-list small { color: #666; font-size: 14px; }
-        .related-posts {
-            margin-top: 40px;
-            border-top: 1px solid #333;
-            padding-top: 20px;
-        }
-        .post-content ul,
-        .post-content ol {
-            padding-left: 20px !important;
+        .post-content ul, .post-content ol {
+            padding-left: 25px;
+            margin: 10px 0;
         }
         .post-content li {
             margin-bottom: 5px;
         }
         .post-content blockquote {
-            border-left: 3px solid #80cbc4;
+            border-left: 3px solid #58a6ff;
             padding-left: 15px;
-            color: #aaa;
+            color: #8b949e;
+            margin: 15px 0;
+        }
+        .post-content code {
+            background: #161b22;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .post-content pre {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .post-meta {
+            color: #8b949e;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .related-posts {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+        }
+        .related-posts h3 {
+            color: #f0f6fc;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .related-posts li {
+            list-style: none;
+            padding: 5px 0;
+        }
+        .related-posts a {
+            color: #58a6ff;
+        }
+        
+        footer {
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #8b949e;
+        }
+        footer a {
+            color: #8b949e;
+        }
+        footer a:hover {
+            color: #f0f6fc;
+        }
+        
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #f0f6fc;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #f0f6fc;
+            margin-top: 20px;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 4px;
         }
     </style>
 </head>
@@ -87,7 +170,7 @@
     <header>
         <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
         <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
-        <div class="categories-list">
+        <div class="categories">
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
@@ -95,12 +178,12 @@
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
         </div>
     </header>
-    <main><h1>Категория: Модели</h1><ul class='post-list'><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-blarm-animatsiya-3d-obektov-iz-video-cherez-smeshivanie-late.html">BLARM анимация 3D-объектов из видео через смешивание латентных жёстких примитивов движения</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-codex-kotoryy-bolshe-ne-upiraetsya-v-limity-pokazyvayu-chto-.html">Codex, который больше не упирается в лимиты? Показываю, что обсуждают за рубежом!</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-hindsight-memory-prm-obuchenie-pamyati-llm-agentov-s-audirue.html">Hindsight Memory-PRM обучение памяти LLM-агентов с аудируемой ретроспективной оценкой</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nl2agbench-benchmark-avto-formalizatsii-geometricheskikh-zad.html">NL2AGBench Бенчмарк авто-формализации геометрических задач для AlphaGeometry</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-open-llm-vtuber.html">Open-LLM-VTuber</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-prefect-orkestrator-dannykh-bez-placha.html">Prefect  оркестратор данных без плача</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-pykeen-nsx-modulnyy-freymvork-dlya-staticheskogo-dinamichesk.html">PyKEEN-NSX модульный фреймворк для статического, динамического и schema-aware негативного сэмплинга в PyKEEN</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-zhipu-ofitsialno-predstavila-i-otkryla-glm-53-flash-i-eta-mo.html">Zhipu официально представила и открыла GLM-5.3 Flash  и эта модель уже наступает на пятки гигантам рынка</a> <small>(2026-08-27)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-akshay-pachaar.html">akshay_pachaar</a> <small>(2026-08-22)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-jingyaogongminimind.html">jingyaogongminimind</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-a-vy-znali-chto-1s-razrabotka-do-sikh-por-zhivyot-v-mire-xml.html">А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скриптов и Конфигуратора, который открывается дольше, чем мой утренний кофе остывает? Именно эту боль закрывает Agenter  локальный AI-агент, который встраивается прямо в платформу 1СПредприятие 8.3.</a> <small>(2026-08-29)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-a-vy-kogda-nibud-mechtali-podruzhit-ai-agenta-s-glpi-tak-cht.html">А вы когда-нибудь мечтали подружить AI-агента с GLPI так, чтобы он случайно не снёс полбазы тикетов?</a> <small>(2026-08-30)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-a-vy-uzhe-slyshali-tencent-vykatila-hy4-preview-i-eto-yavno-.html">А вы уже слышали? Tencent выкатила Hy4 Preview  и это явно не рядовой релиз. Открытые веса, лицензия Apache 2.0, а внутри 770 млрд параметров на архитектуре mixture of experts. 49 млрд из них активны одновременно  баланс между мощью и нагрузкой на железо. Контекстное окно? Целый 1 млн токенов. По сути, это флагман, который задаёт новую планку для открытых моделей.</a> <small>(2026-08-30)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-agent-kotoryy-sam-sebya-budit.html">Агент, который сам себя будит?</a> <small>(2026-08-30)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-vrach-kotoryy-realno-lechit-tvoy-kod-a-ne-prosto-kivaet-u-mo.html">Врач, который реально лечит твой код, а не просто кивает у монитора</a> <small>(2026-08-30)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-vy-kogda-nibud-mechtali-chtoby-vash-magazin-na-starvell-rabo.html">Вы когда-нибудь мечтали, чтобы ваш магазин на Starvell работал как швейцарские часы, а вы при этом пили кофе?</a> <small>(2026-08-28)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-generativnyy-poisk-dlya-elektronnoy-kommertsii-sovmestnoe-ob.html">Генеративный поиск для электронной коммерции совместное обучение эмбеддингов и кодовой книги с использованием кластеров товаров</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-znaete-chto-menya-vsegda-besilo-v-arende-kogda-pishesh-khoch.html">Знаете, что меня всегда бесило в аренде? Когда пишешь хочу домик на выходные, а тебе в ответ  тишина. Или перезвоните завтра. Завтра. Серьёзно.</a> <small>(2026-08-28)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-znaete-chto-menya-vsegda-besilo-v-onlayn-magazinakh-eti-bezd.html">Знаете, что меня всегда бесило в онлайн-магазинах? Эти бездушные чат-окна, где тебе отвечают заготовками из 2010 года. Здравствуйте! Чем могу помочь?  а в итоге просто кидают ссылку на FAQ</a> <small>(2026-08-28)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-znaete-chto-menya-vsegda-zabavlyalo-kogda-kod-pishet-tot-kto.html">Знаете, что меня всегда забавляло? Когда код пишет тот, кто кодить не умеет. Но в случае с этим репозиторием  это не магия, а осознанный подход.</a> <small>(2026-08-28)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-znaete-chto-obshchego-mezhdu-vashey-lentoy-vk-i-spamom-pro-u.html">Знаете, что общего между вашей лентой VK и спамом про увеличение груди? И то, и то можно автоматизировать. Шучу. Или нет?</a> <small>(2026-08-30)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-post.html">Пост</a> <small>(2026-09-01)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>(2026-08-31)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-post.html">Пост</a> <small>(2026-08-30)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-post.html">Пост</a> <small>(2026-08-30)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>(2026-08-29)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>(2026-08-29)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>(2026-08-29)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>(2026-08-29)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>(2026-08-29)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>(2026-08-29)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>(2026-08-29)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-post.html">Пост</a> <small>(2026-08-28)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>(2026-08-27)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>(2026-08-27)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>(2026-08-27)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>(2026-08-27)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>(2026-08-27)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>(2026-08-27)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-25-post.html">Пост</a> <small>(2026-08-25)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-25-post.html">Пост</a> <small>(2026-08-25)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-25-post.html">Пост</a> <small>(2026-08-25)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-post.html">Пост</a> <small>(2026-08-24)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-post.html">Пост</a> <small>(2026-08-24)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-post.html">Пост</a> <small>(2026-08-24)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-post.html">Пост</a> <small>(2026-08-24)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-23-post.html">Пост</a> <small>(2026-08-23)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-23-post.html">Пост</a> <small>(2026-08-23)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-23-post.html">Пост</a> <small>(2026-08-23)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-post.html">Пост</a> <small>(2026-08-22)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-post.html">Пост</a> <small>(2026-08-22)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-18-post.html">Пост</a> <small>(2026-08-18)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-18-post.html">Пост</a> <small>(2026-08-18)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-17-post.html">Пост</a> <small>(2026-08-17)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-17-post.html">Пост</a> <small>(2026-08-17)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-16-post.html">Пост</a> <small>(2026-08-16)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-16-post.html">Пост</a> <small>(2026-08-16)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-16-post.html">Пост</a> <small>(2026-08-16)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-16-post.html">Пост</a> <small>(2026-08-16)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-post.html">Пост</a> <small>(2026-08-14)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-post.html">Пост</a> <small>(2026-08-14)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-post.html">Пост</a> <small>(2026-08-14)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>(2026-08-13)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>(2026-08-13)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>(2026-08-13)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>(2026-08-13)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>(2026-08-13)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>(2026-08-13)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-priobretay-chini-sokhranyay-retsept-post-obucheniya-dlya-mal.html">Приобретай, чини, сохраняй рецепт пост-обучения для маленьких диалоговых игровых агентов</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-provedenie-stilisticheskogo-analiza-kartin-s-pomoshchyu-agen.html">Проведение стилистического анализа картин с помощью агента-искусствоведа</a> <small>(2026-09-02)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-top-5-primechatelnykh-repozitoriev-github-za-poslednyuyu-ned.html">Топ-5 примечательных репозиториев GitHub за последнюю неделю</a> <small>(2026-08-26)</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-faktcheking-novogo-pokoleniya-kogda-pamyat-grafa-znaniy-byot.html">Фактчекинг нового поколения когда память графа знаний бьёт гигантские LLM</a> <small>(2026-09-02)</small></li></ul></main>
+    <main><h1>Модели</h1><ul class='post-list'><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-blarm-animatsiya-3d-obektov-iz-video-cherez-smeshivanie-late.html">BLARM анимация 3D-объектов из видео через смешивание латентных жёстких примитивов движения</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-codex-kotoryy-bolshe-ne-upiraetsya-v-limity-pokazyvayu-chto-.html">Codex, который больше не упирается в лимиты? Показываю, что обсуждают за рубежом!</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-hindsight-memory-prm-obuchenie-pamyati-llm-agentov-s-audirue.html">Hindsight Memory-PRM обучение памяти LLM-агентов с аудируемой ретроспективной оценкой</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nl2agbench-benchmark-avto-formalizatsii-geometricheskikh-zad.html">NL2AGBench Бенчмарк авто-формализации геометрических задач для AlphaGeometry</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-open-llm-vtuber.html">Open-LLM-VTuber</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-prefect-orkestrator-dannykh-bez-placha.html">Prefect  оркестратор данных без плача</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-pykeen-nsx-modulnyy-freymvork-dlya-staticheskogo-dinamichesk.html">PyKEEN-NSX модульный фреймворк для статического, динамического и schema-aware негативного сэмплинга в PyKEEN</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-zhipu-ofitsialno-predstavila-i-otkryla-glm-53-flash-i-eta-mo.html">Zhipu официально представила и открыла GLM-5.3 Flash  и эта модель уже наступает на пятки гигантам рынка</a> <small>2026-08-27</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-akshay-pachaar.html">akshay_pachaar</a> <small>2026-08-22</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-jingyaogongminimind.html">jingyaogongminimind</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-a-vy-znali-chto-1s-razrabotka-do-sikh-por-zhivyot-v-mire-xml.html">А вы знали, что 1С-разработка до сих пор живёт в мире XML-выгрузок, ручных скриптов и Конфигуратора, который открывается дольше, чем мой утренний кофе остывает? Именно эту боль закрывает Agenter  локальный AI-агент, который встраивается прямо в платформу 1СПредприятие 8.3.</a> <small>2026-08-29</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-a-vy-kogda-nibud-mechtali-podruzhit-ai-agenta-s-glpi-tak-cht.html">А вы когда-нибудь мечтали подружить AI-агента с GLPI так, чтобы он случайно не снёс полбазы тикетов?</a> <small>2026-08-30</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-a-vy-uzhe-slyshali-tencent-vykatila-hy4-preview-i-eto-yavno-.html">А вы уже слышали? Tencent выкатила Hy4 Preview  и это явно не рядовой релиз. Открытые веса, лицензия Apache 2.0, а внутри 770 млрд параметров на архитектуре mixture of experts. 49 млрд из них активны одновременно  баланс между мощью и нагрузкой на железо. Контекстное окно? Целый 1 млн токенов. По сути, это флагман, который задаёт новую планку для открытых моделей.</a> <small>2026-08-30</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-agent-kotoryy-sam-sebya-budit.html">Агент, который сам себя будит?</a> <small>2026-08-30</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-vrach-kotoryy-realno-lechit-tvoy-kod-a-ne-prosto-kivaet-u-mo.html">Врач, который реально лечит твой код, а не просто кивает у монитора</a> <small>2026-08-30</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-vy-kogda-nibud-mechtali-chtoby-vash-magazin-na-starvell-rabo.html">Вы когда-нибудь мечтали, чтобы ваш магазин на Starvell работал как швейцарские часы, а вы при этом пили кофе?</a> <small>2026-08-28</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-generativnyy-poisk-dlya-elektronnoy-kommertsii-sovmestnoe-ob.html">Генеративный поиск для электронной коммерции совместное обучение эмбеддингов и кодовой книги с использованием кластеров товаров</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-znaete-chto-menya-vsegda-besilo-v-arende-kogda-pishesh-khoch.html">Знаете, что меня всегда бесило в аренде? Когда пишешь хочу домик на выходные, а тебе в ответ  тишина. Или перезвоните завтра. Завтра. Серьёзно.</a> <small>2026-08-28</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-znaete-chto-menya-vsegda-besilo-v-onlayn-magazinakh-eti-bezd.html">Знаете, что меня всегда бесило в онлайн-магазинах? Эти бездушные чат-окна, где тебе отвечают заготовками из 2010 года. Здравствуйте! Чем могу помочь?  а в итоге просто кидают ссылку на FAQ</a> <small>2026-08-28</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-znaete-chto-menya-vsegda-zabavlyalo-kogda-kod-pishet-tot-kto.html">Знаете, что меня всегда забавляло? Когда код пишет тот, кто кодить не умеет. Но в случае с этим репозиторием  это не магия, а осознанный подход.</a> <small>2026-08-28</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-znaete-chto-obshchego-mezhdu-vashey-lentoy-vk-i-spamom-pro-u.html">Знаете, что общего между вашей лентой VK и спамом про увеличение груди? И то, и то можно автоматизировать. Шучу. Или нет?</a> <small>2026-08-30</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-post.html">Пост</a> <small>2026-09-01</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-post.html">Пост</a> <small>2026-08-31</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-post.html">Пост</a> <small>2026-08-30</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-post.html">Пост</a> <small>2026-08-30</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>2026-08-29</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>2026-08-29</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>2026-08-29</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>2026-08-29</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>2026-08-29</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>2026-08-29</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-post.html">Пост</a> <small>2026-08-29</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-28-post.html">Пост</a> <small>2026-08-28</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>2026-08-27</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>2026-08-27</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>2026-08-27</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>2026-08-27</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>2026-08-27</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-27-post.html">Пост</a> <small>2026-08-27</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-post.html">Пост</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-25-post.html">Пост</a> <small>2026-08-25</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-25-post.html">Пост</a> <small>2026-08-25</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-25-post.html">Пост</a> <small>2026-08-25</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-post.html">Пост</a> <small>2026-08-24</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-post.html">Пост</a> <small>2026-08-24</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-post.html">Пост</a> <small>2026-08-24</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-post.html">Пост</a> <small>2026-08-24</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-23-post.html">Пост</a> <small>2026-08-23</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-23-post.html">Пост</a> <small>2026-08-23</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-23-post.html">Пост</a> <small>2026-08-23</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-post.html">Пост</a> <small>2026-08-22</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-post.html">Пост</a> <small>2026-08-22</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-18-post.html">Пост</a> <small>2026-08-18</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-18-post.html">Пост</a> <small>2026-08-18</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-17-post.html">Пост</a> <small>2026-08-17</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-17-post.html">Пост</a> <small>2026-08-17</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-16-post.html">Пост</a> <small>2026-08-16</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-16-post.html">Пост</a> <small>2026-08-16</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-16-post.html">Пост</a> <small>2026-08-16</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-16-post.html">Пост</a> <small>2026-08-16</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-post.html">Пост</a> <small>2026-08-14</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-post.html">Пост</a> <small>2026-08-14</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-post.html">Пост</a> <small>2026-08-14</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>2026-08-13</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>2026-08-13</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>2026-08-13</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>2026-08-13</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>2026-08-13</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-post.html">Пост</a> <small>2026-08-13</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-priobretay-chini-sokhranyay-retsept-post-obucheniya-dlya-mal.html">Приобретай, чини, сохраняй рецепт пост-обучения для маленьких диалоговых игровых агентов</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-provedenie-stilisticheskogo-analiza-kartin-s-pomoshchyu-agen.html">Проведение стилистического анализа картин с помощью агента-искусствоведа</a> <small>2026-09-02</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-26-top-5-primechatelnykh-repozitoriev-github-za-poslednyuyu-ned.html">Топ-5 примечательных репозиториев GitHub за последнюю неделю</a> <small>2026-08-26</small></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-faktcheking-novogo-pokoleniya-kogda-pamyat-grafa-znaniy-byot.html">Фактчекинг нового поколения когда память графа знаний бьёт гигантские LLM</a> <small>2026-09-02</small></li></ul></main>
     <footer>
-        © 2026 Idea Scout |
-        <a href="https://t.me/idea_scout">Telegram</a> |
-        <a href="https://vk.com/idea_scout">VK</a> |
-        <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> |
+        © 2026 Idea Scout &middot;
+        <a href="https://t.me/idea_scout">Telegram</a> &middot;
+        <a href="https://vk.com/idea_scout">VK</a> &middot;
+        <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot;
         <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
     </footer>
 </body>
