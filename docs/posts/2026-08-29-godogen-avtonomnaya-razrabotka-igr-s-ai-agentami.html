@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>godogen — автономная разработка игр с AI-агентами | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="godogen — автономная разработка игр с AI-агентами">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        /* Дополнительные тёмные тона */
+        body {
+            background: #0d1117;
+            color: #e6edf3;
+        }
+        a {
+            color: #58a6ff;
+        }
+        a:hover {
+            color: #79c0ff;
+        }
+        header h1 a {
+            color: #f0f6fc;
+        }
+        .categories-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        .categories-list a {
+            background: #21262d;
+            color: #58a6ff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid #30363d;
+            text-decoration: none;
+        }
+        .categories-list a:hover {
+            background: #30363d;
+            text-decoration: none;
+        }
+        .post-list li {
+            list-style: none;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 10px;
+        }
+        .post-list a {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .post-meta {
+            color: #8b949e;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        footer {
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #8b949e;
+        }
+        footer a {
+            color: #8b949e;
+        }
+        footer a:hover {
+            color: #f0f6fc;
+        }
+        .post-content ul, .post-content ol {
+            padding-left: 25px;
+        }
+        .post-content blockquote {
+            border-left: 3px solid #58a6ff;
+            padding-left: 15px;
+            color: #8b949e;
+        }
+        .post-content code {
+            background: #161b22;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .post-content pre {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .related-posts {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+        }
+        .related-posts h3 {
+            font-size: 1.2em;
+        }
+        .related-posts li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
+        <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+        <div class="categories-list">
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html">Парсинг</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
+        </div>
+    </header>
+    <main><h1>godogen — автономная разработка игр с AI-агентами</h1><p class='post-meta'>29 August 2026</p><div class='post-content'><p>🔥
+godogen — автономная разработка игр с AI-агентами
+❓
+Что это: Это open-source проект, который превращает языковые модели в полноценных игровых разработчиков. Идея простая: ты пишешь описание игры на естественном языке, а Claude Code или Codex генерируют рабочий код для Godot, Bevy или Babylon.js. По сути, это мост между промптами и реальными игровыми движками, где AI не просто подсказывает решения, а сам пишет, тестирует и итерирует игровые механики. Проект решает боль инди-разработчиков, которые застряли между прототипом и готовым продуктом — теперь можно делегировать рутину машине.
+⚡
+Фишки:
+- Поддержка сразу трёх движков: Godot для 2D/3D на GDScript, Bevy для Rust-фанатов и Babylon.js для веб-проектов
+- Полностью автономный workflow — агент сам планирует архитектуру, пишет код, запускает тесты и исправляет баги
+- Интеграция с Claude Code и Codex как альтернативными бэкендами для генерации
+- Возможность итерировать — описал фичу, получил реализацию, уточнил, получил улучшенную версию
+🎰
+Статистика: 6399 звёзд на GitHub, написано на Python, проект активно развивается и собирает вокруг себя комьюнити энтузиастов AI-генерации.
+🎯
+Кому пригодится: Соло-разработчикам, которые хотят быстро прототипировать идеи без найма команды. Геймдизайнерам, которые умеют объяснять концепции, но не хотят ковыряться в шейдерах и коллизиях. Стартапам, тестирующим гипотезы игровых механик на скорость. А также всем, кто верит, что будущее геймдева — это диалог с машиной, а не бессонные ночи в попытках понять, почему RigidBody снова проваливается сквозь пол. Если ты из тех, кто считает, что писать код вручную в 2025 году — это уже немного странно, добро пожаловать в клуб.
+100% опенсорс</p></div><div class="related-posts"><h3>📚 Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-open-duck-mini.html">Open_Duck_Mini</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-microsofthve-core.html">microsoft/hve-core</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-30-music-assistantserver.html">music-assistant/server</a></li></ul></div></main>
+    <footer>
+        © 2026 Idea Scout &middot;
+        <a href="https://t.me/idea_scout">Telegram</a> &middot;
+        <a href="https://vk.com/idea_scout">VK</a> &middot;
+        <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot;
+        <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+    </footer>
+</body>
+</html>

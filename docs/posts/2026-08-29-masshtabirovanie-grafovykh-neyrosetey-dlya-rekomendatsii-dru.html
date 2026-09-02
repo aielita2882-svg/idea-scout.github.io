@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Масштабирование графовых нейросетей для рекомендации друзей: мульти-хеш эмбеддинги и временное семплирование соседей | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="Масштабирование графовых нейросетей для рекомендации друзей: мульти-хеш эмбеддинги и временное семплирование соседей">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        /* Дополнительные тёмные тона */
+        body {
+            background: #0d1117;
+            color: #e6edf3;
+        }
+        a {
+            color: #58a6ff;
+        }
+        a:hover {
+            color: #79c0ff;
+        }
+        header h1 a {
+            color: #f0f6fc;
+        }
+        .categories-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        .categories-list a {
+            background: #21262d;
+            color: #58a6ff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid #30363d;
+            text-decoration: none;
+        }
+        .categories-list a:hover {
+            background: #30363d;
+            text-decoration: none;
+        }
+        .post-list li {
+            list-style: none;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 10px;
+        }
+        .post-list a {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .post-meta {
+            color: #8b949e;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        footer {
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #8b949e;
+        }
+        footer a {
+            color: #8b949e;
+        }
+        footer a:hover {
+            color: #f0f6fc;
+        }
+        .post-content ul, .post-content ol {
+            padding-left: 25px;
+        }
+        .post-content blockquote {
+            border-left: 3px solid #58a6ff;
+            padding-left: 15px;
+            color: #8b949e;
+        }
+        .post-content code {
+            background: #161b22;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .post-content pre {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .related-posts {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+        }
+        .related-posts h3 {
+            font-size: 1.2em;
+        }
+        .related-posts li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
+        <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+        <div class="categories-list">
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html">Парсинг</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
+        </div>
+    </header>
+    <main><h1>Масштабирование графовых нейросетей для рекомендации друзей: мульти-хеш эмбеддинги и временное семплирование соседей</h1><p class='post-meta'>29 August 2026</p><div class='post-content'><p>💡
+Масштабирование графовых нейросетей для рекомендации друзей: мульти-хеш эмбеддинги и временное семплирование соседей
+❓
+Что сделали: Ребята из индустрии собрали end-to-end GNN-систему ранжирования для продакшн-соцсетей с сотнями миллионов пользователей и десятками миллиардов рёбер. Ключевая боль обычных графовых сетей на таких масштабах — таблица эмбеддингов ID-шников пользователей раздувается за 200 ГБ и вообще не влезает в память, а тупой temporal sampling требует обхода всей окрестности вершины, что убийственно для юзеров с десятками тысяч друзей. Авторы предложили два главных решения: мульти-хеш эмбеддинги как основное представление узла и хранение соседей в CSR-структуре с сортировкой по timestamp и бинарным поиском. По сути, превратили монструозный ID-lookup в лёгкую хеш-операцию, а выбор временных соседей — в почти бесплатный логарифм.
+🎯
+Результаты: На графе с 194 миллионами пользователей и 28 миллиардами рёбер таблица ID-эмбеддингов ужалась более чем на 98 процентов без потери качества ранжирования. Сложность temporal sampling сократилась с линейной O(deg(v) + k) до сублинейной O(log(deg(v)) + k) — то есть для юзера с 50 тысячами друзей выборка k=соседей теперь стоит как несколько десятков операций вместо полного сканирования. Онлайн A/B тест на реальных пользователях показал измеримый production impact, что для соцсетевой метрики означает живые деньги и удержание.
+✈️
+Зачем это нужно: Для любой крупной соцсети рекомендация друзей — это одна из базовых фич, которая держит engagement и рост аудитории. Классические GNN на таких объёмах раньше просто не вывозили в проде, и команды скатывались к более простым, но менее качественным моделям. Теперь можно ставить графовые сети и не платить за это терабайтами RAM и бесконечным latency. Полезно ML-инженерам в крупных платформах, рекомендательным командам и всем, кто страдает от того, что их красивый пайплайн упирается в инфраструктурные лимиты, а не в математику.
+Источник</p></div></main>
+    <footer>
+        © 2026 Idea Scout &middot;
+        <a href="https://t.me/idea_scout">Telegram</a> &middot;
+        <a href="https://vk.com/idea_scout">VK</a> &middot;
+        <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot;
+        <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+    </footer>
+</body>
+</html>

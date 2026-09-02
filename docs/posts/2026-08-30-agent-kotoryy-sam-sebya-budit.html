@@ -5,139 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Агент, который сам себя будит? | Idea Scout - AI-находки для разработчиков</title>
     <meta name="description" content="Агент, который сам себя будит?">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Дополнительные тёмные тона */
         body {
             background: #0d1117;
             color: #e6edf3;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            padding: 30px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.8;
         }
-        a { color: #58a6ff; text-decoration: none; }
-        a:hover { color: #79c0ff; text-decoration: underline; }
-        
-        header {
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+        a {
+            color: #58a6ff;
         }
-        header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 5px;
+        a:hover {
+            color: #79c0ff;
         }
-        header h1 a { color: #f0f6fc; }
-        header p { color: #8b949e; font-size: 16px; }
-        
-        .categories {
+        header h1 a {
+            color: #f0f6fc;
+        }
+        .categories-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 15px 0 10px;
+            margin: 15px 0;
         }
-        .categories a {
+        .categories-list a {
             background: #21262d;
             color: #58a6ff;
             padding: 4px 14px;
             border-radius: 20px;
-            font-size: 14px;
             border: 1px solid #30363d;
+            text-decoration: none;
         }
-        .categories a:hover {
+        .categories-list a:hover {
             background: #30363d;
             text-decoration: none;
         }
-        
         .post-list li {
             list-style: none;
-            padding: 10px 0;
+            margin-bottom: 12px;
             border-bottom: 1px solid #21262d;
+            padding-bottom: 10px;
         }
         .post-list a {
-            font-size: 18px;
+            font-size: 1.2em;
             font-weight: 500;
-        }
-        .post-list small {
-            color: #8b949e;
-            font-size: 14px;
-            margin-left: 10px;
-        }
-        
-        .post-content {
-            margin: 20px 0;
-        }
-        .post-content h2 {
-            color: #f0f6fc;
-            font-size: 22px;
-            margin: 25px 0 10px;
-        }
-        .post-content h3 {
-            color: #f0f6fc;
-            font-size: 18px;
-            margin: 20px 0 8px;
-        }
-        .post-content ul, .post-content ol {
-            padding-left: 25px;
-            margin: 10px 0;
-        }
-        .post-content li {
-            margin-bottom: 5px;
-        }
-        .post-content blockquote {
-            border-left: 3px solid #58a6ff;
-            padding-left: 15px;
-            color: #8b949e;
-            margin: 15px 0;
-        }
-        .post-content code {
-            background: #161b22;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .post-content pre {
-            background: #161b22;
-            padding: 15px;
-            border-radius: 6px;
-            overflow-x: auto;
         }
         .post-meta {
             color: #8b949e;
-            font-size: 14px;
+            font-size: 0.9em;
             margin-bottom: 15px;
         }
-        
-        .related-posts {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #30363d;
-        }
-        .related-posts h3 {
-            color: #f0f6fc;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .related-posts li {
-            list-style: none;
-            padding: 5px 0;
-        }
-        .related-posts a {
-            color: #58a6ff;
-        }
-        
         footer {
             border-top: 1px solid #30363d;
             padding-top: 20px;
             margin-top: 40px;
             text-align: center;
-            font-size: 14px;
             color: #8b949e;
         }
         footer a {
@@ -146,23 +67,35 @@
         footer a:hover {
             color: #f0f6fc;
         }
-        
-        h1 {
-            font-size: 26px;
-            font-weight: 700;
-            color: #f0f6fc;
-        }
-        h2 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #f0f6fc;
-            margin-top: 20px;
-        }
-        ul, ol {
+        .post-content ul, .post-content ol {
             padding-left: 25px;
         }
-        li {
-            margin-bottom: 4px;
+        .post-content blockquote {
+            border-left: 3px solid #58a6ff;
+            padding-left: 15px;
+            color: #8b949e;
+        }
+        .post-content code {
+            background: #161b22;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .post-content pre {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .related-posts {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+        }
+        .related-posts h3 {
+            font-size: 1.2em;
+        }
+        .related-posts li {
+            list-style: none;
         }
     </style>
 </head>
@@ -170,7 +103,7 @@
     <header>
         <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
         <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
-        <div class="categories">
+        <div class="categories-list">
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
             <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
@@ -191,7 +124,7 @@
 Подписывайся на канал, чтобы не пропустить момент, когда Persistent наконец выйдет из тени — и мы разберём, что под капотом.
 🚀
 Источник: GitHub-коммит OpenAI Codex
-100% опенсорс</p></div><div class="related-posts"><h3>📚 Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
+100% опенсорс</p></div><div class="related-posts"><h3>📚 Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdev/common-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">google/skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне? 🔥</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов: экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
     <footer>
         © 2026 Idea Scout &middot;
         <a href="https://t.me/idea_scout">Telegram</a> &middot;
