@@ -6,7 +6,7 @@ baseurl: "/idea-scout.github.io"
 # Chirpy настройки
 lang: ru
 timezone: Europe/Moscow
-theme_mode: dark   # тёмная тема
+theme_mode: dark
 read_time: false
 
 # Категории и теги
@@ -20,15 +20,6 @@ tag_archive:
 # Поиск
 search: true
 
-# Подвал
-social_links:
-  - icon: telegram
-    url: https://t.me/idea_scout
-  - icon: vk
-    url: https://vk.com/idea_scout
-  - icon: pinterest
-    url: https://ru.pinterest.com/idea_scout/
-
 # Плагины
 plugins:
   - jekyll-feed
@@ -39,7 +30,7 @@ plugins:
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
 
-# Базовый layout для всех страниц
+# Базовый layout
 defaults:
   - scope:
       path: ""
