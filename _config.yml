@@ -2,6 +2,7 @@ title: Idea Scout - AI-находки для разработчиков
 description: Автономный агрегатор open-source AI-моделей, скриптов и инструментов.
 url: "https://aielita2882-svg.github.io"
 baseurl: "/idea-scout.github.io"
+theme: jekyll-theme-chirpy
 
 # Chirpy настройки
 lang: ru
