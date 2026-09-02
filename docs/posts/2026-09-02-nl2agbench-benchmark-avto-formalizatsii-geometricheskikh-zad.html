@@ -33,6 +33,19 @@
         }
         .post-meta { color: #888; font-size: 14px; }
         .post-content { margin: 20px 0; }
+        .post-content h2 { color: #80cbc4; }
+        .post-content h3 { color: #80cbc4; }
+        .post-content ul {
+            list-style: disc !important;
+            padding-left: 20px !important;
+        }
+        .post-content ul li {
+            list-style: disc !important;
+            margin-bottom: 5px;
+        }
+        .post-content ul li::before {
+            content: none !important;
+        }
         .categories-list {
             display: flex;
             flex-wrap: wrap;
@@ -56,6 +69,18 @@
             border-top: 1px solid #333;
             padding-top: 20px;
         }
+        .post-content ul,
+        .post-content ol {
+            padding-left: 20px !important;
+        }
+        .post-content li {
+            margin-bottom: 5px;
+        }
+        .post-content blockquote {
+            border-left: 3px solid #80cbc4;
+            padding-left: 15px;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -63,21 +88,20 @@
         <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
         <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
         <div class="categories-list">
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli/">Модели</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty/">Скрипты</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya/">Автоматизация</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing/">Парсинг</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe/">Разное</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html">Парсинг</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
         </div>
     </header>
-    <main><h1>NL2AGBench Бенчмарк авто-формализации геометрических задач для AlphaGeometry</h1><p class='post-meta'>02 September 2026</p><div class='post-content'>❓ Что сделали:
-Создали первый бенчмарк NL2AGBench, который оценивает, насколько хорошо большие языковые модели умеют переводить обычные геометрические задачки на английском в специализированный DSL AlphaGeometry. Ключевая фишка — проверка не текстовым сходством, а реальным выполнением в движке AlphaGeometry. Если формализация скомпилировалась и геометрические ограничения сохранились — значит перевод удался, а не просто похож на правильный. Протестировали десять топовых LLM (от закрытых GPT-классов до крупных open-source моделей) и проанализировали, где именно они спотыкаются.
-
-🎰 Результаты:
-Разрыв между закрытыми и открытыми моделями оказался катастрофическим. Лидеры закрытого сегмента выдают более 80% исполняемых переводов, то есть формализация реально работает в AlphaGeometry. А вот даже самые жирные open-source модели стабильно теряют геометрические ограничения и плюют невалидный синтаксис. Синтаксическая корректность и сохранение семантики у открытых моделей проседают заметно. Бенчмарк выявил типичные паттерны ошибок — от потери условий задачи до кривого маппинга углов и отрезков в DSL-конструкции.
-
-✈️ Зачем это нужно:
-Если AlphaGeometry почти дотягивается до уровня золотых медалистов IMO, но требует ручного перевода задач в свой формат — это бутылочное горлышко всей нейросимволической схемы. NL2AGBench показывает, что автоматизация этой формализации пока работает только у проприетарных гигантов, а open-source комьюнити ещё пилить и пилить. Полезно всем, кто строит математических агентов, автоматические решатели олимпиадных задач и системы формальной верификации геометрии. По сути, это карта местности для тех, кто хочет дёшево и сердито подключить LLM к серьёзному геометрическому движку без подписки на закрытые API.</div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
+    <main><h1>NL2AGBench Бенчмарк авто-формализации геометрических задач для AlphaGeometry</h1><p class='post-meta'>02 September 2026</p><div class='post-content'><p>💡 NL2AGBench: Бенчмарк авто-формализации геометрических задач для AlphaGeometry</p>
+<p>❓ Что сделали:
+Создали первый бенчмарк NL2AGBench, который оценивает, насколько хорошо большие языковые модели умеют переводить обычные геометрические задачки на английском в специализированный DSL AlphaGeometry. Ключевая фишка — проверка не текстовым сходством, а реальным выполнением в движке AlphaGeometry. Если формализация скомпилировалась и геометрические ограничения сохранились — значит перевод удался, а не просто похож на правильный. Протестировали десять топовых LLM (от закрытых GPT-классов до крупных open-source моделей) и проанализировали, где именно они спотыкаются.</p>
+<p>🎰 Результаты:
+Разрыв между закрытыми и открытыми моделями оказался катастрофическим. Лидеры закрытого сегмента выдают более 80% исполняемых переводов, то есть формализация реально работает в AlphaGeometry. А вот даже самые жирные open-source модели стабильно теряют геометрические ограничения и плюют невалидный синтаксис. Синтаксическая корректность и сохранение семантики у открытых моделей проседают заметно. Бенчмарк выявил типичные паттерны ошибок — от потери условий задачи до кривого маппинга углов и отрезков в DSL-конструкции.</p>
+<p>✈️ Зачем это нужно:
+Если AlphaGeometry почти дотягивается до уровня золотых медалистов IMO, но требует ручного перевода задач в свой формат — это бутылочное горлышко всей нейросимволической схемы. NL2AGBench показывает, что автоматизация этой формализации пока работает только у проприетарных гигантов, а open-source комьюнити ещё пилить и пилить. Полезно всем, кто строит математических агентов, автоматические решатели олимпиадных задач и системы формальной верификации геометрии. По сути, это карта местности для тех, кто хочет дёшево и сердито подключить LLM к серьёзному геометрическому движку без подписки на закрытые API.</p></div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
     <footer>
         © 2026 Idea Scout |
         <a href="https://t.me/idea_scout">Telegram</a> |

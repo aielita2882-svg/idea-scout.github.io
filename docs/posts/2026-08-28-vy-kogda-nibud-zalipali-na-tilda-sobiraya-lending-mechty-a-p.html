@@ -33,6 +33,19 @@
         }
         .post-meta { color: #888; font-size: 14px; }
         .post-content { margin: 20px 0; }
+        .post-content h2 { color: #80cbc4; }
+        .post-content h3 { color: #80cbc4; }
+        .post-content ul {
+            list-style: disc !important;
+            padding-left: 20px !important;
+        }
+        .post-content ul li {
+            list-style: disc !important;
+            margin-bottom: 5px;
+        }
+        .post-content ul li::before {
+            content: none !important;
+        }
         .categories-list {
             display: flex;
             flex-wrap: wrap;
@@ -56,6 +69,18 @@
             border-top: 1px solid #333;
             padding-top: 20px;
         }
+        .post-content ul,
+        .post-content ol {
+            padding-left: 20px !important;
+        }
+        .post-content li {
+            margin-bottom: 5px;
+        }
+        .post-content blockquote {
+            border-left: 3px solid #80cbc4;
+            padding-left: 15px;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -63,14 +88,15 @@
         <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
         <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
         <div class="categories-list">
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli/">Модели</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty/">Скрипты</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya/">Автоматизация</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing/">Парсинг</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe/">Разное</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html">Парсинг</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
         </div>
     </header>
-    <main><h1>Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что лиды с формы уходят в пустоту?</h1><p class='post-meta'>28 August 2026</p><div class='post-content'>💡
+    <main><h1>Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что лиды с формы уходят в пустоту?</h1><p class='post-meta'>28 August 2026</p><div class='post-content'><p>Вы когда-нибудь залипали на Tilda, собирая лендинг мечты, а потом понимали, что лиды с формы уходят в пустоту?
+💡
 Поздравляю, вы поймали классический синдром «красивый сайт — мёртвая база». Лечится это просто: автоматизация email рассылок, и я сегодня разобрала один весьма занятный рецепт.
 Суть такая: у вас Tilda, у посетителя — форма, у вас — желание моментально отправить ему приветственное письмо с обращением по имени (а не безликое «Уважаемый клиент»). Берётся Yandex Cloud Functions, прикручивается как вебхук к Tilda, а дальше вся магия происходит в скрипте webhook_sender.py. Он ловит данные из формы, хватает имя и email, и через API Unisender отправляет персонализированное письмо. Никаких ручных «ой, надо бы ответить», никаких потерянных лидов. Сценарий: заполнил форму → через секунды у тебя в почте «Привет, Аня, вот твоя полезность» → ты доволен, Аня тоже.
 Теперь моё честное мнение
@@ -82,7 +108,7 @@
 🔥
 👉
 Больше таких находок без воды — в нашем Telegram-канале. Ссылка в профиле сообщества.
-100% опенсорс</div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-mirofish.html">MiroFish</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-claude-watch.html">claude-watch</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-tchmaterial-parser.html">tchMaterial-parser</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-spiderfoot.html">SpiderFoot</a></li></ul></div></main>
+100% опенсорс</p></div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-mirofish.html">MiroFish</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-claude-watch.html">claude-watch</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-tchmaterial-parser.html">tchMaterial-parser</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-spiderfoot.html">SpiderFoot</a></li></ul></div></main>
     <footer>
         © 2026 Idea Scout |
         <a href="https://t.me/idea_scout">Telegram</a> |

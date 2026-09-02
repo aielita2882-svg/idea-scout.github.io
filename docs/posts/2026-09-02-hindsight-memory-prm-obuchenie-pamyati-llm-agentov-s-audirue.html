@@ -33,6 +33,19 @@
         }
         .post-meta { color: #888; font-size: 14px; }
         .post-content { margin: 20px 0; }
+        .post-content h2 { color: #80cbc4; }
+        .post-content h3 { color: #80cbc4; }
+        .post-content ul {
+            list-style: disc !important;
+            padding-left: 20px !important;
+        }
+        .post-content ul li {
+            list-style: disc !important;
+            margin-bottom: 5px;
+        }
+        .post-content ul li::before {
+            content: none !important;
+        }
         .categories-list {
             display: flex;
             flex-wrap: wrap;
@@ -56,6 +69,18 @@
             border-top: 1px solid #333;
             padding-top: 20px;
         }
+        .post-content ul,
+        .post-content ol {
+            padding-left: 20px !important;
+        }
+        .post-content li {
+            margin-bottom: 5px;
+        }
+        .post-content blockquote {
+            border-left: 3px solid #80cbc4;
+            padding-left: 15px;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -63,18 +88,17 @@
         <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
         <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
         <div class="categories-list">
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli/">Модели</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty/">Скрипты</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya/">Автоматизация</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing/">Парсинг</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe/">Разное</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html">Парсинг</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
         </div>
     </header>
-    <main><h1>Hindsight Memory-PRM обучение памяти LLM-агентов с аудируемой ретроспективной оценкой</h1><p class='post-meta'>02 September 2026</p><div class='post-content'>❓ Что сделали: Авторы разработали новый метод обучения с подкреплением для долгосрочной памяти LLM-агентов под названием Hindsight Memory-PRM. Главная проблема — операции с памятью (чтение, запись, удаление) невозможно нормально оценить в момент их выполнения, потому что их ценность проявляется только через десятки шагов. Ребята решили это элегантно: они используют машинно-читаемые следы в траектории — попадания в ретривер и цитаты при генерации ответа — чтобы дважды провести аудит. Офлайн они тренируют критика полезности памяти по операциям, а онлайн через контролируемое удаление-переотвечание калибруют кредит доверия для конкретных записей. Этот кредит потом распространяется по цепочкам версий как прокси-награда за действие — без человеческой разметки и без Monte-Carlo переигровки.
-
-🎰 Результаты: На бенчмарке LoCoMo локальная 8B модель достигла 77.5% при фиксированном общем reader, обогнав своего API-учителя (65.1%) и все воспроизведённые внешние системы. Контекст при этом в восемь раз меньше, чем у Mem0 в его официальной конфигурации. На LongMemEval результат 79.0%. Абляции показывают, что прирост идёт именно от каузальной калибровки, а не от плотности сигнала. Политика сходится к многоверсионной организации памяти, приросты которой не воспроизводит ни один открытый бейзлайн.
-
-✈️ Зачем это нужно: Это серьёзный шаг к тому, чтобы LLM-агенты могли работать с длинным контекстом не раздувая его в бесконечность и не разоряя бюджет на токены. Метод позволяет тренировать агентов с эффективной памятью на средних по размеру моделях, которые превосходят коммерческие API — мечта для тех, кто устал платить за облака. Практическая польза: персональные ассистенты, которые помнят о тебе всё и не теряют нить через неделю, корпоративные боты с длинной историей диалогов и автоматизация, где нужно принимать решения на основе накопленного контекста. Ну и приятный бонус — отсутствие необходимости в человеческой разметке делает подход масштабируемым для всех, у кого есть пара свободных GPU.</div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
+    <main><h1>Hindsight Memory-PRM обучение памяти LLM-агентов с аудируемой ретроспективной оценкой</h1><p class='post-meta'>02 September 2026</p><div class='post-content'><p>💡 Hindsight Memory-PRM: обучение памяти LLM-агентов с аудируемой ретроспективной оценкой</p>
+<p>❓ Что сделали: Авторы разработали новый метод обучения с подкреплением для долгосрочной памяти LLM-агентов под названием Hindsight Memory-PRM. Главная проблема — операции с памятью (чтение, запись, удаление) невозможно нормально оценить в момент их выполнения, потому что их ценность проявляется только через десятки шагов. Ребята решили это элегантно: они используют машинно-читаемые следы в траектории — попадания в ретривер и цитаты при генерации ответа — чтобы дважды провести аудит. Офлайн они тренируют критика полезности памяти по операциям, а онлайн через контролируемое удаление-переотвечание калибруют кредит доверия для конкретных записей. Этот кредит потом распространяется по цепочкам версий как прокси-награда за действие — без человеческой разметки и без Monte-Carlo переигровки.</p>
+<p>🎰 Результаты: На бенчмарке LoCoMo локальная 8B модель достигла 77.5% при фиксированном общем reader, обогнав своего API-учителя (65.1%) и все воспроизведённые внешние системы. Контекст при этом в восемь раз меньше, чем у Mem0 в его официальной конфигурации. На LongMemEval результат 79.0%. Абляции показывают, что прирост идёт именно от каузальной калибровки, а не от плотности сигнала. Политика сходится к многоверсионной организации памяти, приросты которой не воспроизводит ни один открытый бейзлайн.</p>
+<p>✈️ Зачем это нужно: Это серьёзный шаг к тому, чтобы LLM-агенты могли работать с длинным контекстом не раздувая его в бесконечность и не разоряя бюджет на токены. Метод позволяет тренировать агентов с эффективной памятью на средних по размеру моделях, которые превосходят коммерческие API — мечта для тех, кто устал платить за облака. Практическая польза: персональные ассистенты, которые помнят о тебе всё и не теряют нить через неделю, корпоративные боты с длинной историей диалогов и автоматизация, где нужно принимать решения на основе накопленного контекста. Ну и приятный бонус — отсутствие необходимости в человеческой разметке делает подход масштабируемым для всех, у кого есть пара свободных GPU.</p></div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
     <footer>
         © 2026 Idea Scout |
         <a href="https://t.me/idea_scout">Telegram</a> |

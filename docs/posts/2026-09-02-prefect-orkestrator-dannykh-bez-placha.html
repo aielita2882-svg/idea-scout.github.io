@@ -33,6 +33,19 @@
         }
         .post-meta { color: #888; font-size: 14px; }
         .post-content { margin: 20px 0; }
+        .post-content h2 { color: #80cbc4; }
+        .post-content h3 { color: #80cbc4; }
+        .post-content ul {
+            list-style: disc !important;
+            padding-left: 20px !important;
+        }
+        .post-content ul li {
+            list-style: disc !important;
+            margin-bottom: 5px;
+        }
+        .post-content ul li::before {
+            content: none !important;
+        }
         .categories-list {
             display: flex;
             flex-wrap: wrap;
@@ -56,6 +69,18 @@
             border-top: 1px solid #333;
             padding-top: 20px;
         }
+        .post-content ul,
+        .post-content ol {
+            padding-left: 20px !important;
+        }
+        .post-content li {
+            margin-bottom: 5px;
+        }
+        .post-content blockquote {
+            border-left: 3px solid #80cbc4;
+            padding-left: 15px;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -63,28 +88,24 @@
         <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/">Idea Scout - AI-находки для разработчиков</a></h1>
         <p>Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
         <div class="categories-list">
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli/">Модели</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty/">Скрипты</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya/">Автоматизация</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing/">Парсинг</a>
-            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe/">Разное</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html">Модели</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html">Скрипты</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html">Автоматизация</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html">Парсинг</a>
+            <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html">Разное</a>
         </div>
     </header>
-    <main><h1>Prefect  оркестратор данных без плача</h1><p class='post-meta'>02 September 2026</p><div class='post-content'>❓ Что это: Prefect — это фреймворк для оркестровки рабочих процессов на Python, который позволяет строить отказоустойчивые конвейеры данных. Вместо того чтобы писать костыли с cron и костылями, вы описываете логику как есть, а Prefect заботится о планировании, повторных запусках и мониторинге. Это как если бы ваша бабушка не просто готовила борщ, а ещё и напоминала, когда настаивать, а если что-то подгорело — сама пересчитывала.
-
-⚡ Фишки:
+    <main><h1>Prefect  оркестратор данных без плача</h1><p class='post-meta'>02 September 2026</p><div class='post-content'><p>🔥 Prefect — оркестратор данных без плача</p>
+<p>❓ Что это: Prefect — это фреймворк для оркестровки рабочих процессов на Python, который позволяет строить отказоустойчивые конвейеры данных. Вместо того чтобы писать костыли с cron и костылями, вы описываете логику как есть, а Prefect заботится о планировании, повторных запусках и мониторинге. Это как если бы ваша бабушка не просто готовила борщ, а ещё и напоминала, когда настаивать, а если что-то подгорело — сама пересчитывала.</p>
+<p>⚡ Фишки:
 - Гибкая модель задач с поддержкой асинхронности, retries, timeouts и кэширования
 - Интуитивно понятный UI для визуализации DAG-графов, логов и метрик в реальном времени
 - Автоматическое обнаружение и управление зависимостями между задачами
-- Возможность запускать workflows локально, в облаке или в любом Kubernetes-кластере
-
-🎰 Статистика: 23 731 звёзд на GitHub, Python, активно поддерживается и развивается — коммиты льются чаще, чем чай в самолёте
-
-🎯 Кому пригодится: Инженерам данных, которые устали писать bash-скрипты и молиться, чтобы ничего не сломалось. Тем, кто строит ML-пайплайны и хочет, чтобы модель обучалась не в пятницу вечером, а стабильно по расписанию. И даже тем, кто просто хочет выглядеть серьёзно на собеседовании, когда упоминает «workflow orchestration» с полной уверенностью в том, что это значит.
-
-Дополнительно: Prefect поддерживает интеграцию с почти всеми популярными системами — от Snowflake и BigQuery до Slack и Discord. То есть ваш пайплайн может не только работать, но и радовать коллег в чате, когда всё прошло успешно. Или, наоборот, срочно оповещать, если данные опять пришли с пустыми полями от того самого аналитика.
-
-А ещё в нём есть Prefect Cloud — облачный сервис с расширенной аналитикой, RBAC и поддержкой enterprise-нагрузок. Для тех, кто хочет, чтобы не только работало, но и выглядело по-корпоративно.</div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
+- Возможность запускать workflows локально, в облаке или в любом Kubernetes-кластере</p>
+<p>🎰 Статистика: 23 731 звёзд на GitHub, Python, активно поддерживается и развивается — коммиты льются чаще, чем чай в самолёте</p>
+<p>🎯 Кому пригодится: Инженерам данных, которые устали писать bash-скрипты и молиться, чтобы ничего не сломалось. Тем, кто строит ML-пайплайны и хочет, чтобы модель обучалась не в пятницу вечером, а стабильно по расписанию. И даже тем, кто просто хочет выглядеть серьёзно на собеседовании, когда упоминает «workflow orchestration» с полной уверенностью в том, что это значит.</p>
+<p>Дополнительно: Prefect поддерживает интеграцию с почти всеми популярными системами — от Snowflake и BigQuery до Slack и Discord. То есть ваш пайплайн может не только работать, но и радовать коллег в чате, когда всё прошло успешно. Или, наоборот, срочно оповещать, если данные опять пришли с пустыми полями от того самого аналитика.</p>
+<p>А ещё в нём есть Prefect Cloud — облачный сервис с расширенной аналитикой, RBAC и поддержкой enterprise-нагрузок. Для тех, кто хочет, чтобы не только работало, но и выглядело по-корпоративно.</p></div><div class="related-posts"><h3>Похожие статьи</h3><ul><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-warpdotdevcommon-skills.html">warpdotdevcommon-skills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-googleskills.html">googleskills</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-chto-esli-obedinit-vsekh-ii-pomoshchnikov-v-odnom-okne.html">А что, если объединить всех ИИ-помощников в одном окне?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-virtualnye-skhemy-realnogo-vremeni-dlya-upravleniya-formoy-p.html">Виртуальные схемы реального времени для управления формой плазмы с помощью нейросетевых эмуляторов экспериментальная демонстрация на MAST Upgrade</a></li></ul></div></main>
     <footer>
         © 2026 Idea Scout |
         <a href="https://t.me/idea_scout">Telegram</a> |
