@@ -43,15 +43,21 @@ Needle - это дерзкий вызов эпохе жирн">
 
     /* Карточки постов */
     .card {
-        background-color: #0b132b;   /* тот же тёмно-синий фон */
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
         border: 2px solid transparent;
         border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
         transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
         border-radius: 12px;
     }
     .card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
         border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
     }
     .card-title a {
@@ -63,6 +69,9 @@ Needle - это дерзкий вызов эпохе жирн">
     }
     .card-text {
         color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
     }
 
     /* Кнопки категорий */
