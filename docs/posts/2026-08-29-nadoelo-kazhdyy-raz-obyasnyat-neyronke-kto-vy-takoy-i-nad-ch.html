@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Надоело каждый раз объяснять нейронке, кто вы такой и над чем работаете последние две недели? Знакомая ситуация вы три ночи полировали курс, а через неделю чат-бот смотрит на вас пустыми глазами, будто вы впервые встретились. LearnFlow AI пришел, чтобы закончить этот цирк с амнезией. | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="Надоело каждый раз объяснять нейронке, кто вы такой и над чем работаете последние две недели? Знакомая ситуация: вы три ночи полировали курс, а через неделю чат">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #7ab7ff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        background-color: #1a2332;   /* чуть светлее фона */
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #1a2332;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #4d9eff;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #1a2332;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #1a2332;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #1a2332;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-light text-decoration-none">Idea Scout - AI-находки для разработчиков</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Надоело каждый раз объяснять нейронке, кто вы такой и над чем работаете последние две недели? Знакомая ситуация вы три ночи полировали курс, а через неделю чат-бот смотрит на вас пустыми глазами, будто вы впервые встретились. LearnFlow AI пришел, чтобы закончить этот цирк с амнезией.</h1>
+        <p class="post-meta">29 August 2026</p>
+        <div class="post-content"><p>Надоело каждый раз объяснять нейронке, кто вы такой и над чем работаете последние две недели? Знакомая ситуация: вы три ночи полировали курс, а через неделю чат-бот смотрит на вас пустыми глазами, будто вы впервые встретились. LearnFlow AI пришел, чтобы закончить этот цирк с амнезией.</p>
+<p><strong>Что это</strong>
+Это не просто очередной интерфейс для чата, а полноценное рабочее пространство с AI-агентом, который обладает долгосрочной памятью. Вы создаете проект (будь то серия статей, сложный доклад или образовательный курс), и агент формирует так называемую «Сферу знаний». Все решения, термины и наработки копятся в одном месте, поэтому каждая новая сессия начинается не с чистого листа, а с четкого понимания контекста.</p>
+<p><strong>В чем фишка</strong> ⚡
+- Прозрачная память: вы видите, что именно агент запомнил о вас и проекте, и можете вручную поправить любые галлюцинации.
+- Методические скиллы: встроенные алгоритмы помогают структурировать лекции, оформлять отчеты по ГОСТу или собирать логичный нарратив.
+- Реальные артефакты: на выходе вы получаете не бесконечную простыню текста в чате, а готовые конспекты, слайды и планы.
+- Персонализация стиля: со временем агент копирует вашу манеру письма, избавляя от ощущения, что текст писал усредненный копирайтер с биржи.
+- Технический стек: база на LangGraph ReAct с использованием субагентов, что не дает основному контексту раздуться до размеров Вселенной.
+- Безопасность: self-hosted развертывание, защита от prompt-injection и даже SIEM-сервис для параноиков.</p>
+<p><strong>Кто создатель</strong>
+Проект разрабатывается энтузиастом под ником Bbar0n234 и его командой, которые решили перенести логику работы с экспертизой из хаотичных переписок в структурированную систему.</p>
+<p><strong>Статистика</strong> 🎯
+Проект живет на GitHub, написан на Python с активным использованием фреймворков LangChain и LangGraph. Для контроля расходов и отладки интегрирован Langfuse-трейсинг. Комьюнити растет за счет тех, кому мало стандартных GPT-оберток.</p>
+<p><strong>Для кого</strong> 💡
+Инструмент станет спасением для технических спикеров, преподавателей и авторов курсов. Всем, кто перекладывает огромные объемы экспертизы из головы в документы и устал от рутины «скопируй-вставь-напомни контекст».</p>
+<p><strong>Мое мнение</strong>
+Идея с «памятью пользователя» - это просто пушка. Когда AI начинает понимать ваши предпочтения без лишних промптов, продуктивность взлетает. Из жирных плюсов - архитектура: конфигурации вместо жестких конвейеров делают систему гибкой. </p>
+<p>Из подводных камней - порог входа. Это не «нажми одну кнопку и лети», тут придется повозиться с self-hosted установкой. Но за возможность контролировать свои данные и не кормить корпорации всей своей базой знаний стоит заплатить временем. Пробовать однозначно стоит, если вы создаете сложный контент.</p>
+<p><strong>Заключение</strong>
+LearnFlow AI превращает нейросеть из капризного стажера в полноценного партнера, который помнит всё. Это серьезный шаг от простых чат-ботов к настоящим интеллектуальным системам управления знаниями.</p>
+<p><strong>🔗 100% Опенсорс</strong>: <a href="https://github.com/Bbar0n234/learnflow-ai">LearnFlow AI</a></p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-kogda-nibud-zadumyvalis-mozhno-li-prevratit-khaos-danny.html">А вы когда-нибудь задумывались, можно ли превратить хаос данных в точный прогноз, если заставить тысячи виртуальных сущностей поспорить друг с другом?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-zadumyvalis-pochemu-odni-roliki-zaletayut-v-rekomendats.html">А вы задумывались, почему одни ролики залетают в рекомендации, а другие умирают в муках на пятой секунде просмотра?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-srazhatsya-s-interfeysami-gosudarstvennykh-portalov-.html">Надоело сражаться с интерфейсами государственных порталов, которые будто создавались в эпоху динозавров специально для того, чтобы вы не нашли нужный файл?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-dumali-chto-v-mire-opensorsa-lidery-bessmenny-kak-by-ne-tak-.html">Думали, что в мире опенсорса лидеры бессменны? Как бы не так! Представьте один дерзкий новичок умудряется за считанные недели обойти мастодонта с 202 тысячами звезд на GitHub. Да, мы говорим о настоящем перевороте в инструментах разработки.</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

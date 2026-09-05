@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задумывались ли вы, почему нейросети с таким каменным лицом выдают полную чушь, когда сталкиваются с данными, которых никогда не видели?  | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="Задумывались ли вы, почему нейросети с таким каменным лицом выдают полную чушь, когда сталкиваются с данными, которых никогда не видели? 🎯
+
+**Что это**
+Lévy Att">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #7ab7ff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        background-color: #1a2332;   /* чуть светлее фона */
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #1a2332;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #4d9eff;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #1a2332;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #1a2332;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #1a2332;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-light text-decoration-none">Idea Scout - AI-находки для разработчиков</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Задумывались ли вы, почему нейросети с таким каменным лицом выдают полную чушь, когда сталкиваются с данными, которых никогда не видели? </h1>
+        <p class="post-meta">22 August 2026</p>
+        <div class="post-content"><p>Задумывались ли вы, почему нейросети с таким каменным лицом выдают полную чушь, когда сталкиваются с данными, которых никогда не видели? 🎯</p>
+<p><strong>Что это</strong>
+Lévy Attention - это дерзкая попытка переосмыслить классический механизм внимания. Авторы решили, что стандартный softmax-слой в cross-attention слишком предсказуем и ограничен. Вместо него они внедрили стохастический оператор, который работает с непрерывным временем и каналами. По сути, это способ заставить модель не просто угадывать ответ, но и честно признаваться, когда она в нем не уверена.</p>
+<p><strong>В чем фишка</strong>
+Тут всё завязано на математической магии и теории вероятностей:
+- Замена softmax на Lévy Attention: вместо скучного взвешенного среднего теперь используется интенсивность над непрерывным пространством.
+- Пуассоновский процесс: модель буквально «бросает атомы» в пространство (время x каналы) и усредняет значения в этих точках.
+- Косинусное ядро: в среднем всё это сводится к сглаженному косинусному ядру, что позволяет просто заменить слой и обучать его обычными градиентами.
+- Мгновенная неопределенность: расчет σ̂(q) происходит в закрытом виде прямо во время прямого прохода.
+- Никаких костылей: не нужно тренировать отдельную сеть или добавлять дополнительные «головы» для оценки уверенности.
+- Умная реакция на данные: на плотных данных механизм почти не влияет на результат, но на разреженных (где данных мало) резко активируется, сигнализируя о риске. ⚡</p>
+<p><strong>Кто создатель</strong>
+Проект разработан группой исследователей, специализирующихся на глубоком обучении и анализе иррегулярных временных рядов. Команда сфокусировалась на том, чтобы сделать предиктивную неопределенность доступной без потери в производительности.</p>
+<p><strong>Статистика</strong>
+Проект находится в стадии активного академического продвижения. Основной стек - Python и PyTorch. Тесты на t-PatchGNN показали, что замена слоя стоит всего 5.6% точности по сравнению с контрольной группой, что является ничтожной ценой за получение метрики уверенности. 🚀</p>
+<p><strong>Для кого</strong>
+Если ваши данные выглядят как хаос, где замеры приходят через случайные промежутки времени, вам сюда. Это маст-хэв для:
+- Медиков (анализ показателей пациентов с иррегулярным интервалом).
+- IoT-инженеров (датчики, которые спят или глючат).
+- Финтех-аналитиков (рыночные данные с пропусками).
+- Разработчиков критических систем, где «уверенный бред» модели может привести к катастрофе.</p>
+<p><strong>Мое мнение</strong>
+Идея заменить softmax на стохастический процесс выглядит как чистый секс для любителей математики. Самое крутое здесь то, что нам не нужно гонять модель по кругу (как в методах Монте-Карло), чтобы понять, врет она или нет. Подводный камень один - небольшая просадка в точности. Но давайте честно: лучше получить ответ на 5% менее точный, но знать, что ему нельзя доверять, чем слепо следовать за галлюцинацией нейронки. Стоит пробовать, если вы работаете с реальным, «грязным» миром, а не с вылизанными датасетами из Kaggle. 💡</p>
+<p><strong>Заключение</strong>
+Lévy Attention превращает черную коробку нейросети в инструмент, который умеет говорить: «Я не знаю». В мире, где цена ошибки растет, такая честность бесценна.</p>
+<p><strong>🔗 100% Опенсорс</strong>: <a href="Нет публичного репозитория">Lévy Attention</a></p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-zadumyvalis-li-vy-chto-obshchego-u-upravleniya-raskalennym-g.html">Задумывались ли вы, что общего у управления раскаленным газом в миллионы градусов и попыткой удержать в руках скользкого мыла? Примерно одно и то же - любая ошибка ведет к катастрофе, а объект стремится сбежать из-под контроля.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-nadoelo-videt-soobshchenie-o-tom-chto-vashi-limity-ischerpan.html">Надоело видеть сообщение о том, что ваши лимиты исчерпаны в самый разгар написания фичи? Пока одни смиренно ждут обновления квот, другие используют серые схемы, чтобы заставить нейронку пахать 247.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-znali-chto-dazhe-samaya-umnaya-neyronka-mozhet-pasovat-.html">А вы знали, что даже самая умная нейронка может пасовать перед задачей за 8 класс, если ей не перевести условие на правильный язык?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-zachem-skarmlivat-modeli-terabayty-dannykh-esli-ona-vse-ravn.html">Зачем скармливать модели терабайты данных, если она все равно тупит на втором ходу и игнорирует собственные ошибки?</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

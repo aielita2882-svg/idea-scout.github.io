@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>А вы всё еще пытаетесь впихнуть все инструкции в один гигантский системный промпт, надеясь, что нейронка не забудет, что ей делать, на середине текста? | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="А вы всё еще пытаетесь впихнуть все инструкции в один гигантский системный промпт, надеясь, что нейронка не забудет, что ей делать, на середине текста?
+
+**Что э">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #7ab7ff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        background-color: #1a2332;   /* чуть светлее фона */
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #1a2332;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #4d9eff;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #1a2332;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #1a2332;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #1a2332;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-light text-decoration-none">Idea Scout - AI-находки для разработчиков</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">А вы всё еще пытаетесь впихнуть все инструкции в один гигантский системный промпт, надеясь, что нейронка не забудет, что ей делать, на середине текста?</h1>
+        <p class="post-meta">29 August 2026</p>
+        <div class="post-content"><p>А вы всё еще пытаетесь впихнуть все инструкции в один гигантский системный промпт, надеясь, что нейронка не забудет, что ей делать, на середине текста?</p>
+<p><strong>Что это</strong> 💡</p>
+<p>Проект anthropics/skills - это официальный склад «суперспособностей» для Claude от создателей модели. Если упростить, то это библиотека модульных расширений (Agent Skills), которые превращают обычный чат-бот в полноценного цифрового сотрудника. Вместо того чтобы каждый раз объяснять модели, как работать с файлами или кодом, вы просто подключаете нужный навык, и агент сразу понимает алгоритм действий и доступный инструментарий.</p>
+<p><strong>В чем фишка</strong> 🚀</p>
+<p>Здесь нет магии, но есть грамотный инженерный подход:
+- Готовые сеты инструкций и инструментов, которые протестированы и одобрены самой Anthropic.
+- Модульность на максималках: берете только те скиллы, которые нужны для конкретного кейса, не перегружая контекст.
+- Нативная поддержка работы с репозиториями, документами и файловыми системами.
+- Весь код написан на Python, так что можно смело форкать, копаться в кишках и допиливать под себя.
+- Это фактически «дорожная карта» от Anthropic, показывающая, какой архитектурой должны обладать AI-агенты будущего.</p>
+<p><strong>Кто создатель</strong></p>
+<p>За проектом стоит команда Anthropic. Это те самые ребята, которые создали Claude, поэтому репозиторий является эталоном того, как модель должна взаимодействовать с внешними инструментами.</p>
+<p><strong>Статистика</strong> ⚡</p>
+<p>Цифры говорят сами за себя: 171 тысяча звезд на GitHub. Основной стек - Python. Активность зашкаливает, так как сообщество сейчас буквально помешано на агентных технологиях, и этот проект стал одним из главных хабов для разработчиков.</p>
+<p><strong>Для кого</strong> 🎯</p>
+<p>В первую очередь для тех, кто строит AI-агентов на базе Claude и не хочет изобретать велосипед с квадратными колесами. Если вы разработчик, который устал от «промпт-инжиниринга» в стиле написания романов, модульная архитектура станет для вас спасением. Также рекомендую заглянуть AI-исследователям и продакт-менеджерам: здесь наглядно показан переход от концепции «один большой промпт» к концепции «набор специализированных микро-навыков».</p>
+<p><strong>Мое мнение</strong></p>
+<p>Проект выглядит очень здраво. Главный плюс в том, что Anthropic фактически легализует модульный подход. Вместо того чтобы пытаться сделать модель «всезнайкой» через один текст, они дают ей инструменты. </p>
+<p>Из подводных камней: как и любой опенсорс от гигантов, проект может эволюционировать быстрее, чем вы успеете его внедрить. Но попробовать однозначно стоит, потому что это самый короткий путь к созданию реально работающего агента, который не «галлюцинирует» в середине сложного процесса.</p>
+<p><strong>Заключение</strong></p>
+<p>Anthropic Skills - это не просто библиотека, а манифест того, как должна выглядеть автоматизация. Меньше слов в промптах - больше конкретных навыков в коде.</p>
+<p><strong>🔗 100% Опенсорс</strong>: <a href="https://github.com/anthropics/skills">Anthropic Skills</a></p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-kogda-nibud-zadumyvalis-mozhno-li-prevratit-khaos-danny.html">А вы когда-нибудь задумывались, можно ли превратить хаос данных в точный прогноз, если заставить тысячи виртуальных сущностей поспорить друг с другом?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-zadumyvalis-pochemu-odni-roliki-zaletayut-v-rekomendats.html">А вы задумывались, почему одни ролики залетают в рекомендации, а другие умирают в муках на пятой секунде просмотра?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-srazhatsya-s-interfeysami-gosudarstvennykh-portalov-.html">Надоело сражаться с интерфейсами государственных порталов, которые будто создавались в эпоху динозавров специально для того, чтобы вы не нашли нужный файл?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-dumali-chto-v-mire-opensorsa-lidery-bessmenny-kak-by-ne-tak-.html">Думали, что в мире опенсорса лидеры бессменны? Как бы не так! Представьте один дерзкий новичок умудряется за считанные недели обойти мастодонта с 202 тысячами звезд на GitHub. Да, мы говорим о настоящем перевороте в инструментах разработки.</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

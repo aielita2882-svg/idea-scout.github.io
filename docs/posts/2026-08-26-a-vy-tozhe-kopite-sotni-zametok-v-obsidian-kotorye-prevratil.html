@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>А вы тоже копите сотни заметок в Obsidian, которые превратились в цифровое кладбище, где ничего невозможно найти? | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="А вы тоже копите сотни заметок в Obsidian, которые превратились в цифровое кладбище, где ничего невозможно найти? 
+
+**Что это**
+Claude-obsidian - это дерзкая по">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #7ab7ff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        background-color: #1a2332;   /* чуть светлее фона */
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #1a2332;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #4d9eff;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #1a2332;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #1a2332;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #1a2332;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-light text-decoration-none">Idea Scout - AI-находки для разработчиков</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">А вы тоже копите сотни заметок в Obsidian, которые превратились в цифровое кладбище, где ничего невозможно найти?</h1>
+        <p class="post-meta">26 August 2026</p>
+        <div class="post-content"><p>А вы тоже копите сотни заметок в Obsidian, которые превратились в цифровое кладбище, где ничего невозможно найти? </p>
+<p><strong>Что это</strong>
+Claude-obsidian - это дерзкая попытка скрестить мощь Claude Code и гибкость Obsidian, чтобы создать настоящий "второй мозг". Проект превращает ваш локальный архив в самоорганизующуюся систему. Вы просто скармливаете ему PDF-ки, статьи или конспекты, а нейронка сама переваривает контент, ищет логические связи с тем, что уже написано, и раскладывает все по полочкам. И самое главное - никаких облачных тюрем, только чистый Markdown на вашем жестком диске.</p>
+<p><strong>В чем фишка</strong> 💡
+- Автоматический порядок: Claude сам решает, в какую папку отправить заметку и какие теги прикрутить.
+- Интеллектуальный граф: AI создает связи между файлами, превращая хаос из документов в структурированную сеть идей.
+- Тотальный суверенитет: Ваши данные принадлежат вам. Никаких проприетарных форматов и страха, что сервис завтра закроется.
+- Интеграция с Claude Code: Вся магия происходит прямо внутри вашего хранилища.
+- Принцип LLM Wiki: Система работает по паттерну, который продвигает Андрей Карпаты, превращая базу знаний в живой организм.</p>
+<p><strong>Кто создатель</strong>
+За проектом стоит энтузиаст AgriciDaniel и активное опенсорс-комьюнити, которое допиливает инструмент до идеала, превращая его из простого скрипта в полноценного цифрового библиотекаря.</p>
+<p><strong>Статистика</strong> 🚀
+Цифры говорят сами за себя: более 12 тысяч звезд на GitHub. Для такого нишевого инструмента это настоящий разрыв. Проект написан на Python, обновляется регулярно, а количество форков и ишуссов подтверждает, что люди реально пользуются этой штукой, а не просто ставят звезду для красоты.</p>
+<p><strong>Для кого</strong> 🎯
+В первую очередь для "информационных плюшкиных": исследователей, студентов и авторов, которые тонут в потоке данных. Если вы любите идею Zettelkasten, но вам лень вручную проставлять сотни ссылок - это ваш выбор. Также рекомендую тем, кто сбегает из Notion, устав от медленного интерфейса и подписок, и хочет иметь под рукой инструмент, который работает молниеносно и бесплатно (если не считать API Claude).</p>
+<p><strong>Мое мнение</strong> 🔥
+Идея с автоматическим графом знаний - это просто пушка. Наконец-то Obsidian перестает быть просто текстовым редактором с красивыми линиями и становится полноценным когнитивным помощником. Из подводных камней - зависимость от API Claude и необходимость базово дружить с Python для установки. Но стоит ли оно того? Однозначно. Это как нанять профессионального архивариуса, который не просит зарплаты и работает 24/7.</p>
+<p><strong>Заключение</strong>
+Claude-obsidian - это мост между простым хранением текста и реальным управлением знаниями. Если вы готовы доверить сортировку своих мыслей нейронке, чтобы освободить время для творчества - дерзайте.</p>
+<p><strong>🔗 100% Опенсорс</strong>: <a href="https://github.com/AgriciDaniel/claude-obsidian">claude-obsidian</a></p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-po-desyat-raz-perepisyvat-odni-i-te-zhe-prompty-i-in.html">Надоело по десять раз переписывать одни и те же промпты и инструкции, чтобы ваш AI-агент перестал тупить и начал наконец-то работать?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-chto-vash-ai-agent-s-uverennym-vidom-pridumyvaet-nes.html">Надоело, что ваш AI-агент с уверенным видом придумывает несуществующие методы API, а потом искренне удивляется, почему код не работает?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-igrat-v-perekladyvatelya-konteksta-prygaya-mezhdu-py.html">Надоело играть в перекладывателя контекста, прыгая между пятью вкладками браузера, чтобы сравнить, кто из нейронок меньше накосячил в вашем коде?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-a-vy-vsyo-eshche-vruchnuyu-kopiruete-prompty-iz-chata-v-reda.html">А вы всё еще вручную копируете промпты из чата в редактор кода, надеясь, что нейронка в этот раз не нагаллюцинировала? Пора перестать быть перекладывателем токенов и заставить искусственный интеллект работать за вас в режиме полного автопилота.</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

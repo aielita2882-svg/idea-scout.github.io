@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>А вы всё еще вручную копируете промпты из заметок или пытаетесь объяснить нейронке, как работает ваш специфический стек, в десятый раз за утро? Пора перестать играть в сломанный телефон с терминалом и начать использовать инструменты, которые делают работу за вас. | Idea Scout - AI-находки для разработчиков</title>
+    <meta name="description" content="А вы всё еще вручную копируете промпты из заметок или пытаетесь объяснить нейронке, как работает ваш специфический стек, в десятый раз за утро? Пора перестать и">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-dark.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #7ab7ff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        background-color: #1a2332;   /* чуть светлее фона */
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(77, 158, 255, 0.2);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #1a2332;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #4d9eff;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #1a2332;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #1a2332;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #1a2332;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-light text-decoration-none">Idea Scout - AI-находки для разработчиков</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">А вы всё еще вручную копируете промпты из заметок или пытаетесь объяснить нейронке, как работает ваш специфический стек, в десятый раз за утро? Пора перестать играть в сломанный телефон с терминалом и начать использовать инструменты, которые делают работу за вас.</h1>
+        <p class="post-meta">26 August 2026</p>
+        <div class="post-content"><p>А вы всё еще вручную копируете промпты из заметок или пытаетесь объяснить нейронке, как работает ваш специфический стек, в десятый раз за утро? Пора перестать играть в «сломанный телефон» с терминалом и начать использовать инструменты, которые делают работу за вас.</p>
+<p><strong>Что это</strong>
+Перед нами claude-plugins-official - официальный хаб расширений для Claude Code от создателей модели, компании Anthropic. Если упростить, то это своего рода App Store для вашего AI-помощника в консоли. Здесь собраны проверенные инструменты, которые превращают обычный чат в мощный комбайн для автоматизации разработки, интегрируя Claude с внешними сервисами и внутренними процессами проекта.</p>
+<p><strong>В чем фишка</strong> 💡
+Почему стоит смотреть именно сюда, а не искать сомнительные скрипты на форумах:
+- Жесткий отбор: каждый плагин проходит верификацию Anthropic. Никаких бэкдоров или внезапных утечек ключей API.
+- Универсальный охват: в каталоге есть всё - от работы с БД и написания тестов до деплоя и генерации документации.
+- Установка в один клик: всё ставится прямо через CLI. Никаких правок в конфигах вручную и танцев с бубном.
+- Постоянный апгрейд: репозиторий живой, новые расширения залетают регулярно.
+- Безопасность: вы используете официальный стандарт, а не форки от анонимов с тремя звездами на GitHub.</p>
+<p><strong>Кто создатель</strong>
+За всем этим стоит команда Anthropic. Это не фанатский проект, а часть экосистемы Claude, поэтому интеграция работает бесшовно, а поддержка осуществляется на уровне первоисточника.</p>
+<p><strong>Статистика</strong> 🚀
+Проект вызывает дикий ажиотаж: на GitHub уже 33 954 звезды. Основной стек - Python. Активность зашкаливает: коммиты сыплются стабильно, а в разделе issues разворачиваются настоящие баталии по улучшению функционала и обсуждению новых идей.</p>
+<p><strong>Для кого</strong> 🎯
+В первую очередь для тех, кто уже живет в Claude Code и хочет выжать из него 110%. Если вы разработчик, который ценит свое время и ненавидит рутину - вам сюда. Также это идеальный «входной билет» для новичков: можно быстро развернуть рабочее окружение с проверенным набором инструментов, не рискуя безопасностью системы.</p>
+<p><strong>Мое мнение</strong>
+Честно? Это именно то, чего не хватало для полноценного превращения AI в полноценного коллегу-мидла. Главный плюс - доверие. Когда инструмент официальный, ты не переживаешь, что после обновления всё сломается или данные улетят в неизвестном направлении. Из минусов - пока что экосистема только растет, и некоторых узкоспециализированных штук может не хватать. Но база уже настолько мощная, что пробовать стоит однозначно. Это превращает Claude из «умного чат-бота» в полноценный инструмент автоматизации.</p>
+<p><strong>Заключение</strong>
+Официальный каталог плагинов - это кратчайший путь от «напиши мне функцию» до «разверни этот микросервис с тестами и задокументируй API». Безопасно, быстро и максимально эффективно.</p>
+<p><strong>🔗 100% Опенсорс</strong>: <a href="https://github.com/anthropics/claude-plugins-official">Claude Plugins Official</a></p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-kogda-nibud-zadumyvalis-mozhno-li-prevratit-khaos-danny.html">А вы когда-нибудь задумывались, можно ли превратить хаос данных в точный прогноз, если заставить тысячи виртуальных сущностей поспорить друг с другом?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-zadumyvalis-pochemu-odni-roliki-zaletayut-v-rekomendats.html">А вы задумывались, почему одни ролики залетают в рекомендации, а другие умирают в муках на пятой секунде просмотра?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-nadoelo-srazhatsya-s-interfeysami-gosudarstvennykh-portalov-.html">Надоело сражаться с интерфейсами государственных порталов, которые будто создавались в эпоху динозавров специально для того, чтобы вы не нашли нужный файл?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-dumali-chto-v-mire-opensorsa-lidery-bessmenny-kak-by-ne-tak-.html">Думали, что в мире опенсорса лидеры бессменны? Как бы не так! Представьте один дерзкий новичок умудряется за считанные недели обойти мастодонта с 202 тысячами звезд на GitHub. Да, мы говорим о настоящем перевороте в инструментах разработки.</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
