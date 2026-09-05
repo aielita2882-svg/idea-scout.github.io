@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#3D | Idea Scout - AI находки для вайбкодеров</title>
+    <meta name="description" content="Автономный агрегатор open-source AI-моделей, скриптов и инструментов.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b !important;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #4d9eff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #0b132b;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #48036f;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #0b132b;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #0b132b;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #0b132b;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-decoration-none">Idea Scout - AI находки для вайбкодеров</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main><h1 class='display-6'>#3D</h1><div class='row row-cols-1 g-4'>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-05-a-vy-uvereny-chto-vash-lyubimyy-chat-bot-deystvitelno-umnyy--2.html">А вы уверены, что ваш любимый чат-бот действительно умный, а не просто зазубрил все ответы из интернета, как отличник-троечник? 🔍</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-05</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-05-zagolovok-uravneniya-nave-stoksa-kak-zarabotat-million-dolla.html">Заголовок: Уравнения Навье-Стокса: как заработать миллион долларов на воде</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-05</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-04-a-vy-gotovy-k-tomu-chto-vasha-rabota-za-mesyats-teper-delaet.html">А вы готовы к тому, что ваша работа за месяц теперь делается за неделю одним энтузиастом с доступом к правильной нейронке?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-04</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-04-nadoelo-tratit-nedeli-zhizni-na-rasstanovku-kostey-i-nastroy.html">Надоело тратить недели жизни на расстановку костей и настройку весов в Blender, чтобы персонаж просто помахал рукой?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-04</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-03-a-vy-gotovy-k-tomu-chto-vash-diplom-o-vysshem-obrazovanii-pr-2.html">А вы готовы к тому, что ваш диплом о высшем образовании превратится в тыкву за одну ночь?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-03</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-03-a-vy-gotovy-k-tomu-chto-vash-diplom-o-vysshem-obrazovanii-pr.html">А вы готовы к тому, что ваш диплом о высшем образовании превратится в тыкву за одну ночь?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-03</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-03-a-vy-kogda-nibud-zadumyvalis-naskolko-khrupok-vash-lyubimyy--2.html">А вы когда-нибудь задумывались, насколько хрупок ваш любимый интернет, когда всё держится на паре-тройке гигантов?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-03</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-03-a-vy-kogda-nibud-zadumyvalis-naskolko-khrupok-vash-lyubimyy-.html">А вы когда-нибудь задумывались, насколько хрупок ваш любимый интернет, когда всё держится на паре-тройке гигантов?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-03</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-03-a-vy-vsyo-eshche-zastavlyaete-klientov-zapolnyat-beskonechny.html">А вы всё еще заставляете клиентов заполнять бесконечные формы заказа или ждать ответа оператора по десять минут?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-03</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-03-zachem-tratit-milliony-na-arendu-poligona-ili-pokupku-tesla--2.html">Зачем тратить миллионы на аренду полигона или покупку Tesla, если можно собрать полноценный беспилотник, который поместится на кухонном столе?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-03</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-03-zachem-tratit-milliony-na-arendu-poligona-ili-pokupku-tesla-.html">Зачем тратить миллионы на аренду полигона или покупку Tesla, если можно собрать полноценный беспилотник, который поместится на кухонном столе?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-03</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-zachem-tratit-tysyachi-dollarov-na-markernye-kostyumy-i-obve.html">Зачем тратить тысячи долларов на маркерные костюмы и обвешивать зал десятками камер, если в вашем кармане уже лежит мощный вычислительный центр?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-02</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-01-a-vy-tozhe-chuvstvuete-etot-zapakh-net-ne-kofe-a-aromat-gory.html">А вы тоже чувствуете этот запах?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-09-01</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-a-vy-kogda-nibud-zadumyvalis-mozhno-li-prevratit-khaos-danny.html">А вы когда-нибудь задумывались, можно ли превратить хаос данных в точный прогноз, если заставить тысячи виртуальных сущностей поспорить друг с другом?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-khotite-uvidet-kak-vash-robot-epichno-vrezaetsya-v-stenu-des.html">Хотите увидеть, как ваш робот эпично врезается в стену десять тысяч раз за минуту, но при этом не тратит ни копейки из вашего бюджета на ремонт?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-31-mechtali-o-sobstvennom-droide-kotoryy-ne-budet-pytatsya-zakh.html">Мечтали о собственном дроиде, который не будет пытаться захватить мир, а просто эпично топать по вашей гостиной?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-08-31</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-29-a-vy-vsyo-eshche-pytaetes-vpikhnut-vse-instruktsii-v-odin-gi.html">А вы всё еще пытаетесь впихнуть все инструкции в один гигантский системный промпт, надеясь, что нейронка не забудет, что ей делать, на середине текста?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-08-29</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-25-a-vy-kogda-nibud-mechtali-o-sotrudnike-kotoromu-dostatochno-.html">А вы когда-нибудь мечтали о сотруднике, которому достаточно один раз сказать сделай мне красиво, и он исчезнет на пару часов, чтобы вернуться с готовым результатом, не задавая тупых вопросов?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-08-25</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-25-zachem-stavit-na-kompyuter-tyazhelennyy-soft-kotoryy-zhret-v.html">Зачем ставить на компьютер тяжеленный софт, который жрет всю оперативку и грузит систему до предела, если можно просто открыть вкладку в браузере и начать творить?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-08-25</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-17-mechtaete-zastavit-neyroset-zarabatyvat-vam-dengi-poka-vy-sp.html">Мечтаете заставить нейросеть зарабатывать вам деньги, пока вы спокойно пьете кофе, а не пытаетесь понять, куда пополз график акций?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-08-17</small></p>
+                </div>
+            </div>
+        </div>
+        <div class='col'>
+            <div class='card h-100'>
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-nadoelo-smotret-kak-vashi-virtualnye-roboty-dergayutsya-slov.html">Надоело смотреть, как ваши виртуальные роботы дергаются, словно в старых играх, а симуляция превращается в слайд-шоу при попытке добавить в сцену большего, чем два кубика?</a></h5>
+                    <p class='card-text'><small class='text-muted'>2026-08-14</small></p>
+                </div>
+            </div>
+        </div></div></main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
