@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вы когда-нибудь задумывались, каково это - когда нейронка выдает ответ быстрее, чем вы успеваете моргнуть или вспомнить, куда делся тот чертов закрывающий скобкой символ? | Idea Scout - AI находки для вайбкодеров</title>
+    <meta name="description" content="Вы когда-нибудь задумывались, каково это - когда нейронка выдает ответ быстрее, чем вы успеваете моргнуть или вспомнить, куда делся тот чертов закрывающий скобк">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b !important;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #4d9eff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #0b132b;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #48036f;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #0b132b;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #0b132b;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #0b132b;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-decoration-none">Idea Scout - AI находки для вайбкодеров</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Вы когда-нибудь задумывались, каково это - когда нейронка выдает ответ быстрее, чем вы успеваете моргнуть или вспомнить, куда делся тот чертов закрывающий скобкой символ?</h1>
+        <p class="post-meta">05 September 2026</p>
+        <div class="post-content"><p>Вы когда-нибудь задумывались, каково это - когда нейронка выдает ответ быстрее, чем вы успеваете моргнуть или вспомнить, куда делся тот чертов закрывающий скобкой символ?</p>
+<p><strong>Что это</strong>
+Речь о выкате модели Qwen 2.5 27B на платформе Cerebras. Если упростить: взяли мощную открытую модель от Alibaba и запустили ее на «железе», которое не знает слова «тормоза». Теперь эта связка доступна на общем тарифе, превращая ожидание ответа в мимолетное мгновение.</p>
+<p><strong>В чем фишка</strong> ⚡
+Тут всё упирается в одну цифру - 1500 токенов в секунду. Чтобы вы понимали масштаб катастрофы для вашего терпения:
+- Ответы прилетают мгновенно, даже если вы просите переписать легаси-код.
+- Огромные массивы данных и кодовые базы «проглатываются» за секунды.
+- Итеративный процесс (баг-репорт -&gt; фикс -&gt; проверка) теперь происходит в реальном времени.
+- Анализ целых модулей проекта больше не требует похода за кофе.
+- Исчезает тот самый раздражающий лаг, когда модель «думает» над каждой буквой.</p>
+<p><strong>Кто создатель</strong>
+За «мозги» отвечает команда Alibaba Cloud (авторы семейства Qwen), а за невероятную скорость - инженеры Cerebras, которые создают специализированные чипы (WSE), оставляя традиционные GPU далеко позади в гонке за токенами.</p>
+<p><strong>Статистика</strong> 📊
+- Скорость: ~1500 токенов/сек.
+- Модель: Qwen 2.5 27B (Open Weights).
+- Доступность: Общий тариф Cerebras.
+- Активность: Высокий интерес в сообществе AI-инженеров благодаря сочетанию размера модели (27B) и скорости.</p>
+<p><strong>Для кого</strong> 🎯
+В первую очередь для разработчиков, которые ненавидят ждать. Если ваш рабочий процесс завязан на рефакторинге, аудите безопасности или разборе чужого кода, этот инструмент станет вашим лучшим другом. Также пригодится всем, кто строит сложные цепочки промптов, где задержка в 10 секунд на каждом шаге превращает работу в пытку.</p>
+<p><strong>Мое мнение</strong> 💡
+Честно? Это выглядит как магия. Когда генерация сливается с процессом мышления, AI перестает быть «внешним сервисом» и становится полноценным расширением вашего мозга. Главный подводный камень - привыкание. После такой скорости возвращаться к стандартным чат-ботам, которые печатают текст со скоростью пьяного бухгалтера, будет физически больно. Стоит ли пробовать? Однозначно да, просто чтобы почувствовать, как должен работать современный стек.</p>
+<p><strong>Заключение</strong>
+Cerebras в очередной раз доказали, что железо решает. Qwen 2.5 27B на их платформе - это не просто «быстро», это смена парадигмы взаимодействия с LLM.</p>
+<p><strong>🔗 100% Опенсорс</strong>: <a href="Нет публичного репозитория">Qwen 2.5 27B</a></p></div>
+        <p class="post-tags"><span class="text-muted">Теги:</span> <a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/novosti.html" style="background:#ffd700;color:#000;text-decoration:none">Новости</a><a class="badge rounded-pill post-tag-chip" href="https://www.google.com/search?q=cerebras" style="background:#ffd700;color:#000;text-decoration:none">Cerebras</a><a class="badge rounded-pill post-tag-chip" href="https://www.google.com/search?q=%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8" style="background:#ffd700;color:#000;text-decoration:none">Скорости</a><a class="badge rounded-pill post-tag-chip" href="https://www.google.com/search?q=%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%B2" style="background:#ffd700;color:#000;text-decoration:none">Токенов</a><a class="badge rounded-pill post-tag-chip" href="https://www.google.com/search?q=%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8" style="background:#ffd700;color:#000;text-decoration:none">Времени</a><a class="badge rounded-pill post-tag-chip" href="https://www.google.com/search?q=%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7" style="background:#ffd700;color:#000;text-decoration:none">Анализ</a></p>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-03-dumali-chto-claude-opus-45-eto-potolok-razvitiya-neyrosetey.html">Думали, что Claude Opus 4.5 - это потолок развития нейросетей?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-05-a-vy-uvereny-chto-v-vashem-wi-fi-seychas-sidite-tolko-vy-i-v-2.html">А вы уверены, что в вашем Wi-Fi сейчас сидите только вы и ваша кошка с планшетом? 🚀</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-05-vash-ai-koder-utverzhdaet-chto-mozhet-zamenit-senora-no-pasu-2.html">Ваш AI-кодер утверждает, что может заменить сеньора, но пасует перед рефакторингом трех файлов?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-02-a-vy-vsyo-eshche-dumaete-chto-v-gonke-neyrosetey-pobezhdayut-2.html">А вы всё еще думаете, что в гонке нейросетей побеждают только ребята из Кремниевой долины?</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
