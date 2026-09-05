@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Представьте, что ваша аналитика не просто рисует красивые графики, а приходит к вам с готовым решением проблемы и открытым пулл-реквестом. | Idea Scout - AI находки для вайбкодеров</title>
+    <meta name="description" content="Представьте, что ваша аналитика не просто рисует красивые графики, а приходит к вам с готовым решением проблемы и открытым пулл-реквестом. Звучит как бред из пр">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b !important;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #4d9eff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #0b132b;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #48036f;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #0b132b;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #0b132b;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #0b132b;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-decoration-none">Idea Scout - AI находки для вайбкодеров</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Представьте, что ваша аналитика не просто рисует красивые графики, а приходит к вам с готовым решением проблемы и открытым пулл-реквестом.</h1>
+        <p class="post-meta">05 September 2026</p>
+    <p class="post-tags" style="margin-top:.75rem"><span style="background:#ffd700;color:#000;padding:.15rem .45rem;border-radius:3px;font-size:.8rem;font-weight:600">Теги:</span> <a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/llm.html" style="background:#ffd700;color:#000;text-decoration:none">LLM</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/ai.html" style="background:#ffd700;color:#000;text-decoration:none">AI</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/anthropic.html" style="background:#ffd700;color:#000;text-decoration:none">Anthropic</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/agenty.html" style="background:#ffd700;color:#000;text-decoration:none">Агенты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/mcp.html" style="background:#ffd700;color:#000;text-decoration:none">MCP</a></p>
+    
+    
+        
+        <div class="post-content"><p>Представьте, что ваша аналитика не просто рисует красивые графики, а приходит к вам с готовым решением проблемы и открытым пулл-реквестом. Звучит как бред из презентации стартапа, который хочет собрать инвестиции, но на деле это база PostHog.</p>
+<h3>Что это 🚀</h3>
+<p>PostHog - это мощный open source комбайн для тех, кто хочет строить self-driving products. Если перевести с маркетингового на человеческий: это платформа, которая позволяет продукту развиваться и исправлять ошибки почти в автономном режиме, объединяя в себе всё, что обычно разбросано по пяти разным подпискам.</p>
+<h3>В чем фишка ⚡</h3>
+<p>Тут собрали столько всего, что глаза разбегаются. Вот основной стек:
+- Полный набор аналитики: от классических дашбордов до записи сессий (session replays), где видно каждое движение мыши пользователя.
+- Безопасный деплой: фиче-флаги и A/B тесты с честной статзначимостью.
+- Технический контроль: трекинг ошибок, логи и полноценный data warehouse с пайплайнами данных.
+- AI observability: специальный надзор за LLM-приложениями.
+- Режим self-driving: система ловит rage clicks и ошибки, после чего сама генерирует отчет и пишет код для фикса. Вам остается только нажать кнопку Merge.
+- Гибкость: деплой одной строкой через Docker и поддержка всех мыслимых SDK (JS, Python, Go, .NET, Flutter и др.).</p>
+<h3>Кто создатель 🎯</h3>
+<p>Проект развивает амбициозная команда PostHog, которая решила пойти против течения и сделать максимально открытый и прозрачный инструмент. Они не просто пишут код, а создают экосистему, где данные напрямую влияют на разработку.</p>
+<h3>Статистика 💡</h3>
+<p>Проект пользуется бешеной популярностью в опенсорс-тусовке. Тысячи звезд на GitHub подтверждают, что разработчики устали от разрозненных сервисов. Активность коммитов зашкаливает, а комьюнити растет за счет интеграций с современными AI-инструментами вроде Cursor и Claude Code через MCP.</p>
+<h3>Для кого</h3>
+<p>Инструмент будет незаменим для:
+- Продакт-менеджеров, которым надоело ждать отчеты от аналитиков.
+- Разработчиков, которые хотят видеть, как их фичи работают в реальности.
+- CTO стартапов, желающих сэкономить бюджет, заменив пачку платных SaaS-сервисов одним решением.</p>
+<h3>Мое мнение</h3>
+<p>Честно? Это просто разнос. Когда один инструмент заменяет Google Analytics, LaunchDarkly и Sentry, это вызывает приятное чувство облегчение в кошельке. Особенно радует бесплатный тариф на миллион событий - для старта этого хватит за глаза.</p>
+<p>Из минусов: документация иногда напоминает лабиринт, в котором можно пропасть на пару часов. Также стоит помнить, что при гигантских объемах данных self-hosted версия может начать подъедать ресурсы, и тогда придется переезжать в Cloud. Но даже с этим PostHog выглядит как ультимативное решение.</p>
+<h3>Заключение</h3>
+<p>PostHog - это не просто про цифры и графики, а про новый подход к разработке, где данные сами диктуют правки в коде. Если вы всё еще склеиваете аналитику из пяти разных сервисов с помощью синей изоленты и молитв - самое время попробовать этот комбайн.\n\n🔗 <strong>100% Опенсорс</strong>: <a href="https://github.com/PostHog/posthog">Репозиторий</a></p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-a-vy-tozhe-chuvstvuete-etu-legkuyu-paniku-kogda-prikhoditsya.html">А вы тоже чувствуете эту легкую панику, когда приходится переключаться между пятью разными чатами, чтобы собрать один рабочий кусок кода?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-gotovy-perestat-kormit-zhadnye-oblachnye-servisy-i-nachat-ge.html">Готовы перестать кормить жадные облачные сервисы и начать генерировать видеоконтент, который не выглядит как галлюцинация пьяного робота?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-khotite-uznat-skolko-vashikh-sekretov-uzhe-gulyaet-po-seti-p.html">Хотите узнать, сколько ваших секретов уже гуляет по сети, пока вы спокойно пьете утренний кофе?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-nadoelo-v-tri-chasa-nochi-dvigat-tekstovye-bloki-na-polpikse.html">Надоело в три часа ночи двигать текстовые блоки на полпикселя влево, чтобы слайд выглядел нормально?</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

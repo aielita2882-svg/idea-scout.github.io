@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пока вы медленно цедите утренний раф, этот код уже вовсю анализирует графики и принимает решения, которые могли бы принести вам миллионы (или просто сэкономить кучу нервов). ☕️
+
+Что это
+Alpaca AI Trading Agent - это не очередной «волшебный индикатор» из Телеграма, который рисует стрелочки на графике. Это полноценный автономный агент, родившийся в пылу хакатона. Проект представляет собой систему с полноценным «интеллектом», которая берет на себя рутину по мониторингу рынка и управлению капиталом.
+
+В чем фишка ⚡️
+Здесь собрано все, что нужно для автоматизации трейдинга без лишнего пафоса:
+- Жесткий тайминг: агент сканирует рынок каждую минуту, чтобы не пропустить важный чих котировок.
+- Классический теханализ: в арсенале RSI, MACD и полосы Боллинджера.
+- Работа с опционами: бот не просто жмет «купить», а выстраивает сложные стратегии, например, Bull Call Spread, чтобы прикрыть тылы.
+- Железобетонный риск-менеджмент: автоматические стоп-лоссы и лимиты на дневной убыток. Слить весь депозит за один вечер не получится - система просто остановится.
+- Расширяемость: интеграция с MCP server позволяет прикручивать к агенту любые внешние инструменты.
+
+Кто создатель
+Проект вырос из хакатона, где команда разработчиков решила создать не просто скрипт, а полноценного торгового помощника, способного к автономному мышлению и управлению позициями.
+
+Статистика 🚀
+Проект активно живет на GitHub, привлекая внимание любителей алготрейдинга. Основной стек базируется на современных языках программирования с высокой активностью комьюнити, которое помогает допиливать логику генерации сигналов и оптимизировать взаимодействие с API.
+
+Для кого
+- Разработчикам, которые хотят понять, как устроены современные торговые алгоритмы.
+- Трейдерам, мечтающим автоматизировать свои стратегии и перестать смотреть в монитор 24/7.
+- Любителям покрутить сложные сценарии на paper trading (симуляторе), не рискуя при этом последней зарплатой.
+
+Мое мнение 💡
+Выглядит максимально бодро. Особенно радует, что авторы не забыли про риск-менеджмент - обычно в таких «инновационных» проектах об этом вспоминают, когда пользователь уже остался без штанов. Возможность тестирования на виртуальных счетах делает этот инструмент идеальным полигоном. Однако, переносить бота на реальный депозит, не разобравшись в каждой строчке кода - затея для очень смелых или просто безумных людей. Помните: ИИ может ошибаться, а ваши деньги - нет.
+
+Заключение
+Alpaca AI Trading Agent - это отличный пример того, как современные LLM и технический анализ могут работать в связке. Это мощный инструмент для обучения и автоматизации, который превращает трейдинг из азартной игры в структурированный процесс. 🎯 | Idea Scout - AI находки для вайбкодеров</title>
+    <meta name="description" content="\n🔗 **100% Опенсорс**: [Репозиторий](https://github.com/alfeena-01/alpaca-ai-trading-agent)">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b !important;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #4d9eff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #0b132b;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #48036f;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #0b132b;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #0b132b;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #0b132b;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-decoration-none">Idea Scout - AI находки для вайбкодеров</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Пока вы медленно цедите утренний раф, этот код уже вовсю анализирует графики и принимает решения, которые могли бы принести вам миллионы (или просто сэкономить кучу нервов). ☕️
+
+Что это
+Alpaca AI Trading Agent - это не очередной «волшебный индикатор» из Телеграма, который рисует стрелочки на графике. Это полноценный автономный агент, родившийся в пылу хакатона. Проект представляет собой систему с полноценным «интеллектом», которая берет на себя рутину по мониторингу рынка и управлению капиталом.
+
+В чем фишка ⚡️
+Здесь собрано все, что нужно для автоматизации трейдинга без лишнего пафоса:
+- Жесткий тайминг: агент сканирует рынок каждую минуту, чтобы не пропустить важный чих котировок.
+- Классический теханализ: в арсенале RSI, MACD и полосы Боллинджера.
+- Работа с опционами: бот не просто жмет «купить», а выстраивает сложные стратегии, например, Bull Call Spread, чтобы прикрыть тылы.
+- Железобетонный риск-менеджмент: автоматические стоп-лоссы и лимиты на дневной убыток. Слить весь депозит за один вечер не получится - система просто остановится.
+- Расширяемость: интеграция с MCP server позволяет прикручивать к агенту любые внешние инструменты.
+
+Кто создатель
+Проект вырос из хакатона, где команда разработчиков решила создать не просто скрипт, а полноценного торгового помощника, способного к автономному мышлению и управлению позициями.
+
+Статистика 🚀
+Проект активно живет на GitHub, привлекая внимание любителей алготрейдинга. Основной стек базируется на современных языках программирования с высокой активностью комьюнити, которое помогает допиливать логику генерации сигналов и оптимизировать взаимодействие с API.
+
+Для кого
+- Разработчикам, которые хотят понять, как устроены современные торговые алгоритмы.
+- Трейдерам, мечтающим автоматизировать свои стратегии и перестать смотреть в монитор 24/7.
+- Любителям покрутить сложные сценарии на paper trading (симуляторе), не рискуя при этом последней зарплатой.
+
+Мое мнение 💡
+Выглядит максимально бодро. Особенно радует, что авторы не забыли про риск-менеджмент - обычно в таких «инновационных» проектах об этом вспоминают, когда пользователь уже остался без штанов. Возможность тестирования на виртуальных счетах делает этот инструмент идеальным полигоном. Однако, переносить бота на реальный депозит, не разобравшись в каждой строчке кода - затея для очень смелых или просто безумных людей. Помните: ИИ может ошибаться, а ваши деньги - нет.
+
+Заключение
+Alpaca AI Trading Agent - это отличный пример того, как современные LLM и технический анализ могут работать в связке. Это мощный инструмент для обучения и автоматизации, который превращает трейдинг из азартной игры в структурированный процесс. 🎯</h1>
+        <p class="post-meta">05 September 2026</p>
+    <p class="post-tags" style="margin-top:.75rem"><span style="background:#ffd700;color:#000;padding:.15rem .45rem;border-radius:3px;font-size:.8rem;font-weight:600">Теги:</span> <a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/ai.html" style="background:#ffd700;color:#000;text-decoration:none">AI</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/agenty.html" style="background:#ffd700;color:#000;text-decoration:none">Агенты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/mcp.html" style="background:#ffd700;color:#000;text-decoration:none">MCP</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/instrumenty.html" style="background:#ffd700;color:#000;text-decoration:none">Инструменты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/boty.html" style="background:#ffd700;color:#000;text-decoration:none">Боты</a></p>
+    
+    
+        
+        <div class="post-content"><p>\n🔗 <strong>100% Опенсорс</strong>: <a href="https://github.com/alfeena-01/alpaca-ai-trading-agent">Репозиторий</a></p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-vy-kogda-nibud-zadumyvalis-skolko-vashikh-tsifrovykh-prizrak.html">Вы когда-нибудь задумывались, сколько ваших цифровых призраков бродит по интернету? Старый аккаунт на форуме любителей кактусов из 2012-го или забытый профиль в соцсети, которая давно сдохла, могут выдать о вас больше, чем вы планировали.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-14-vy-kogda-nibud-zadumyvalis-skolko-vashikh-zabytykh-akkauntov.html">Вы когда-нибудь задумывались, сколько ваших забытых аккаунтов пылится на задворках интернета на сайтах, о которых вы даже не помните? Или, может, вам нужно узнать, где именно засветился конкретный пользователь, не поднимая при этом шум?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-23-nadoelo-prygat-mezhdu-desyatyu-vkladkami-chtoby-ponyat-poche.html">Надоело прыгать между десятью вкладками, чтобы понять, почему пользователь ушел с сайта на третьем шаге регистрации?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-mechtali-kogda-nibud-zastavit-kompyuter-govorit-vashim-golos.html">Мечтали когда-нибудь заставить компьютер говорить вашим голосом, но так, чтобы он не звучал как робот-пылесос с дефектом речи? Или, может, вам надоело скармливать деньги облачным сервисам за каждую минуту озвучки?</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
