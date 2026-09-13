@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хватит гадать на кофейной гуще, когда можно заставить семь нейросетей поспорить о ваших деньгах. | Idea Scout - AI находки для вайбкодеров</title>
+    <meta name="description" content="**Что это** 💡
+TradingAgents-astock - это не просто очередной оберточный скрипт для ChatGPT, а полноценный многоагентный фреймворк, заточенный под суровые реалии">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b !important;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #4d9eff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #0b132b;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #48036f;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #0b132b;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #0b132b;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #0b132b;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-decoration-none">Idea Scout - AI находки для вайбкодеров</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Хватит гадать на кофейной гуще, когда можно заставить семь нейросетей поспорить о ваших деньгах.</h1>
+        <p class="post-meta">13 September 2026</p>
+    <p class="post-tags" style="margin-top:.75rem"><span style="background:#ffd700;color:#000;padding:.15rem .45rem;border-radius:3px;font-size:.8rem;font-weight:600">Теги:</span> <a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/neyroseti.html" style="background:#ffd700;color:#000;text-decoration:none">Нейросети</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/agenty.html" style="background:#ffd700;color:#000;text-decoration:none">Агенты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/ii-agent.html" style="background:#ffd700;color:#000;text-decoration:none">ИИ-агент</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/instrumenty.html" style="background:#ffd700;color:#000;text-decoration:none">Инструменты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/boty.html" style="background:#ffd700;color:#000;text-decoration:none">Боты</a></p>
+        
+        <div class="post-content"><p><strong>Что это</strong> 💡
+TradingAgents-astock - это не просто очередной оберточный скрипт для ChatGPT, а полноценный многоагентный фреймворк, заточенный под суровые реалии китайского фондового рынка (A-share). Представьте, что вы наняли целый аналитический отдел, где каждый сотрудник - специализированный ИИ. Вместо одного сомнительного совета от чат-бота вы получаете результат коллективного разума, который просеивает тонны данных, прежде чем выдать итоговый вердикт.</p>
+<p><strong>В чем фишка</strong> 🚀
+Проект превращает анализ акций в своего рода интеллектуальный баттл. Вот что делает его особенным:
+- Команда из семи профильных агентов: каждый обладает своей ролью и жесткой специализацией, что исключает поверхностные ответы.
+- Локальный контекст: глубокая работа с данными, которые западные модели обычно игнорируют (например, списки Longhu с активностью крупных игроков).
+- Анализ «китов»: отслеживание спекулятивного капитала и графиков разблокировки акций.
+- Режим дебатов: встроенная система столкновения мнений «быков» и «медведей», которая вытаскивает на свет скрытые риски.
+- Рыночная адаптация: алгоритмы настроены именно под специфику A-share, а не под стандартный S&amp;P 500.
+- Снижение когнитивных искажений: многослойная проверка гипотез позволяет избежать эмоциональных торговых решений.</p>
+<p><strong>Кто создатель</strong> 🎯
+Проект развивается сообществом энтузиастов и разработчиков, которые решили объединить возможности LLM с глубокой финансовой экспертизой в области восточных рынков.</p>
+<p><strong>Статистика</strong> ⚡
+На GitHub проект уже собрал 3296 звезд, что говорит о серьезном интересе комьюнити. Весь бэкенд написан на Python. Активность разработки высокая: код постоянно обновляется, чтобы успевать за изменчивыми паттернами рынка.</p>
+<p><strong>Для кого</strong> 💡
+В первую очередь - для тех, кто решил испытать свои нервы на волатильности китайских акций и не хочет обнулить депозит. Инструмент будет крайне полезен квант-разработчикам и дата-сайентистам, которые строят автономные торговые системы. Также проект подойдет всем любителям «цифровых гладиаторских боев», где нейросети с пеной у рта доказывают друг другу, почему конкретная компания взлетит или рухнет.</p>
+<p><strong>Мое мнение</strong> 🚀
+Идея с «виртуальным отделом аналитики» - это глоток свежего воздуха. Одиночные LLM часто склонны к галлюцинациям или излишнему оптимизму, но когда один агент начинает разносить аргументы другого, истина всплывает гораздо быстрее. Главный подводный камень - зависимость от качества входных данных и стоимость токенов при интенсивных дебатах семи агентов. Тем не менее, попробовать стоит, особенно если вам нужен холодный расчет вместо интуиции.</p>
+<p><strong>Заключение</strong>
+TradingAgents-astock превращает хаос рыночных данных в структурированный отчет. Это мощный пример того, как многоагентные системы могут заменить линейные прогнозы, превращая инвестиционный анализ в точную инженерную задачу.</p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-08-zabudte-o-razroznennykh-analizakh-teper-ii-vidit-vsyu-vashu-.html">Забудьте о разрозненных анализах, теперь ИИ видит всю вашу медицинскую историю как единый бесконечный сериал.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-08-poka-my-uchim-neyronki-pisat-stikhi-oni-vozmozhno-uzhe-pytay.html">Пока мы учим нейронки писать стихи, они, возможно, уже пытаются понять, как именно они это делают.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-08-zabudte-pro-sterilnye-laboratorii-prishlo-vremya-otpravit-ro.html">Забудьте про стерильные лаборатории, пришло время отправить робота в настоящий беспорядок.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-a-vy-kogda-nibud-chuvstvovali-chto-onlayn-kursy-eto-prosto-d.html">А вы когда-нибудь чувствовали, что онлайн-курсы - это просто дорогой способ читать PDF-файлы, пока лектор в видео засыпает вас терминами?</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
