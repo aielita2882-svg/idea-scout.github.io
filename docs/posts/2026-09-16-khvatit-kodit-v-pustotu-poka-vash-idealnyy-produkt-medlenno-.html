@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хватит кодить в пустоту, пока ваш идеальный продукт медленно умирает на localhost. | Idea Scout - AI находки для вайбкодеров</title>
+    <meta name="description" content="Что это
+Это авторский образовательный проект и серия разборов от практика, который учит отличать процесс написания кода от процесса создания бизнеса. Вместо сте">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b !important;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #4d9eff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #0b132b;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #48036f;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #0b132b;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #0b132b;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #0b132b;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-decoration-none">Idea Scout - AI находки для вайбкодеров</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Хватит кодить в пустоту, пока ваш идеальный продукт медленно умирает на localhost.</h1>
+        <p class="post-meta">16 September 2026</p>
+    <p class="post-tags" style="margin-top:.75rem"><span style="background:#ffd700;color:#000;padding:.15rem .45rem;border-radius:3px;font-size:.8rem;font-weight:600">Теги:</span> <a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/ai.html" style="background:#ffd700;color:#000;text-decoration:none">AI</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/agenty.html" style="background:#ffd700;color:#000;text-decoration:none">Агенты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/instrumenty.html" style="background:#ffd700;color:#000;text-decoration:none">Инструменты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/boty.html" style="background:#ffd700;color:#000;text-decoration:none">Боты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/grafika.html" style="background:#ffd700;color:#000;text-decoration:none">Графика</a></p>
+        
+        <div class="post-content"><p>Что это
+Это авторский образовательный проект и серия разборов от практика, который учит отличать процесс написания кода от процесса создания бизнеса. Вместо стерильных кейсов об успехе здесь препарируют реальный опыт запуска AI-инструментов: от эпичных провалов до выручки в миллионы долларов.</p>
+<p>В чем фишка 💡
+- Жесткий фокус на дистрибуции: автор доказывает, что умение продать важнее, чем умение собрать.
+- Честность до боли: детальный разбор 40% неудачных запусков, а не только «историй успеха».
+- Практика вайб-кодинга: примеры того, как быстро собирать тулзы в Claude, чтобы не переплачивать интеграторам.
+- Поиск Product-Market Fit: конкретные метрики и признаки того, что ваш продукт действительно нужен рынку.
+- Борьба с иллюзиями: объяснение, почему низкий порог входа в разработку только поднял порог выживания стартапов.
+- Анализ AI-агентов: разбор того, почему памяти агенту нужны больше, чем функциональные «руки».</p>
+<p>Кто создатель 🚀
+Константин Сухачев - стратег и рост-менеджер в Overgear. Это международная гейминг-платформа с впечатляющей выручкой более $2M в месяц. Константин прошел путь от наивного разработчика до человека, который знает, за что клиенты готовы платить деньги, а что останется просто «прикольной фичей».</p>
+<p>Статистика 📊
+Проект базируется на реальных цифрах Overgear и личных экспериментах автора. Основной стек инструментов для быстрых прототипов - Claude и современные AI-фреймворки. Активность проявляется в серии глубоких статей и разборов, где каждый кейс подкреплен результатами рекламных кампаний (например, окупаемость 60% первых запусков рекламных агентов).</p>
+<p>Для кого 🎯
+- Инди-хакерам, которые застряли в бесконечном цикле «допиливания» продукта.
+- Разработчикам, решившим запустить свой AI-стартап, но не знающим, где искать первых юзеров.
+- Продакт-менеджерам, которым нужно быстро проверить гипотезу, не тратя бюджеты целого отдела.
+- Всем, кто верит, что крутой код сам себя продаст (спойлер: нет).</p>
+<p>Мое мнение 🔥
+Наконец-то кто-то сказал вслух: AI-ускорители часто просто ускоряют путь к провалу. Сейчас рынок забит однотипными обертками над GPT, которые делают «красиво», но не решают реальных болей. Подход Сухачева крут тем, что он бьет по самому больному - по отсутствию дистрибуции. Главный подводный камень здесь в том, что принять правду о своем «нежизнеспособном» продукте психологически тяжело. Но лучше узнать об этом за неделю вайб-кодинга, чем за год дорогой разработки.</p>
+<p>Заключение
+Создать продукт сегодня может любой, у кого есть доступ к API и немного фантазии. Но выжить в этой мясорубке смогут только те, кто ставит рынок выше кода. Если ваш план - просто «написать крутую штуку», готовьтесь к тишине в уведомлениях. В остальном - мастхэв для тех, кто хочет строить бизнес, а не просто коллекционировать репозитории.</p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-15-a-vy-vsyo-eshche-obshchaetes-s-neyronkoy-kak-s-kapriznym-sta.html">А вы всё еще общаетесь с нейронкой как с капризным стажером, надеясь, что она вдруг поймет вас с полуслова?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-mechtali-o-tsifrovom-dvoynike-kotoryy-budet-delat-vsyu-nudnu.html">Мечтали о цифровом двойнике, который будет делать всю нудную работу в браузере, пока вы пьете кофе?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-a-vy-gotovy-k-tomu-chto-vash-byvshiy-tekhlid-kotoryy-posledn.html">А вы готовы к тому, что ваш бывший техлид, который последние пять лет только рисовал квадратики в Jira, внезапно вернется в репозиторий и перепишет половину вашего кода за один вечер?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-nadoelo-chuvstvovat-sebya-besplatnym-kopirayterom-kotoryy-po.html">Надоело чувствовать себя бесплатным копирайтером, который по десять раз в день переписывает одно и то же резюме под разные требования HR-ов?</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
