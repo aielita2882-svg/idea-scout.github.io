@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хватит сжигать бюджеты и ждать неделями, пока ваши агенты проползут через бесконечные тесты. | Idea Scout - AI находки для вайбкодеров</title>
+    <meta name="description" content="**Что это** 💡
+DualViewEval - это продвинутый метод двухвидового реляционного обучения, созданный для того, чтобы сделать бенчмаркинг ИИ-агентов быстрым и дешевы">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b !important;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #4d9eff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #0b132b;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #48036f;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #0b132b;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #0b132b;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #0b132b;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-decoration-none">Idea Scout - AI находки для вайбкодеров</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Хватит сжигать бюджеты и ждать неделями, пока ваши агенты проползут через бесконечные тесты.</h1>
+        <p class="post-meta">16 September 2026</p>
+    <p class="post-tags" style="margin-top:.75rem"><span style="background:#ffd700;color:#000;padding:.15rem .45rem;border-radius:3px;font-size:.8rem;font-weight:600">Теги:</span> <a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/agenty.html" style="background:#ffd700;color:#000;text-decoration:none">Агенты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/ii-agent.html" style="background:#ffd700;color:#000;text-decoration:none">ИИ-агент</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/dannye.html" style="background:#ffd700;color:#000;text-decoration:none">Данные</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/obuchenie.html" style="background:#ffd700;color:#000;text-decoration:none">Обучение</a></p>
+        
+        <div class="post-content"><p><strong>Что это</strong> 💡
+DualViewEval - это продвинутый метод двухвидового реляционного обучения, созданный для того, чтобы сделать бенчмаркинг ИИ-агентов быстрым и дешевым. Вместо того чтобы прогонять модель через тысячи однотипных задач, система создает компактные, но репрезентативные мини-датасеты, которые предсказывают финальный результат с пугающей точностью.</p>
+<p><strong>В чем фишка</strong> 🚀
+Авторы решили не просто смотреть на итоговый балл (который часто бывает обманчив), а залезть «под капот» процесса.
+- Анализ траекторий: система изучает путь агента к решению, а не только факт успеха.
+- Шесть сигналов процесса: выделены специфические метрики выполнения, которые напрямую коррелируют с итоговым качеством.
+- Двойной взгляд: метод совмещает данные об исходах и деталях процесса (Dual-View).
+- Экстремальное сжатие: на тестах APEX-Agents и BFCL удалось добиться сокращения объема данных в 24-40 раз.
+- Высокая точность: средняя абсолютная ошибка (MAE) упала на 14.5-28.2% по сравнению с аналогами.
+- Диагностика: мини-датасеты не просто дают цифру, а подсвечивают конкретные слабые места агента.</p>
+<p><strong>Кто создатель</strong> 🎯
+Проект разработан группой исследователей в области машинного обучения, которые устали от неэффективности традиционных методов оценки LLM-агентов.</p>
+<p><strong>Статистика</strong> ⚡
+Метод был обкатан на пяти крупнейших бенчмарках. На SWE-bench Verified он показал рост корреляции Kendall’s τ на 7.2% относительно EssenceBench. Основной стек - Python и фреймворки для глубокого обучения. Активность вокруг проекта растет, так как индустрия остро нуждается в дешевой валидации.</p>
+<p><strong>Для кого</strong> 💡
+В первую очередь для ML-инженеров и разработчиков автономных агентов. Если ваш пайплайн тестирования занимает вечность, а счета за API заставляют нервно икать - этот инструмент для вас. Также будет полезно исследователям, которые создают новые метрики оценки ИИ.</p>
+<p><strong>Мое мнение</strong> 🚀
+Идея с «двумя взглядами» - это просто база. Раньше мы пытались сжать тесты, глядя только на ответ «правильно/неправильно», что напоминало попытку оценить качество написания кода по количеству ошибок компиляции. DualViewEval же смотрит на логику. </p>
+<p>Главный подвох может быть в сложности первичной настройки сигналов процесса для специфических, узконишевых задач. Но даже с этим, возможность сократить тесты в 40 раз - это слишком жирный плюс, чтобы его игнорировать. Стоит пробовать, если вы не хотите тратить жизнь на ожидание логов.</p>
+<p><strong>Заключение</strong>
+DualViewEval превращает громоздкий и дорогой процесс оценки агентов в элегантный и быстрый инструмент. Это не просто оптимизация, а переход к более умному, диагностическому подходу в разработке ИИ.</p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-15-a-vy-vsyo-eshche-obshchaetes-s-neyronkoy-kak-s-kapriznym-sta.html">А вы всё еще общаетесь с нейронкой как с капризным стажером, надеясь, что она вдруг поймет вас с полуслова?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-22-mechtali-o-tsifrovom-dvoynike-kotoryy-budet-delat-vsyu-nudnu.html">Мечтали о цифровом двойнике, который будет делать всю нудную работу в браузере, пока вы пьете кофе?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-a-vy-gotovy-k-tomu-chto-vash-byvshiy-tekhlid-kotoryy-posledn.html">А вы готовы к тому, что ваш бывший техлид, который последние пять лет только рисовал квадратики в Jira, внезапно вернется в репозиторий и перепишет половину вашего кода за один вечер?</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-24-nadoelo-chuvstvovat-sebya-besplatnym-kopirayterom-kotoryy-po.html">Надоело чувствовать себя бесплатным копирайтером, который по десять раз в день переписывает одно и то же резюме под разные требования HR-ов?</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
