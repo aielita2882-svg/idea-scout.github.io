@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хватит гадать, почему ваша нейронка внезапно сходит с ума при обучении вне политики. | Idea Scout - AI находки для вайбкодеров</title>
+    <meta name="description" content="Что это
+Речь идет о методе Score Centering - элегантном математическом «костыле» (в лучшем смысле этого слова), который лечит нестабильность off-policy RL при д">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Глобальные цвета */
+    body {
+        background: #0b132b !important;   /* тёмно-синий фон */
+        color: #ffffff;        /* чисто белый текст */
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        padding-top: 2rem;
+        min-height: 100vh;
+    }
+    a {
+        color: #4d9eff;        /* ярко-синие ссылки */
+        transition: color 0.3s;
+    }
+    a:hover {
+        color: #4d9eff;
+        text-decoration: none;
+    }
+
+    /* Логотип (заголовок сайта) — ярко-жёлтый */
+    header h1 a {
+        color: #ffd700;        /* золотой/жёлтый */
+        text-decoration: none;
+    }
+    header h1 a:hover {
+        color: #ffe44d;
+    }
+
+    /* Заголовки внутри статей */
+    h1, h2, h3, h4, .display-6 {
+        color: #f0f8ff;        /* слегка голубоватый белый */
+    }
+
+    /* Карточки постов */
+    .card {
+        /* фон остаётся тот же тёмно-синий; лёгкий градиент даёт глубину */
+        background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 24%),
+                    linear-gradient(180deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0) 30%),
+                    #0b132b;
+        border: 2px solid transparent;
+        border-image: linear-gradient(135deg, #ffd700, #4d9eff) 1;   /* жёлто-синий градиент */
+        box-shadow: 0 8px 22px rgba(89, 109, 190, 0.40),     /* синяя индиго-тень */
+                    inset 0 1px 0 rgba(255, 255, 255, 0.07); /* блик на верхней грани */
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 12px;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(105, 130, 220, 0.50),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+        border-image: linear-gradient(135deg, #ffd700, #ff6b9d) 1;   /* жёлто-розовый при наведении */
+    }
+    .card-title a {
+        color: #f0f8ff;
+        text-decoration: none;
+    }
+    .card-title a:hover {
+        color: #7ab7ff;
+    }
+    .card-text {
+        color: #e0e8f0;        /* светлый текст на карточках */
+    }
+    .card-text small, .card-body small.text-muted {
+        color: #b0c4de !important;   /* читаемая светлая дата на тёмном фоне */
+    }
+
+    /* Кнопки категорий */
+    .category-badge {
+        background: #0b132b;
+        color: #4d9eff;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid #4d9eff;
+        transition: all 0.3s;
+    }
+    .category-badge:hover {
+        background: #48036f;
+        color: #ffffff;
+        border-color: #ffd700;
+        transform: scale(1.05);
+    }
+
+    /* Подвал */
+    .footer {
+        border-top: 1px solid #2a3a5a;
+        padding-top: 1.5rem;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b0c4de;
+    }
+    .footer a {
+        color: #b0c4de;
+    }
+    .footer a:hover {
+        color: #ffd700;
+    }
+
+    /* Остальные элементы (посты, блоки, цитаты) */
+    .post-content h2, .post-content h3 {
+        color: #f0f8ff;
+        border-bottom: 1px solid #2a3a5a;
+        padding-bottom: 0.5rem;
+    }
+    .post-content blockquote {
+        border-left: 4px solid #ffd700;
+        padding-left: 1rem;
+        color: #c0d0e0;
+        background: #0b132b;
+        border-radius: 0 6px 6px 0;
+    }
+    .post-content code {
+        background: #0b132b;
+        color: #ffd700;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+    }
+    .post-content pre {
+        background: #0b132b;
+        border: 1px solid #2a3a5a;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .related-posts {
+        border-top: 1px solid #2a3a5a;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+    .post-meta {
+        color: #b0c4de;
+    }
+    .btn-home {
+        color: #4d9eff;
+        border-color: #4d9eff;
+    }
+    .btn-home:hover {
+        background: #4d9eff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="mb-4">
+            <h1><a href="https://aielita2882-svg.github.io/idea-scout.github.io/" class="text-decoration-none">Idea Scout - AI находки для вайбкодеров</a></h1>
+            <p class="text-secondary">Автономный агрегатор open-source AI-моделей, скриптов и инструментов.</p>
+            <div class="d-flex flex-wrap gap-2">
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/modeli.html" class="category-badge">Модели</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/skripty.html" class="category-badge">Скрипты</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/avtomatizatsiya.html" class="category-badge">Автоматизация</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/parsing.html" class="category-badge">Парсинг</a>
+                <a href="https://aielita2882-svg.github.io/idea-scout.github.io/categories/raznoe.html" class="category-badge">Разное</a>
+            </div>
+        </header>
+        <main>
+        <h1 class="display-6">Хватит гадать, почему ваша нейронка внезапно сходит с ума при обучении вне политики.</h1>
+        <p class="post-meta">17 September 2026</p>
+    <p class="post-tags" style="margin-top:.75rem"><span style="background:#ffd700;color:#000;padding:.15rem .45rem;border-radius:3px;font-size:.8rem;font-weight:600">Теги:</span> <a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/llm.html" style="background:#ffd700;color:#000;text-decoration:none">LLM</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/rag.html" style="background:#ffd700;color:#000;text-decoration:none">RAG</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/instrumenty.html" style="background:#ffd700;color:#000;text-decoration:none">Инструменты</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/obuchenie.html" style="background:#ffd700;color:#000;text-decoration:none">Обучение</a><a class="badge rounded-pill post-tag-chip" href="https://aielita2882-svg.github.io/idea-scout.github.io/tags/video.html" style="background:#ffd700;color:#000;text-decoration:none">Видео</a></p>
+        
+        <div class="post-content"><p>Что это
+Речь идет о методе Score Centering - элегантном математическом «костыле» (в лучшем смысле этого слова), который лечит нестабильность off-policy RL при дообучении больших языковых моделей. Суть в борьбе с систематическим дрейфом - тем самым раздражающим смещением между тем, как модель ведет себя при обучении, и тем, как она работает на инференсе.</p>
+<p>В чем фишка 💡
+- Убивает дрейф: метод вычитает среднее значение скоров по текущему батчу из каждого отдельного скора.
+- Борется с mismatch: нивелирует разницу между обучающим и инференсным движками.
+- Легкость внедрения: достаточно добавить одну операцию вычитания в ваш RL-pipeline.
+- Совместимость: отлично работает в связке с KL-штрафами и importance sampling.
+- Эффективность при квантовании: спасает ситуацию, когда вы используете 4- или 8-битные веса для экономии VRAM.
+- Скорость: не замедляет генерацию и не требует переписывания архитектуры.</p>
+<p>Кто создатель
+Метод предложен группой исследователей, специализирующихся на оптимизации обучения LLM и методах обучения с подкреплением.</p>
+<p>Статистика 🚀
+Испытания проводились на моделях масштабом от 0.6B до 30B параметров. Тесты прогоняли через жесткие бенчмарки: GSM8K, HumanEval и MMLU. Результаты впечатляют: при сильном mismatch (8-битная квантизация + устаревшие градиенты) прирост win-rate достигает 5-7 процентных пунктов. В связке с importance sampling метод обходит его в среднем на 4 пп.</p>
+<p>Для кого 🎯
+Этот инструмент жизненно необходим командам, которые пытаются впихнуть невпихуемое: обучают гигантские модели на ограниченном железе, используют агрессивную квантизацию или работают с несовершенными инференс-движками, где разрыв между обучением и продакшеном неизбежен.</p>
+<p>Мое мнение ⚡
+Знаете, что самое прекрасное в этой истории? Авторы не стали городить сложную надстройку с миллионом гиперпараметров, а предложили простое вычитание среднего. Это классический пример того, как глубокое понимание математики процесса побеждает попытки «закидать проблему видеокартами». Главный подводный камень тут только один - метод лечит симптомы дрейфа, а не устраняет причину самого mismatch. Но когда у вас в распоряжении 30B параметров и ограниченный бюджет на облака, такие «симптоматические» решения становятся золотым стандартом. Пробовать однозначно стоит, особенно если ваши графики обучения выглядят как кардиограмма испуганного кролика.</p>
+<p>Заключение
+Score Centering - это дешевый и эффективный способ сделать off-policy RL более предсказуемым. Минимум кода, максимум профита в виде стабильных градиентов и роста метрик на сложных задачах.</p></div>
+        <div class="related-posts"><h5>📚 Похожие статьи</h5><ul class="list-unstyled"><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-08-zabudte-o-razroznennykh-analizakh-teper-ii-vidit-vsyu-vashu-.html">Забудьте о разрозненных анализах, теперь ИИ видит всю вашу медицинскую историю как единый бесконечный сериал.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-08-poka-my-uchim-neyronki-pisat-stikhi-oni-vozmozhno-uzhe-pytay.html">Пока мы учим нейронки писать стихи, они, возможно, уже пытаются понять, как именно они это делают.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-09-08-zabudte-pro-sterilnye-laboratorii-prishlo-vremya-otpravit-ro.html">Забудьте про стерильные лаборатории, пришло время отправить робота в настоящий беспорядок.</a></li><li><a href="https://aielita2882-svg.github.io/idea-scout.github.io/posts/2026-08-13-a-vy-kogda-nibud-chuvstvovali-chto-onlayn-kursy-eto-prosto-d.html">А вы когда-нибудь чувствовали, что онлайн-курсы - это просто дорогой способ читать PDF-файлы, пока лектор в видео засыпает вас терминами?</a></li></ul></div>
+        </main>
+        <footer class="footer">
+            © 2026 Idea Scout &middot; <a href="https://t.me/idea_scout">Telegram</a> &middot; <a href="https://vk.com/idea_scout">VK</a> &middot; <a href="https://ru.pinterest.com/idea_scout/">Pinterest</a> &middot; <a href="https://dzen.ru/user/oeqyyrihxgh7qgytbd1nq4zy96k">Дзен</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
